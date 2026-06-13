@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>調速（チョーソク）｜住所を入れて、5分。物件調査が、提案資料まで終わる。</title>
+  <meta name="description" content="中小不動産業者のための物件調査支援ツール「調速（チョーソク）」。住所ひとつで12種類の調査結果を表示し、AIが提案文を下書き、A4のプレゼンボードまで一気に。公的データを根拠にした設計で、営業の調査時間を大きく圧縮します。" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="調速（チョーソク）｜物件調査が、提案資料まで終わる。" />
+  <meta property="og:description" content="住所ひとつで12種類の調査結果。AIが提案文を下書きし、A4のプレゼンボードまで自動で。中小不動産業者のための物件調査支援ツール。" />
+  <meta property="og:image" content="assets/img/ogp.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- =====================================================================
+       Google Analytics 4
+       本番では下記コメントを解除し、G-XXXXXXXXXX を実測定IDに差し替える。
+       ====================================================================
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+<body>
+
+  <!-- ============ Inline icon sprite (Lucide-style) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-mappin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="M19 14l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2Z"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></symbol>
+      <symbol id="i-shieldcheck" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7"/><path d="M4 10V3"/><path d="M12 21v-9"/><path d="M12 8V3"/><path d="M20 21v-5"/><path d="M20 12V3"/><path d="M1 14h6"/><path d="M9 8h6"/><path d="M17 16h6"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-15-6.7L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/><path d="M21 21v-5h-5"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-filetext" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 5 3 7v14l6-2 6 2 6-2V5l-6 2-6-2Z"/><path d="M9 5v14M15 7v14"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrowdown" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#top" class="logo" aria-label="調速 ホーム">
+        <img src="assets/img/logo-mark.svg" alt="調速 ロゴ" />
+        <span class="logo__text">
+          <span class="logo__name">調速</span>
+          <span class="logo__sub">不動産調査アプリ</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="メインナビゲーション">
+        <div class="nav__links">
+          <a href="#solution">特長</a>
+          <a href="#features">機能</a>
+          <a href="#steps">使い方</a>
+          <a href="#integration">連携</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a class="nav__login" href="https://real-estate-research-app.vercel.app/" target="_blank" rel="noopener">ログイン</a>
+        <div class="nav__cta">
+          <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉" aria-expanded="false">
+        <svg class="icon icon-open"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="hero__badge"><svg class="icon"><use href="#i-gauge"/></svg> 中小不動産業者のための物件調査支援ツール</span>
+          <h1>住所を入れて、5分。<br /><span class="accent">物件調査</span>が、<br class="sp-br" />提案資料まで終わる。</h1>
+          <p class="hero__lead">公的データとAIを組み合わせ、これまで数時間かかっていた物件調査から、お客様向けの提案資料づくりまでを一気に。営業の現場が、もっと速くなります。</p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn-primary btn-lg">お問い合わせ <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <p class="hero__note"><svg class="icon"><use href="#i-check"/></svg> 全国対応／PC・スマホ両対応</p>
+        </div>
+
+        <!-- product mockup (placeholder visual) -->
+        <div class="mockup reveal">
+          <div class="mockup__browser">
+            <div class="mockup__bar">
+              <span></span><span></span><span></span>
+              <span class="mockup__addr"><small>chosoku / 物件調査</small></span>
+            </div>
+            <div class="mockup__body">
+              <div class="mock-grid">
+                <div class="mock-map"></div>
+                <div class="mock-card"><b></b><i></i><i></i></div>
+                <div class="mock-card"><span class="mock-chip"></span><i style="margin-top:10px"></i><i></i></div>
+                <div class="mock-card" style="grid-column:1 / -1"><b style="width:30%"></b><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup__phone" aria-hidden="true">
+            <div class="scr">
+              <div class="ph-bar"></div>
+              <div class="ph-line"></div>
+              <div class="ph-line s"></div>
+              <div class="ph-line"></div>
+              <div class="ph-line s"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Trust strip ============ -->
+    <div class="trust">
+      <div class="container trust__inner">
+        <span class="trust__label">調査結果の根拠は公的データ</span>
+        <span class="trust__item"><svg class="icon"><use href="#i-shieldcheck"/></svg> 国土交通省</span>
+        <span class="trust__item"><svg class="icon"><use href="#i-shieldcheck"/></svg> 国税庁</span>
+        <span class="trust__item"><svg class="icon"><use href="#i-shieldcheck"/></svg> 国土地理院</span>
+        <span class="trust__item"><svg class="icon"><use href="#i-shieldcheck"/></svg> e-Stat（政府統計）</span>
+      </div>
+    </div>
+
+    <!-- ============ Problem ============ -->
+    <section class="section problem">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Issues</span>
+          <h2>その調査、まだ何時間もかけていませんか？</h2>
+          <p>1件の物件を広告化するまでに、営業マンはいくつもの手間を抱えています。</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-card reveal">
+            <div class="problem-card__icon"><svg class="icon"><use href="#i-mappin"/></svg></div>
+            <h3>窓口めぐりに半日</h3>
+            <p>用途地域・ハザード・学区などを確認するために、自治体の窓口を何カ所も回る。移動と待ち時間で半日が消えていく。</p>
+          </div>
+          <div class="problem-card reveal">
+            <div class="problem-card__icon"><svg class="icon"><use href="#i-search"/></svg></div>
+            <h3>サイトのハシゴ</h3>
+            <p>地価や取引事例、周辺情報を集めるために、複数の調査サイトを毎回行き来。同じ作業の繰り返しに時間を取られる。</p>
+          </div>
+          <div class="problem-card reveal">
+            <div class="problem-card__icon"><svg class="icon"><use href="#i-filetext"/></svg></div>
+            <h3>資料づくりが負担</h3>
+            <p>集めた情報を、お客様に分かりやすい1枚の資料へまとめ直す。レイアウトや文章づくりが、人によって品質もまちまち。</p>
+          </div>
+        </div>
+        <p class="problem__foot reveal">その時間を、<span>本来の提案や接客</span>に使えたら。</p>
+      </div>
+    </section>
+
+    <!-- ============ Solution ============ -->
+    <section class="section" id="solution">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Solution</span>
+          <h2>調速が、調査の流れを変えます。</h2>
+          <p>住所の入力から提案資料まで。バラバラだった作業を、ひとつの画面につなぎます。</p>
+        </div>
+        <div class="solution-grid">
+          <div class="solution-card reveal">
+            <span class="solution-card__num">01</span>
+            <div class="solution-card__icon"><svg class="icon"><use href="#i-layers"/></svg></div>
+            <h3>住所ひとつで12種類の調査結果</h3>
+            <p>地図・用途地域・建蔽率・容積率・ハザード・学区・地価・取引事例・周辺施設まで。確認したい項目を、1画面でまとめて表示します。</p>
+            <div class="solution-card__tags">
+              <span class="tag">用途地域</span><span class="tag">ハザード</span><span class="tag">地価</span><span class="tag">取引事例</span><span class="tag">周辺施設</span>
+            </div>
+          </div>
+          <div class="solution-card reveal">
+            <span class="solution-card__num">02</span>
+            <div class="solution-card__icon"><svg class="icon"><use href="#i-sparkles"/></svg></div>
+            <h3>AIが提案文を下書き</h3>
+            <p>周辺データをもとに、「この街で暮らすイメージ」が伝わるお客様向けの提案文をAIが下書き。営業担当のメモも自然に文章へ反映します。</p>
+            <div class="solution-card__tags">
+              <span class="tag">提案文の自動下書き</span><span class="tag">メモを反映</span>
+            </div>
+          </div>
+          <div class="solution-card reveal">
+            <span class="solution-card__num">03</span>
+            <div class="solution-card__icon"><svg class="icon"><use href="#i-layout"/></svg></div>
+            <h3>プレゼンボードでA4 1枚に</h3>
+            <p>各情報をブロック化し、ドラッグ&ドロップで自由に並べ替え。レイアウトを整えたまま、A4横のPDFやExcelとして出力できます。</p>
+            <div class="solution-card__tags">
+              <span class="tag">ドラッグ&ドロップ</span><span class="tag">PDF出力</span><span class="tag">Excel出力</span>
+            </div>
+          </div>
+          <div class="solution-card reveal">
+            <span class="solution-card__num">04</span>
+            <div class="solution-card__icon"><svg class="icon"><use href="#i-shieldcheck"/></svg></div>
+            <h3>公的データを根拠にした設計</h3>
+            <p>調査結果は公的なデータソースを組み合わせて表示。数値はAIに作らせない設計とし、最終的な確認・ご説明は宅地建物取引士が行う前提で、業務を支えます。</p>
+            <div class="solution-card__tags">
+              <span class="tag">公的データ</span><span class="tag">宅建士の判断を支援</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Features ============ -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Features</span>
+          <h2>営業の現場で使う機能を、ひととおり。</h2>
+          <p>調査から提案、案件登録まで。日々の業務をまるごと後押しします。</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-layers"/></svg></div>
+            <h3>ワンクリック多面調査</h3>
+            <p>地図・用途地域・ハザード・地価・取引事例・周辺施設など、12種類の調査結果を住所ひとつでまとめて表示します。</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-sparkles"/></svg></div>
+            <h3>AI提案文（お客様向け）</h3>
+            <p>周辺データを根拠に、暮らしのイメージが伝わる提案文をAIが下書き。営業担当のメモも反映します。</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-layout"/></svg></div>
+            <h3>プレゼンボード</h3>
+            <p>情報をブロック化し、ドラッグ&ドロップで並べ替え。色変更にも対応し、A4横のPDF・Excelで出力できます。</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-sliders"/></svg></div>
+            <h3>営業判断価格パネル</h3>
+            <p>複数の起点データから選び、スライダーや調整理由の入力で価格の考え方を整理。資料にもそのまま反映します。</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-building"/></svg></div>
+            <h3>案件管理アプリと連携</h3>
+            <p>案件管理アプリ「kanri」とアカウント連携。調査から案件登録までを、ひとつの動線で行えます。</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature__icon"><svg class="icon"><use href="#i-link"/></svg></div>
+            <h3>外部サイトへのショートカット</h3>
+            <p>主要な不動産ポータルや調査サイトの検索結果へ、物件種別や町名で絞り込んでワンクリックで遷移できます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Steps ============ -->
+    <section class="section steps" id="steps">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>使い方は、3ステップ。</h2>
+          <p>特別な準備はいりません。住所を入れるところから始まります。</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step reveal">
+            <div class="step__num">1</div>
+            <h3>住所を入力</h3>
+            <p>調べたい物件の住所を入力します。むずかしい設定は不要です。</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">2</div>
+            <h3>12種類の調査が自動表示</h3>
+            <p>地図・法令・ハザード・地価・周辺情報などが、1画面に自動でそろいます。</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__num">3</div>
+            <h3>提案資料をお客様へ</h3>
+            <p>AI提案文とプレゼンボードを整えて、PDF・Excelでお客様にお渡しできます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Integration (kanri) ============ -->
+    <section class="section integration" id="integration">
+      <div class="container integration__inner">
+        <div class="reveal">
+          <span class="eyebrow">Integration</span>
+          <h2>調査だけで終わらせない。<br />案件管理まで、ひとつの動線で。</h2>
+          <p class="lead">調速は、案件管理アプリ「kanri」とアカウント連携します。お客様管理から物件調査、案件登録までを、ひとつのアカウント・ひとつの流れで扱えます。</p>
+          <ul class="integration__list">
+            <li>
+              <svg class="icon"><use href="#i-building"/></svg>
+              <div><b>kanri とのアカウント連携</b><span>1つのアカウントで、調査アプリと案件管理アプリの両方を利用できます。</span></div>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-database"/></svg>
+              <div><b>自治体マスターの自動更新</b><span>調査の基礎データは管理側から自動で同期。手動更新の手間がありません。</span></div>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-route"/></svg>
+              <div><b>案件付きで開けば「保存」、単独で開けば「新規登録」</b><span>調べた内容を、そのまま案件として残せます。</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="flow reveal">
+          <div class="flow__row"><svg class="icon"><use href="#i-search"/></svg><div><b>物件調査</b><small>住所ひとつで12種類の調査</small></div></div>
+          <div class="flow__arrow"><svg class="icon"><use href="#i-arrowdown"/></svg></div>
+          <div class="flow__row"><svg class="icon"><use href="#i-filetext"/></svg><div><b>提案資料の作成</b><small>AI提案文＋プレゼンボード</small></div></div>
+          <div class="flow__arrow"><svg class="icon"><use href="#i-arrowdown"/></svg></div>
+          <div class="flow__row"><svg class="icon"><use href="#i-building"/></svg><div><b>案件登録（kanri）</b><small>そのまま案件として保存</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>よくあるご質問</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">対応エリアはどこまでですか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <div class="faq-item__a"><p>全国に対応しています。用途地域・ハザード・地価・取引事例などは全国でご確認いただけます。自治体の窓口リンク集は順次拡充しています。</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">路線価などの金額は表示されますか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <div class="faq-item__a"><p>路線価・公示地価・取引価格などの具体的な金額数値は、アプリ内では表示しません。一次情報源（国税庁など）へのリンクでご案内し、正確な数値はそちらでご確認いただく設計です。</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">AIが宅建士の代わりになるのですか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <div class="faq-item__a"><p>いいえ。AIはあくまで調査と資料作成を補助するものです。重要事項の確認やお客様へのご説明など、最終的な判断は宅地建物取引士が行う前提でご利用いただきます。</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">セキュリティは大丈夫ですか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <div class="faq-item__a"><p>通信は暗号化され、認証基盤（Supabase Auth）で保護されます。物件住所はサーバー側で安全に処理します。</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">スマホでも使えますか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <div class="faq-item__a"><p>はい。スマホでも快適に閲覧・操作できるよう設計しています。外出先での確認にもご利用いただけます。</p></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__q" type="button">解約はできますか？ <svg class="icon"><use href="#i-chevron"/></svg></button>
+            <!-- TODO: 解約に関する確定文をクライアントから受領後に差し替え -->
+            <div class="faq-item__a"><p>解約のお手続きについては、お問い合わせ窓口より承ります。詳細は別途ご案内いたします。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>お問い合わせ</h2>
+          <p>導入のご相談・資料のご希望など、お気軽にお問い合わせください。担当者よりご連絡いたします。</p>
+        </div>
+
+        <div class="contact__card reveal">
+          <div class="contact__note">
+            <svg class="icon"><use href="#i-info"/></svg>
+            <span>こちらはデザイン確認用のフォームです。本番環境では Contact Form 7 による送信が有効になります。</span>
+          </div>
+
+          <!-- CF7: 本番ではこの <form> を [contact-form-7 id="xxx"] ショートコードに置き換える -->
+          <form id="contactForm" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="company">会社名 <span class="req">必須</span></label>
+                <input type="text" id="company" name="company" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label for="name">お名前 <span class="req">必須</span></label>
+                <input type="text" id="name" name="name" autocomplete="name" required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="email">メールアドレス <span class="req">必須</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="tel">電話番号</label>
+                <input type="tel" id="tel" name="tel" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">お問い合わせ内容 <span class="req">必須</span></label>
+              <textarea id="message" name="message" placeholder="ご相談内容をご記入ください。" required></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="agree" name="agree" required />
+              <span><a href="#" >プライバシーポリシー</a>に同意のうえ送信します。</span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">送信する <svg class="icon"><use href="#i-arrow"/></svg></button>
+            <p class="form-msg" id="formMsg"><svg class="icon" style="width:18px;height:18px;vertical-align:-3px"><use href="#i-check"/></svg> 送信内容を確認しました（デモ表示）。本番環境では実際にメールが送信されます。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">
+            <img src="assets/img/logo-mark-white.svg" alt="調速 ロゴ" style="width:38px;height:38px" />
+            <span class="logo__text">
+              <span class="logo__name">調速</span>
+              <span class="logo__sub">不動産調査アプリ</span>
+            </span>
+          </span>
+          <p>公的データとAIで、不動産営業の調査から提案までを支援するツールです。最終的な確認・ご説明は宅地建物取引士が行う前提でご利用いただけます。</p>
+        </div>
+        <div class="footer-col">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="#solution">特長</a></li>
+            <li><a href="#features">機能</a></li>
+            <li><a href="#steps">使い方</a></li>
+            <li><a href="#integration">kanri連携</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="https://real-estate-research-app.vercel.app/" target="_blank" rel="noopener">ログイン</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
+            <li><a href="#">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TODO: 運営会社情報（特商法表記）をクライアントから受領後に差し替え -->
+      <div class="footer-company">
+        <span class="placeholder">※ 運営会社情報（会社名・所在地・代表者・連絡先）は確定後に掲載します。</span>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> 調速（Chosoku）</span>
+        <span>住所を入れて、5分。物件調査が、提案資料まで終わる。</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

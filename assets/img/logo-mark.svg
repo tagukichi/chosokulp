@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="調速 ロゴマーク">
+  <defs>
+    <linearGradient id="chosoku-grad" x1="14" y1="104" x2="104" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14266B"/>
+      <stop offset="0.55" stop-color="#1E3A8A"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <!-- gauge ring (open at lower-left) -->
+  <path d="M 20.67 65.64 A 44 44 0 1 1 48.95 99.35" fill="none" stroke="url(#chosoku-grad)" stroke-width="7" stroke-linecap="round"/>
+  <!-- dashed scale ticks across the opening -->
+  <path d="M 44.71 97.55 A 44 44 0 0 1 21.70 70.13" fill="none" stroke="#1E3A8A" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 8"/>
+  <!-- buildings + house silhouette -->
+  <g fill="url(#chosoku-grad)">
+    <path d="M34 98 L34 80 L43 70 L52 80 L52 98 Z"/>
+    <path d="M55 98 L55 57 L60 53 L65 57 L65 98 Z"/>
+    <path d="M66 98 L66 73 L82 73 L82 98 Z"/>
+  </g>
+  <!-- windows -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <rect x="40" y="84" width="6" height="6" rx="1"/>
+    <rect x="58.5" y="62" width="3" height="4" rx="0.5"/>
+    <rect x="58.5" y="70" width="3" height="4" rx="0.5"/>
+    <rect x="70" y="78" width="3" height="4" rx="0.5"/>
+    <rect x="76" y="78" width="3" height="4" rx="0.5"/>
+  </g>
+  <!-- needle -->
+  <line x1="62" y1="60" x2="87" y2="38" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="62" cy="60" r="6.5" fill="#1E3A8A"/>
+  <circle cx="62" cy="60" r="2.4" fill="#FFFFFF"/>
+</svg>
