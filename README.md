@@ -49,5 +49,5 @@ assets/img/             ロゴ（仮SVG）・ファビコン
 
 ## 注意
 
-- ロゴは現状、添付された仮ロゴを **SVG で再現したもの**です。正式なロゴデータ受領後に差し替えてください。
+- ロゴは正式データを使用しています（ヘッダー＝`assets/img/cho-sokulogo_yoko.png` 横版／フッター＝`assets/img/cho-sokulogo_tate.png` 縦版）。再現版の `logo-mark*.svg` はファビコン等の予備として残しています。
 - 製品スクリーンショットは CSS によるプレースホルダー表示です。
