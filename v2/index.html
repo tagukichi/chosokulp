@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>調速（チョーソク）| 住所を入れて5分。物件調査が提案資料まで終わる</title>
+  <meta name="description" content="中小不動産業者向けの物件調査支援ツール「調速（Chosoku）」。住所1つで12種類以上の調査結果を即時表示し、AIが提案文・A4プレゼンボードまで自動で組み上げます。公的データ × AI で不動産営業の生産性を最大化。">
+
+  <!-- OGP -->
+  <meta property="og:title" content="調速（チョーソク）| 物件調査が、提案資料まで終わる">
+  <meta property="og:description" content="公的データ × AI で、不動産営業の生産性を最大化。営業マンの調査時間を1/10に。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Google Fonts: Noto Sans JP（日本語）+ Inter（英字・数字） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- スクロール進捗バー -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================= HEADER ============================= -->
+  <header data-section="header" class="site-header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="nav-logo" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+        <img src="assets/logo-tate.png" alt="" class="logo-img logo-img--tate" width="1254" height="1254">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#problem">課題</a></li>
+        <li><a href="#solution">特長</a></li>
+        <li><a href="#features">機能</a></li>
+        <li><a href="#how">使い方</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://real-estate-research-app.vercel.app/" class="nav-login" target="_blank" rel="noopener">ログイン</a>
+        <a href="#contact" class="btn btn-primary btn-sm">無料で試す</a>
+      </div>
+
+      <button class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="#problem">課題</a></li>
+          <li><a href="#solution">特長</a></li>
+          <li><a href="#features">機能</a></li>
+          <li><a href="#how">使い方</a></li>
+          <li><a href="#integration">連携</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+          <a href="https://real-estate-research-app.vercel.app/" class="btn btn-ghost" target="_blank" rel="noopener">ログイン</a>
+          <a href="#contact" class="btn btn-primary">無料で試す</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================= HERO ============================= -->
+    <section data-section="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy hero-anim">
+          <p class="hero-eyebrow">中小不動産業者向け　物件調査アシスタント</p>
+          <h1 class="hero-title">
+            住所を入れて、<span class="hero-accent">5分</span>。<br>
+            物件調査が、<br>提案資料まで終わる。
+          </h1>
+          <p class="hero-lead">
+            公的データ × AI で、不動産営業の生産性を最大化。<br class="pc-only">
+            12種類以上の調査結果を住所1つで即時表示し、提案文・A4資料まで自動で組み上げます。
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary btn-lg">無料で試す</a>
+            <a href="#contact" class="btn btn-outline btn-lg">資料請求</a>
+          </div>
+          <ul class="hero-points">
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              調査時間を約1/10に
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              公的データ100%
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              スマホ対応
+            </li>
+          </ul>
+        </div>
+
+        <!-- 製品モック（PC + スマホ合成）。実スクリーンショットに差し替え可能 -->
+        <div class="hero-visual hero-anim-visual">
+          <div class="mock-window" aria-label="調速 物件調査画面のイメージ" role="img">
+            <div class="mock-bar">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-url">real-estate-research-app.vercel.app</span>
+            </div>
+            <div class="mock-body">
+              <div class="mock-search">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <span class="mock-search-text">東京都〇〇区〇〇 1-2-3</span>
+                <span class="mock-search-btn">調査</span>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-panel mock-panel--map">
+                  <span class="mock-panel-tag">地図</span>
+                  <div class="mock-map">
+                    <span class="mock-pin"></span>
+                  </div>
+                </div>
+                <div class="mock-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span><span class="mock-skel w40"></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">建蔽率 / 容積率</span><span class="mock-skel w60"></span><span class="mock-skel w50"></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">土砂</span><span class="mock-chip">地震</span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">学区</span><span class="mock-skel w80"></span><span class="mock-skel w50"></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">地価（一次情報源リンク）</span><span class="mock-skel w70"></span><span class="mock-link-skel">国税庁で確認 ↗</span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:85%"></i></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">生活利便施設</span><span class="mock-skel w90"></span><span class="mock-skel w60"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mock-phone" aria-hidden="true">
+            <div class="mock-phone-notch"></div>
+            <div class="mock-phone-screen">
+              <div class="mock-phone-head"></div>
+              <div class="mock-phone-row"></div>
+              <div class="mock-phone-row short"></div>
+              <div class="mock-phone-card"></div>
+              <div class="mock-phone-card"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>国土交通省</span><span>国税庁</span><span>国土地理院</span><span>e-Stat</span><span>Google Maps Places</span>
+          <span>国土交通省</span><span>国税庁</span><span>国土地理院</span><span>e-Stat</span><span>Google Maps Places</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= 課題提起 ============================= -->
+    <section data-section="problem" class="problem section" id="problem">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">こんな調査業務に、時間を奪われていませんか？</p>
+          <h2 class="section-title">1物件の調査に、<br class="sp-only">毎回“半日”かけていませんか。</h2>
+          <p class="section-lead">用途地域、ハザード、地価、取引事例……。バラバラの窓口とサイトを行き来する作業が、営業マンの時間を静かに奪っています。</p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem-card reveal">
+            <span class="problem-card-ico" aria-hidden="true">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg>
+            </span>
+            <h3>自治体窓口を<br>5箇所も回る</h3>
+            <p>用途地域・道路・上下水道・ハザード……。確認のたびに窓口をハシゴし、移動と待ち時間で半日が消える。</p>
+          </div>
+          <div class="problem-card reveal">
+            <span class="problem-card-ico" aria-hidden="true">
+              <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h3>SUUMO → HOMES →<br>アットホームをハシゴ</h3>
+            <p>各ポータルと大島てるを毎回横断検索。同じ物件種別・町名を、サイトごとに何度も打ち直している。</p>
+          </div>
+          <div class="problem-card reveal">
+            <span class="problem-card-ico" aria-hidden="true">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M3 7.5 12 3l9 4.5"/><path d="M3 7.5v9L12 21l9-4.5v-9"/></svg>
+            </span>
+            <h3>情報がバラバラで<br>抜け漏れが起きる</h3>
+            <p>調べる項目が多く、新人ほど確認漏れが発生。チェックの属人化が、品質のばらつきを生んでいる。</p>
+          </div>
+          <div class="problem-card reveal">
+            <span class="problem-card-ico" aria-hidden="true">
+              <svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
+            </span>
+            <h3>お客様向け資料を<br>一から手作り</h3>
+            <p>集めた情報を、見やすい提案資料へ作り直す時間。デザインや言い回しに悩み、残業の原因に。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ソリューション ============================= -->
+    <section data-section="solution" class="solution section" id="solution">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">調速 が、その全部を1画面に。</p>
+          <h2 class="section-title">調査 → 提案 → 資料化を、<br class="sp-only">ひとつの流れに。</h2>
+          <p class="section-lead">バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。</p>
+        </div>
+
+        <!-- 01 -->
+        <div class="sol-row">
+          <div class="sol-text reveal reveal--left">
+            <span class="sol-num">01</span>
+            <h3 class="sol-title">住所1つで、12種類以上の調査結果</h3>
+            <p class="sol-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。</p>
+            <ul class="sol-list">
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>13パネルをワンクリックで一覧表示</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>路線価図索引はクリックで一次情報源へ</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>人口推移・取引事例の平均/中央値も</li>
+            </ul>
+          </div>
+          <div class="sol-visual reveal reveal--right">
+            <div class="mock-card">
+              <div class="mock-card-head"><span class="mock-panel-tag">物件調査</span></div>
+              <div class="mock-grid mock-grid--sm">
+                <div class="mock-panel mock-panel--map"><div class="mock-map"><span class="mock-pin"></span></div></div>
+                <div class="mock-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">地震</span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">学区</span><span class="mock-skel w60"></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:50%"></i><i style="height:80%"></i><i style="height:65%"></i></span></div>
+                <div class="mock-panel"><span class="mock-panel-tag">周辺施設</span><span class="mock-skel w80"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="sol-row sol-row--reverse">
+          <div class="sol-text reveal reveal--left">
+            <span class="sol-num">02</span>
+            <h3 class="sol-title">AIが、お客様向けの提案文を自動生成</h3>
+            <p class="sol-desc">周辺データを根拠に「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。</p>
+            <ul class="sol-list">
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>周辺データを根拠にした“暮らしの提案”</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>担当者のメモを文章に反映</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>最終確認は宅地建物取引士が行う建付け</li>
+            </ul>
+          </div>
+          <div class="sol-visual reveal reveal--right">
+            <div class="mock-card mock-ai">
+              <div class="mock-ai-head">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>
+                <span>AIが提案文を生成中…</span>
+              </div>
+              <div class="mock-ai-lines">
+                <span class="mock-skel w90"></span>
+                <span class="mock-skel w95"></span>
+                <span class="mock-skel w80"></span>
+                <span class="mock-skel w90 typing"></span>
+              </div>
+              <div class="mock-ai-foot"><span class="mock-chip green">下書き完成</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="sol-row">
+          <div class="sol-text reveal reveal--left">
+            <span class="sol-num">03</span>
+            <h3 class="sol-title">プレゼンボードで、A4 1枚にまとめる</h3>
+            <p class="sol-desc">提案文・法令制限・周辺施設・人気店・価格情報・物件位置をブロック化。ドラッグ&ドロップで自由に並べ替え、不要なブロックは隠せます。そのままA4横でPDF印刷・Excel出力。</p>
+            <ul class="sol-list">
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>D&Dで並べ替え・ブロックごとに8色パレット</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>編集レイアウトのままA4横で出力</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>提案資料・社内回付資料にそのまま使える</li>
+            </ul>
+          </div>
+          <div class="sol-visual reveal reveal--right">
+            <div class="mock-card mock-board">
+              <div class="mock-board-head">
+                <span class="mock-panel-tag">プレゼンボード（A4横）</span>
+                <span class="mock-board-tools"><i></i><i></i><i></i></span>
+              </div>
+              <div class="mock-board-grid">
+                <div class="mock-block c1">提案文<span class="mock-grab"></span></div>
+                <div class="mock-block c2">物件位置</div>
+                <div class="mock-block c3">法令制限</div>
+                <div class="mock-block c4">周辺施設</div>
+                <div class="mock-block c1 wide">価格情報</div>
+                <div class="mock-block c2">人気店</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="sol-row sol-row--reverse">
+          <div class="sol-text reveal reveal--left">
+            <span class="sol-num">04</span>
+            <h3 class="sol-title">公的データだから、安心して使える</h3>
+            <p class="sol-desc">国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places を組み合わせ、AIが数値を“作らない”設計。一次情報源へのリンクを備え、最終確認は宅地建物取引士が行う前提で組み立てています。</p>
+            <ul class="sol-list">
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>出典は公的データ／一次情報源リンク付き</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>AIは「窓口で確認すべき観点」を提示</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>断定ではなく、確認を支える建付け</li>
+            </ul>
+          </div>
+          <div class="sol-visual reveal reveal--right">
+            <div class="mock-card mock-sources">
+              <span class="mock-panel-tag">データソース</span>
+              <div class="mock-source-list">
+                <div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国土交通省<span class="mock-source-link">↗</span></div>
+                <div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国税庁（路線価）<span class="mock-source-link">↗</span></div>
+                <div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国土地理院<span class="mock-source-link">↗</span></div>
+                <div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>e-Stat / Google Maps<span class="mock-source-link">↗</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= 機能詳細（タブ） ============================= -->
+    <section data-section="features" class="features section section--alt" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">FEATURES</p>
+          <h2 class="section-title">営業の一日を支える、6つの機能</h2>
+          <p class="section-lead">調査から提案、案件登録まで。現場で本当に必要な機能だけを、迷わない導線でまとめました。</p>
+        </div>
+
+        <div class="tabs reveal">
+          <div class="tab-list" role="tablist" aria-label="機能一覧">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-a" id="tabbtn-a">ワンクリック多面調査</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-b" id="tabbtn-b">AI提案文</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-c" id="tabbtn-c">プレゼンボード</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-d" id="tabbtn-d">営業判断価格パネル</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-e" id="tabbtn-e">業務統合</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-f" id="tabbtn-f">外部サイト連携</button>
+          </div>
+
+          <div class="tab-panels">
+            <div class="tab-panel is-active" role="tabpanel" id="tab-a" aria-labelledby="tabbtn-a">
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+                <h3>ワンクリック多面調査（13パネル）</h3>
+                <p>物件位置の地図、路線価図索引、用途地域・建蔽率・容積率、ハザード（浸水・土砂・地震・液状化・災害履歴）、学区、地価、避難所、人口推移、周辺取引事例、生活利便施設、人気の飲食店トップ3まで。住所1つで一覧表示します。</p>
+                <ul class="tab-points">
+                  <li>クリック可能な路線価図索引で一次情報源へ</li>
+                  <li>市全体＋周辺メッシュの人口推移</li>
+                  <li>取引事例は平均・中央値・㎡単価で把握</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" id="tab-b" aria-labelledby="tabbtn-b" hidden>
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg></div>
+                <h3>AI提案文（お客様向け）</h3>
+                <p>Gemini 2.5 Flash が周辺データを根拠に、「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に反映します。金額数値はAIに渡さないハルシネーション抑制設計で、最終確認は宅地建物取引士が行う前提です。</p>
+                <ul class="tab-points">
+                  <li>周辺データを根拠にした暮らしの提案</li>
+                  <li>担当者のメモを文章へ自然に反映</li>
+                  <li>AIは補助、最終判断は人が行う設計</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" id="tab-c" aria-labelledby="tabbtn-c" hidden>
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2M16 18v2"/></svg></div>
+                <h3>プレゼンボード（A4横・ドラッグ&ドロップ）</h3>
+                <p>AI提案文の各セクション、法令制限、周辺施設、人気店、価格情報、物件位置をブロック化。D&Dで自由に並べ替え、不要ブロックは×で非表示にし、上部チップから復活できます。ブロックごとに8色パレットで色変更も。</p>
+                <ul class="tab-points">
+                  <li>D&Dで直感的にレイアウト編集</li>
+                  <li>編集レイアウトのままA4横でPDF印刷</li>
+                  <li>Excel出力で社内回付資料にも</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" id="tab-d" aria-labelledby="tabbtn-d" hidden>
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg></div>
+                <h3>営業判断価格パネル</h3>
+                <p>起点データ4種（取引中央値／㎡単価×面積／公示地価×面積／手動入力）から選択。±50%スライダーとクイック調整ボタン、調整理由の入力に対応し、AIレポート・プレゼンボードへ自動反映します。</p>
+                <ul class="tab-points">
+                  <li>4つの起点データから根拠を選択</li>
+                  <li>スライダーで素早く価格レンジ調整</li>
+                  <li>調整理由を残してチーム共有</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" id="tab-e" aria-labelledby="tabbtn-e" hidden>
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div>
+                <h3>業務統合（kanri 連携）</h3>
+                <p>案件管理アプリ「kanri」と Supabase Auth でSSO・データ共有。kanriから案件付きで開くと「保存」、単独で開くと「新規案件として登録」。自治体マスターは管理アプリから自動同期され、手動更新は不要です。</p>
+                <ul class="tab-points">
+                  <li>1アカウントで調査と案件管理を横断</li>
+                  <li>調査 → 提案 → 案件登録を1動線に</li>
+                  <li>自治体マスターは自動同期</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" id="tab-f" aria-labelledby="tabbtn-f" hidden>
+              <div class="tab-content">
+                <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></div>
+                <h3>外部サイトショートカット</h3>
+                <p>SUUMO・LIFULL HOMES・アットホーム・大島てる の検索結果ページへワンクリックで遷移。物件種別と町名で絞り込んだ状態で開くので、ポータルのハシゴ作業がなくなります。</p>
+                <ul class="tab-points">
+                  <li>主要ポータル＋大島てるに即遷移</li>
+                  <li>物件種別・町名で絞り込み済み</li>
+                  <li>業務の起点を1画面に集約</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= 使い方（3ステップ） ============================= -->
+    <section data-section="how" class="how section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2 class="section-title">使い方は、たったの3ステップ</h2>
+          <p class="section-lead">特別な準備は不要。住所を入れるだけで、お客様に渡せる資料まで辿り着きます。</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>住所を入力</h3>
+            <p>調べたい物件の住所を入力するだけ。難しい操作はありません。</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+            <h3>12種類以上の調査が自動表示</h3>
+            <p>地図・法令・ハザード・地価・取引事例・周辺施設が一画面に並びます。</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></span>
+            <h3>AI提案文＋資料をお客様へ</h3>
+            <p>提案文とA4プレゼンボードを生成。PDF・Excelで出力してそのまま提示。</p>
+          </li>
+        </ol>
+
+        <div class="how-cta reveal">
+          <a href="#contact" class="btn btn-primary btn-lg">まずは無料で試す</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= 差別化ポイント ============================= -->
+    <section data-section="why" class="why section section--alt" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">WHY CHOSOKU</p>
+          <h2 class="section-title">調速が、現場に選ばれる理由</h2>
+          <p class="section-lead">スピードだけでなく、不動産業務の“正確さ”と“安心”を支える設計にこだわりました。</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>公的データ100%</h3>
+            <p>国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places の組み合わせ。AIが数値を作らない設計です。</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M16 7a4 4 0 1 0-8 0M3 21v-2a6 6 0 0 1 12 0v2"/><circle cx="12" cy="7" r="0"/><path d="M18 8v6M21 11h-6"/></svg></span>
+            <h3>宅建士の判断を支える設計</h3>
+            <p>AIは「窓口で確認すべき観点」を提示する補助役。最終確認は宅地建物取引士が行う建付けです。</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span>
+            <h3>業務フローの起点集約</h3>
+            <p>自治体窓口・路線価図・SUUMO・大島てる等への遷移を1画面に。探し回る時間をなくします。</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></span>
+            <h3>印刷・Excel出力が標準装備</h3>
+            <p>A4横のPDF／Excelがそのまま提案資料・社内回付資料に。作り直しの手間がありません。</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></span>
+            <h3>kanri との完全統合</h3>
+            <p>顧客管理 → 物件調査 → 案件登録 を1アカウント・1動線で。情報の二重入力をなくします。</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+            <h3>全国対応</h3>
+            <p>用途地域・ハザード・地価・取引事例等は全国対応。一部自治体は窓口リンク集付きで、順次拡充します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= 連携・拡張 ============================= -->
+    <section data-section="integration" class="integration section" id="integration">
+      <div class="container">
+        <div class="integration-inner">
+          <div class="integration-text reveal">
+            <p class="eyebrow">INTEGRATION</p>
+            <h2 class="section-title">案件管理「kanri」と、ひとつながり。</h2>
+            <p class="section-lead">調速はスタンドアロンの調査ツールではありません。案件管理アプリ kanri と1アカウントで連携し、顧客管理から物件調査、案件登録までを途切れさせません。</p>
+            <ul class="integration-list">
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Supabase Auth による SSO・データ共有</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>案件付きで開けば「保存」、単独なら「新規登録」</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>自治体マスターは管理アプリから自動同期</li>
+            </ul>
+          </div>
+
+          <div class="integration-visual reveal" aria-hidden="true">
+            <div class="flow">
+              <div class="flow-node">
+                <span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+                <span class="flow-label">顧客管理<small>kanri</small></span>
+              </div>
+              <span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="flow-node flow-node--primary">
+                <span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+                <span class="flow-label">物件調査<small>調速</small></span>
+              </div>
+              <span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="flow-node">
+                <span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="flow-label">案件登録<small>kanri</small></span>
+              </div>
+            </div>
+            <p class="flow-note">1アカウント・1動線で、情報を二重入力しない。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= FAQ ============================= -->
+    <section data-section="faq" class="faq section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">よくあるご質問</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>どの自治体に対応していますか？</summary>
+            <div class="faq-body"><p>用途地域・ハザード・地価・取引事例などは全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>路線価などの具体的な数値は表示されますか？</summary>
+            <div class="faq-body"><p>アプリ内では具体的な金額数値は表示せず、一次情報源（国税庁など）へのリンクをご案内します。数値の確認はリンク先の公的情報、および宅地建物取引士による最終確認を前提とした設計です。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>AIが宅建士の代わりになるのですか？</summary>
+            <div class="faq-body"><p>いいえ。AIはあくまで「窓口で確認すべき観点」を提示する補助です。最終的な判断・確認は宅地建物取引士が行う建付けとしています。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>個人情報やデータは安全ですか？</summary>
+            <div class="faq-body"><p>物件住所はサーバー側で処理し、認証・通信は Supabase Auth による暗号化通信で保護しています。詳細はお問い合わせください。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>スマートフォンでも使えますか？</summary>
+            <div class="faq-body"><p>はい。スマホ閲覧に最適化しており、専用のハンバーガーメニューで縦長ページも快適にご利用いただけます。外回りの営業中でも確認できます。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>解約はできますか？</summary>
+            <div class="faq-body"><p>サブスクリプションはいつでも解約可能です。プランや解約手続きの詳細は、お問い合わせフォームよりお気軽にご連絡ください。</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= お問い合わせ ============================= -->
+    <section data-section="contact" class="contact section" id="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-text reveal">
+            <p class="eyebrow">CONTACT</p>
+            <h2 class="section-title">まずは、お気軽にご相談ください。</h2>
+            <p class="section-lead">無料お試し・資料請求・導入のご相談を承っています。内容を確認のうえ、担当者よりご連絡いたします。</p>
+            <ul class="contact-routes">
+              <li>
+                <span class="contact-route-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></span>
+                <div>
+                  <strong>ご検討中の方</strong>
+                  <span>右のフォームから無料お試し・資料請求・ご相談を。</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-route-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg></span>
+                <div>
+                  <strong>すでにアカウントをお持ちの方</strong>
+                  <span><a href="https://real-estate-research-app.vercel.app/" target="_blank" rel="noopener">本体アプリのログイン画面へ ↗</a></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+            WordPress 化メモ:
+            このフォームは UI のみの実装です（クライアント側バリデーション + 完了表示）。
+            WordPress では Contact Form 7 などのショートコードに置き換えるか、
+            <form> の action / method を CF7・REST API・Resend エンドポイントへ接続してください。
+            各 input の name 属性は CF7 のフォームタグ名にそのまま流用できる想定です。
+          -->
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-type">お問い合わせ種別<span class="req">必須</span></label>
+              <select id="cf-type" name="inquiry-type" required>
+                <option value="">選択してください</option>
+                <option value="trial">無料で試す</option>
+                <option value="document">資料請求</option>
+                <option value="consult">導入のご相談</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-company">会社名<span class="req">必須</span></label>
+                <input type="text" id="cf-company" name="company" autocomplete="organization" required placeholder="〇〇不動産株式会社">
+              </div>
+              <div class="field">
+                <label for="cf-name">お名前<span class="req">必須</span></label>
+                <input type="text" id="cf-name" name="your-name" autocomplete="name" required placeholder="調速 太郎">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+                <input type="email" id="cf-email" name="your-email" autocomplete="email" required placeholder="taro@example.co.jp">
+              </div>
+              <div class="field">
+                <label for="cf-tel">電話番号</label>
+                <input type="tel" id="cf-tel" name="your-tel" autocomplete="tel" placeholder="03-1234-5678">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cf-message">お問い合わせ内容<span class="req">必須</span></label>
+              <textarea id="cf-message" name="your-message" rows="5" required placeholder="ご相談内容・ご質問などをご記入ください。"></textarea>
+            </div>
+
+            <label class="field-check">
+              <input type="checkbox" id="cf-agree" name="agree" required>
+              <span><a href="#" class="inline-link">プライバシーポリシー</a>に同意します<span class="req">必須</span></span>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">送信する</button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer data-section="footer" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="footer-logo-chip" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+          <img src="assets/logo-yoko.png" alt="" class="logo-img logo-img--yoko" width="1774" height="887">
+        </a>
+        <p class="footer-tagline">公的データ × AI で、<br>不動産営業の生産性を最大化。</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="フッターメニュー">
+        <div class="footer-col">
+          <h4>プロダクト</h4>
+          <ul>
+            <li><a href="#solution">特長</a></li>
+            <li><a href="#features">機能</a></li>
+            <li><a href="#how">使い方</a></li>
+            <li><a href="#integration">kanri 連携</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>サポート</h4>
+          <ul>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="https://real-estate-research-app.vercel.app/" target="_blank" rel="noopener">ログイン ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>会社・規約</h4>
+          <ul>
+            <!-- TODO: 運営会社情報・各規約のURLを確定後に差し替え -->
+            <li><a href="#">運営会社</a></li>
+            <li><a href="#">特定商取引法に基づく表記</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">利用規約</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy">&copy; 2026 調速（Chosoku）. All rights reserved.</p>
+        <p class="footer-disclaimer">※ 本サービスは物件調査を支援するものです。各種法令・地価・取引価格等の最終確認は、一次情報源および宅地建物取引士の判断によります。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
