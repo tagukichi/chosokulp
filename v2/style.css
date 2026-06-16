@@ -321,32 +321,55 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ===================================================================
-   PROBLEM  — 「こんなお悩み、ありませんか？」箇条書きスタイル
+   PROBLEM  — 「こんなお悩み、ありませんか？」
+   青グラデの背景＋全体を1枚のカードで囲い、下端は ▼ で次セクションへ
    =================================================================== */
+.problem.section {
+  position: relative;
+  background: linear-gradient(180deg, #DBEAFE 0%, #BFDBFE 50%, #93C5FD 100%);
+}
+/* セクション下端の ▼（次セクションへの導線） */
+.problem.section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-top: 32px solid #93C5FD;
+  z-index: 2;
+  pointer-events: none;
+}
+/* 青い背景でリンク色のお悩みが見えづらくならないよう、eyebrow を強めに */
+.problem .eyebrow { color: var(--c-primary-900); }
+
 .problem-list {
   max-width: 780px;
   margin: 44px auto 0;
-  display: grid;
-  gap: 14px;
-  padding: 0;
   list-style: none;
+  padding: 8px 36px;
+  background: var(--c-surface);
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 58, 138, .22), 0 8px 20px rgba(30, 58, 138, .08);
+  display: grid;
+  gap: 0;
 }
 .problem-item {
   display: flex;
   align-items: center;
   gap: 18px;
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: 16px;
-  padding: 20px 26px;
-  box-shadow: var(--sh-sm);
-  transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  padding: 20px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--c-border);
+  border-radius: 0;
+  box-shadow: none;
 }
-.problem-item:hover {
-  transform: translateX(4px);
-  border-color: var(--c-primary-300, #93C5FD);
-  box-shadow: var(--sh-md);
-}
+.problem-item:last-child { border-bottom: 0; }
 .problem-mark {
   flex: none;
   width: 36px; height: 36px;
@@ -686,8 +709,7 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .btn-primary:hover::after { left: 150%; }
 
 /* ---- アイコンのホバー演出 ---- */
-.problem-mark, .why-ico, .step-ico, .tab-icon, .contact-route-ico { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
-.problem-item:hover .problem-mark,
+.why-ico, .step-ico, .tab-icon, .contact-route-ico { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
 .why-card:hover .why-ico,
 .step:hover .step-ico { transform: translateY(-2px) scale(1.08) rotate(-3deg); }
 .contact-routes li:hover .contact-route-ico { transform: scale(1.1); }
@@ -742,11 +764,12 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .hero-title { font-size: clamp(1.5rem, 6.6vw, 1.9rem); line-height: 1.5; }
   .hero-points { flex-direction: column; align-items: center; gap: 10px; }
 
-  .problem-list { margin-top: 32px; }
-  .problem-item { padding: 16px 18px; gap: 14px; }
+  .problem-list { margin-top: 32px; padding: 4px 20px; border-radius: 18px; }
+  .problem-item { padding: 16px 0; gap: 12px; }
   .problem-item p { font-size: .95rem; }
-  .problem-mark { width: 32px; height: 32px; }
+  .problem-mark { width: 30px; height: 30px; }
   .problem-mark .ico { width: 16px; height: 16px; }
+  .problem.section::after { border-left-width: 38px; border-right-width: 38px; border-top-width: 26px; bottom: -26px; }
 
   .sol-row, .sol-row--reverse { grid-template-columns: 1fr; gap: 28px; }
   .sol-row--reverse .sol-text { order: 0; }
