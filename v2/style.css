@@ -56,7 +56,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 108px; }
 body {
   font-family: var(--font-jp);
   color: var(--c-text);
@@ -155,12 +155,12 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
   transition: border-color .3s, box-shadow .3s, background .3s;
 }
 .site-header.is-scrolled { border-bottom-color: var(--c-border); box-shadow: var(--sh-sm); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 96px; }
 
 .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
 .logo-img { display: block; width: auto; }
 /* ヘッダー（横ロゴ）／ フッターチップ（縦ロゴ）の表示サイズ */
-.nav-logo .logo-img--yoko { height: 44px; }
+.nav-logo .logo-img--yoko { height: 64px; }
 .footer-logo-chip .logo-img--tate { height: 110px; }
 .logo-mark { display: grid; place-items: center; }
 .logo-text { font-weight: 900; font-size: 1.3rem; letter-spacing: .02em; display: inline-flex; align-items: baseline; gap: 8px; }
@@ -859,9 +859,9 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 
 @media (max-width: 750px) {
   .container { padding-inline: 5%; }
-  html { scroll-padding-top: 76px; }
-  .nav { height: 68px; }
-  .nav-logo .logo-img--yoko { height: 38px; }
+  html { scroll-padding-top: 80px; }
+  .nav { height: 76px; }
+  .nav-logo .logo-img--yoko { height: 48px; }
   .footer-logo-chip .logo-img--tate { height: 88px; }
 
   /* nav: show hamburger, hide desktop nav */
