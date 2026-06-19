@@ -550,22 +550,41 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 /* ===================================================================
    HOW (steps)
    =================================================================== */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; position: relative; }
-.step {
-  position: relative; background: var(--c-surface); border: 1px solid var(--c-border);
-  border-radius: var(--radius-lg); padding: 40px 28px 32px; text-align: center; box-shadow: var(--sh-sm);
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+/* ===================================================================
+   HOW (steps — 番号ノードを線でつなぐタイムライン)
+   =================================================================== */
+.steps--timeline {
+  position: relative;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  counter-reset: step;
 }
-.step:hover { transform: translateY(-6px); box-shadow: var(--sh-md); }
+/* 横の接続ライン（ノード中心＝上から38pxを通る） */
+.steps--timeline::before {
+  content: ""; position: absolute; top: 38px; left: 16.67%; right: 16.67%;
+  height: 3px; transform: translateY(-50%); border-radius: 3px;
+  background: linear-gradient(90deg, rgba(37,99,235,.25), var(--c-primary-600) 50%, rgba(37,99,235,.25));
+  z-index: 0;
+}
+.steps--timeline .step {
+  position: relative; background: transparent; border: 0; box-shadow: none;
+  padding: 0 22px; text-align: center;
+}
+.steps--timeline .step:hover { transform: none; box-shadow: none; }
+.step-marker { position: relative; height: 76px; display: grid; place-items: center; margin-bottom: 22px; z-index: 1; }
 .step-num {
-  position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
-  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
-  background: var(--grad-brand); color: #fff; font-size: 1.2rem; font-weight: 800; box-shadow: var(--sh-blue);
+  position: relative; z-index: 2;
+  width: 72px; height: 72px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--font-en); font-weight: 800; font-size: 1.7rem; color: #fff;
+  background: var(--grad-brand); box-shadow: 0 10px 24px rgba(37,99,235,.4);
+  border: 5px solid var(--c-bg); /* 背景色の縁取りで接続ラインから浮かせる */
+  transition: transform .3s var(--ease);
 }
-.step-ico { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, #EFF6FF, #E0F2FE); color: var(--c-primary-600); margin: 12px auto 18px; }
-.step-ico .ico { width: 30px; height: 30px; }
-.step h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 10px; }
-.step p { font-size: .9rem; color: var(--c-text-sub); }
+.step:hover .step-num { transform: scale(1.06); }
+.step-body .step-ico { display: inline-flex; color: var(--c-primary-600); margin-bottom: 12px; }
+.step-body .step-ico .ico { width: 30px; height: 30px; }
+.step-body h3 { font-size: 1.14rem; font-weight: 800; margin-bottom: 10px; }
+.step-body p { font-size: .92rem; color: var(--c-text-sub); line-height: 1.85; max-width: 24em; margin: 0 auto; }
 .how-cta { text-align: center; margin-top: 52px; }
 
 /* ===================================================================
@@ -848,7 +867,23 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .tab-list::-webkit-scrollbar { display: none; }
   .tab-btn { flex-shrink: 0; }
 
-  .steps { grid-template-columns: 1fr; gap: 36px; }
+  /* steps: 縦タイムライン */
+  .steps--timeline { grid-template-columns: 1fr; gap: 0; }
+  .steps--timeline::before { display: none; }
+  .steps--timeline .step {
+    display: grid; grid-template-columns: 72px 1fr; gap: 20px;
+    text-align: left; padding: 0 0 36px;
+  }
+  .steps--timeline .step:last-child { padding-bottom: 0; }
+  .steps--timeline .step:not(:last-child)::before {
+    content: ""; position: absolute; left: 36px; top: 78px; bottom: 4px;
+    width: 3px; transform: translateX(-50%); border-radius: 3px;
+    background: linear-gradient(180deg, var(--c-primary-600), rgba(37,99,235,.25));
+    z-index: 0;
+  }
+  .step-marker { height: auto; margin-bottom: 0; }
+  .step-body { padding-top: 4px; }
+  .step-body p { max-width: none; margin: 0; }
   .why-grid { grid-template-columns: 1fr; }
   .feature-cards { grid-template-columns: 1fr; gap: 16px; }
   .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
