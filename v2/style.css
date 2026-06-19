@@ -590,17 +590,41 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 /* ===================================================================
    WHY
    =================================================================== */
-.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.why-card {
-  background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-lg);
-  padding: 32px 28px; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+/* 大きな番号で見せるエディトリアル風リスト（カード型ではない） */
+.why-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(40px, 6vw, 88px); row-gap: 8px;
 }
-.section--alt .why-card { background: var(--c-bg); }
-.why-card:hover { transform: translateY(-6px); box-shadow: var(--sh-md); border-color: var(--c-border-strong); }
-.why-ico { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--grad-brand); color: #fff; margin-bottom: 20px; box-shadow: var(--sh-blue); }
-.why-ico .ico { width: 28px; height: 28px; }
-.why-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
-.why-card p { font-size: .92rem; color: var(--c-text-sub); }
+.why-item {
+  position: relative;
+  display: grid; grid-template-columns: auto 1fr; align-items: start;
+  gap: clamp(18px, 2.4vw, 28px);
+  padding: 28px 4px 32px;
+}
+.why-item + .why-item { border-top: 0; }
+/* 隣接する区切り線（上段・下段共通） */
+.why-item::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-border-strong), transparent);
+}
+.why-item:nth-last-child(-n+2)::after { display: none; }
+.why-num {
+  font-family: var(--font-en); font-weight: 800;
+  font-size: clamp(3.4rem, 6.5vw, 5rem); line-height: 1;
+  background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+  letter-spacing: -.02em;
+}
+.why-text h3 {
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem); font-weight: 800; line-height: 1.55;
+  margin: 6px 0 10px;
+  position: relative; padding-left: 14px;
+}
+.why-text h3::before {
+  content: ""; position: absolute; left: 0; top: .35em; bottom: .35em; width: 4px;
+  border-radius: 4px; background: var(--grad-brand);
+}
+.why-text p { font-size: .94rem; color: var(--c-text-sub); line-height: 1.95; }
 
 /* ===================================================================
    INTEGRATION
@@ -795,8 +819,7 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .btn-primary:hover::after { left: 150%; }
 
 /* ---- アイコンのホバー演出 ---- */
-.why-ico, .step-ico, .tab-icon, .contact-route-ico { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
-.why-card:hover .why-ico,
+.step-ico, .tab-icon, .contact-route-ico { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
 .step:hover .step-ico { transform: translateY(-2px) scale(1.08) rotate(-3deg); }
 .contact-routes li:hover .contact-route-ico { transform: scale(1.1); }
 
@@ -814,7 +837,6 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 @media (max-width: 1201px) {
   .container { padding-inline: 3%; }
   .hero-inner { gap: 32px; }
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
   .feature-cards { grid-template-columns: repeat(2, 1fr); }
   .mock-phone { width: 110px; height: 220px; right: -6px; }
 }
@@ -884,7 +906,10 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .step-marker { height: auto; margin-bottom: 0; }
   .step-body { padding-top: 4px; }
   .step-body p { max-width: none; margin: 0; }
-  .why-grid { grid-template-columns: 1fr; }
+  .why-list { grid-template-columns: 1fr; column-gap: 0; }
+  .why-item { padding: 22px 0 26px; gap: 16px; }
+  .why-item:nth-last-child(-n+2)::after { display: block; }
+  .why-item:last-child::after { display: none; }
   .feature-cards { grid-template-columns: 1fr; gap: 16px; }
   .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
