@@ -301,15 +301,26 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 /* phone */
 .mock-phone {
   position: absolute; right: -14px; bottom: -28px; width: 124px; height: 248px;
-  background: #0F172A; border-radius: 24px; padding: 8px; box-shadow: var(--sh-lg);
-  border: 3px solid #1E293B;
+  background: #0F172A; border-radius: 22px; padding: 4px; box-shadow: var(--sh-lg);
+  border: 1.5px solid #1E293B;
 }
-.mock-phone-notch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 42px; height: 5px; background: #334155; border-radius: 3px; z-index: 2; }
-.mock-phone-screen { width: 100%; height: 100%; background: var(--c-bg); border-radius: 16px; padding: 20px 12px 12px; display: flex; flex-direction: column; gap: 8px; }
-.mock-phone-head { height: 30px; border-radius: 8px; background: var(--grad-brand); }
-.mock-phone-row { height: 8px; border-radius: 4px; background: #E2E8F0; }
-.mock-phone-row.short { width: 60%; }
-.mock-phone-card { flex: 1; border-radius: 10px; background: var(--c-surface); border: 1px solid var(--c-border); }
+.mock-phone-notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 36px; height: 4px; background: #334155; border-radius: 3px; z-index: 2; }
+.mock-phone-screen { width: 100%; height: 100%; background: var(--c-bg); border-radius: 18px; padding: 18px 9px 10px; display: flex; flex-direction: column; gap: 7px; overflow: hidden; }
+/* 中身は PC モックと同じ「調査画面」の縮小版 */
+.mock-phone-search { height: 18px; border-radius: 6px; background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; padding: 0 7px; }
+.mock-phone-search span { display: block; height: 5px; width: 66%; border-radius: 3px; background: linear-gradient(90deg, #E2E8F0, #EEF2F7); }
+.mock-phone-map { height: 56px; border-radius: 8px; position: relative; flex: none;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(16,185,129,.14), transparent 40%),
+    repeating-linear-gradient(0deg, #E2E8F0 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(90deg, #E2E8F0 0 1px, transparent 1px 16px),
+    #EEF2F7; }
+.mock-phone-map .mock-pin { top: 38%; left: 44%; width: 12px; height: 12px; }
+.mock-phone-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.mock-phone-panel { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 7px; padding: 6px 6px 7px; display: flex; flex-direction: column; gap: 4px; min-height: 0; }
+.mock-phone-panel .mock-panel-tag { font-size: .52rem; }
+.mock-phone-panel .mock-chip { font-size: .5rem; padding: 1px 5px; margin-right: 2px; }
+.mock-phone-panel .mock-bars { height: 20px; }
 
 /* marquee */
 .hero-marquee { border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); background: rgba(255,255,255,.5); overflow: hidden; padding: 16px 0; }
@@ -415,14 +426,23 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 
 /* AI card */
 .mock-ai { background: linear-gradient(160deg, #fff 0%, #F8FBFF 100%); }
-.mock-ai-head { display: flex; align-items: center; gap: 10px; font-size: .85rem; font-weight: 700; color: var(--c-primary-700); margin-bottom: 18px; }
+.mock-ai-head { display: flex; align-items: center; gap: 10px; font-size: .85rem; font-weight: 700; color: var(--c-primary-700); margin-bottom: 16px; }
 .mock-ai-head .ico { width: 20px; height: 20px; color: var(--c-sky-500); }
-.mock-ai-lines { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
-.mock-ai-lines .mock-skel { height: 9px; }
-.mock-ai-lines .typing { position: relative; overflow: hidden; }
-.mock-ai-lines .typing::after { content: ""; position: absolute; right: 0; top: 0; width: 30%; height: 100%; background: var(--c-bg); animation: typing 2.4s steps(1) infinite; }
-@keyframes typing { 0% { width: 60%; } 50% { width: 20%; } 100% { width: 60%; } }
-.mock-ai-foot { display: flex; justify-content: flex-end; }
+/* タイプライターで流し込む提案文 */
+.mock-ai-body { margin-bottom: 16px; }
+.mock-ai-text {
+  margin: 0; min-height: 8em;
+  font-size: .85rem; line-height: 1.85; font-weight: 500; color: var(--c-text);
+}
+.mock-ai-text::after {
+  content: ""; display: inline-block; width: 2px; height: 1.05em;
+  background: var(--c-primary-600); margin-left: 2px; vertical-align: -3px;
+  animation: caretBlink .9s steps(1) infinite;
+}
+.mock-ai-text.is-done::after { display: none; }
+@keyframes caretBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.mock-ai-foot { display: flex; justify-content: flex-end; opacity: 0; transform: translateY(6px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.mock-ai.is-typed .mock-ai-foot { opacity: 1; transform: none; }
 .mock-ai-foot .mock-chip { font-size: .68rem; padding: 4px 12px; }
 
 /* board card */
@@ -430,13 +450,35 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .mock-board-tools { display: flex; gap: 5px; }
 .mock-board-tools i { width: 18px; height: 18px; border-radius: 5px; background: var(--c-surface-2); border: 1px solid var(--c-border); }
 .mock-board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.mock-board-grid--2col { grid-template-columns: repeat(2, 1fr); }
 .mock-block {
   position: relative; min-height: 56px; border-radius: 10px; padding: 10px;
-  font-size: .68rem; font-weight: 700; color: var(--c-text-sub);
+  font-size: .72rem; font-weight: 700; color: var(--c-text-sub);
   background: var(--c-surface-2); border: 1px solid var(--c-border);
   display: flex; align-items: flex-start;
 }
 .mock-block.wide { grid-column: span 2; }
+
+/* 2カラム D&D 入れ替えデモ：対角の2ブロックが持ち上がって入れ替わる（ループ）
+   1セル分の移動量 = 自身の幅/高さ(100%) + グリッドの gap(10px) */
+.mock-board-grid--2col .swap-a,
+.mock-board-grid--2col .swap-b { will-change: transform; }
+.mock-board-grid--2col .swap-a { animation: boardSwapA 5.4s var(--ease) infinite; }
+.mock-board-grid--2col .swap-b { animation: boardSwapB 5.4s var(--ease) infinite; }
+@keyframes boardSwapA {
+  0%, 12%   { transform: none; box-shadow: none; z-index: 1; }
+  20%       { transform: translateY(-4px) scale(1.05); box-shadow: var(--sh-md); z-index: 6; }
+  44%, 60%  { transform: translate(calc(100% + 10px), calc(100% + 10px)) scale(1.05); box-shadow: var(--sh-md); z-index: 6; }
+  70%       { transform: translateY(-4px) scale(1.05); box-shadow: var(--sh-md); z-index: 6; }
+  80%, 100% { transform: none; box-shadow: none; z-index: 1; }
+}
+@keyframes boardSwapB {
+  0%, 12%   { transform: none; box-shadow: none; z-index: 1; }
+  20%       { transform: translateY(-4px) scale(1.05); box-shadow: var(--sh-md); z-index: 5; }
+  44%, 60%  { transform: translate(calc(-100% - 10px), calc(-100% - 10px)) scale(1.05); box-shadow: var(--sh-md); z-index: 5; }
+  70%       { transform: translateY(-4px) scale(1.05); box-shadow: var(--sh-md); z-index: 5; }
+  80%, 100% { transform: none; box-shadow: none; z-index: 1; }
+}
 .mock-block.c1 { background: rgba(37,99,235,.08); border-color: rgba(37,99,235,.2); color: var(--c-primary-700); }
 .mock-block.c2 { background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.22); color: var(--c-accent-600); }
 .mock-block.c3 { background: rgba(245,158,11,.1); border-color: rgba(245,158,11,.22); color: #B45309; }

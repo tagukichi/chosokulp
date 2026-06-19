@@ -85,7 +85,7 @@
             物件調査が、<br>提案資料まで終わる。
           </h1>
           <p class="hero-lead">
-            公的データ × AI で、不動産営業の生産性を最大化。<br class="pc-only">
+            <span class="hero-accent">公的データ × AI</span> で、不動産営業の生産性を最大化。<br class="pc-only">
             12種類以上の調査結果を住所1つで即時表示し、提案文・A4資料まで自動で組み上げます。
           </p>
           <div class="hero-cta">
@@ -112,7 +112,7 @@
           <div class="mock-window" aria-label="調速 物件調査画面のイメージ" role="img">
             <div class="mock-bar">
               <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-              <span class="mock-url">real-estate-research-app.vercel.app</span>
+              <span class="mock-url">app.chosoku.jp</span>
             </div>
             <div class="mock-body">
               <div class="mock-search">
@@ -141,11 +141,14 @@
           <div class="mock-phone" aria-hidden="true">
             <div class="mock-phone-notch"></div>
             <div class="mock-phone-screen">
-              <div class="mock-phone-head"></div>
-              <div class="mock-phone-row"></div>
-              <div class="mock-phone-row short"></div>
-              <div class="mock-phone-card"></div>
-              <div class="mock-phone-card"></div>
+              <div class="mock-phone-search"><span></span></div>
+              <div class="mock-phone-map"><span class="mock-pin"></span></div>
+              <div class="mock-phone-panels">
+                <div class="mock-phone-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span></div>
+                <div class="mock-phone-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">地震</span></div>
+                <div class="mock-phone-panel"><span class="mock-panel-tag">地価</span><span class="mock-skel w60"></span></div>
+                <div class="mock-phone-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:50%"></i><i style="height:80%"></i><i style="height:60%"></i></span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -245,13 +248,10 @@
             <div class="mock-card mock-ai">
               <div class="mock-ai-head">
                 <svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>
-                <span>AIが提案文を生成中…</span>
+                <span class="mock-ai-title">AIが提案文を生成中…</span>
               </div>
-              <div class="mock-ai-lines">
-                <span class="mock-skel w90"></span>
-                <span class="mock-skel w95"></span>
-                <span class="mock-skel w80"></span>
-                <span class="mock-skel w90 typing"></span>
+              <div class="mock-ai-body">
+                <p class="mock-ai-text" data-typewriter="最寄り駅まで徒歩8分。周辺にはスーパーや小学校が揃い、子育て世帯にも暮らしやすいエリアです。落ち着いた住環境で、はじめてのマイホームにも安心してお選びいただけます。"></p>
               </div>
               <div class="mock-ai-foot"><span class="mock-chip green">下書き完成</span></div>
             </div>
@@ -276,12 +276,12 @@
                 <span class="mock-panel-tag">プレゼンボード（A4横）</span>
                 <span class="mock-board-tools"><i></i><i></i><i></i></span>
               </div>
-              <div class="mock-board-grid">
-                <div class="mock-block c1">提案文<span class="mock-grab"></span></div>
+              <div class="mock-board-grid mock-board-grid--2col">
+                <div class="mock-block c1 swap-a">提案文<span class="mock-grab"></span></div>
                 <div class="mock-block c2">物件位置</div>
                 <div class="mock-block c3">法令制限</div>
-                <div class="mock-block c4">周辺施設</div>
-                <div class="mock-block c1 wide">価格情報</div>
+                <div class="mock-block c4 swap-b">周辺施設<span class="mock-grab"></span></div>
+                <div class="mock-block c1">価格情報</div>
                 <div class="mock-block c2">人気店</div>
               </div>
             </div>
@@ -352,7 +352,7 @@
               <div class="tab-content">
                 <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg></div>
                 <h3>AI提案文（お客様向け）</h3>
-                <p>Gemini 2.5 Flash が周辺データを根拠に、「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に反映します。金額数値はAIに渡さないハルシネーション抑制設計で、最終確認は宅地建物取引士が行う前提です。</p>
+                <p>AIが周辺データを根拠に、「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に反映します。金額などの数値はAIに任せない設計で、最終確認は宅地建物取引士が行う前提です。</p>
                 <ul class="tab-points">
                   <li>周辺データを根拠にした暮らしの提案</li>
                   <li>担当者のメモを文章へ自然に反映</li>
@@ -391,7 +391,7 @@
               <div class="tab-content">
                 <div class="tab-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div>
                 <h3>業務統合（kanri 連携）</h3>
-                <p>案件管理アプリ「kanri」と Supabase Auth でSSO・データ共有。kanriから案件付きで開くと「保存」、単独で開くと「新規案件として登録」。自治体マスターは管理アプリから自動同期され、手動更新は不要です。</p>
+                <p>案件管理アプリ「kanri」と1つのアカウントで連携・データ共有。kanriから案件付きで開くと「保存」、単独で開くと「新規案件として登録」。自治体マスターは管理アプリから自動同期され、手動更新は不要です。</p>
                 <ul class="tab-points">
                   <li>1アカウントで調査と案件管理を横断</li>
                   <li>調査 → 提案 → 案件登録を1動線に</li>
@@ -503,10 +503,10 @@
         <div class="integration-inner">
           <div class="integration-text reveal">
             <p class="eyebrow">INTEGRATION</p>
-            <h2 class="section-title">案件管理「kanri」と、ひとつながり。</h2>
+            <h2 class="section-title">案件管理「kanri」と、<br>ひとつながり。</h2>
             <p class="section-lead">調速はスタンドアロンの調査ツールではありません。案件管理アプリ kanri と1アカウントで連携し、顧客管理から物件調査、案件登録までを途切れさせません。</p>
             <ul class="integration-list">
-              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Supabase Auth による SSO・データ共有</li>
+              <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>1つのアカウントで連携・データ共有</li>
               <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>案件付きで開けば「保存」、単独なら「新規登録」</li>
               <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>自治体マスターは管理アプリから自動同期</li>
             </ul>
@@ -558,7 +558,7 @@
           </details>
           <details class="faq-item">
             <summary>個人情報やデータは安全ですか？</summary>
-            <div class="faq-body"><p>物件住所はサーバー側で処理し、認証・通信は Supabase Auth による暗号化通信で保護しています。詳細はお問い合わせください。</p></div>
+            <div class="faq-body"><p>物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。</p></div>
           </details>
           <details class="faq-item">
             <summary>スマートフォンでも使えますか？</summary>

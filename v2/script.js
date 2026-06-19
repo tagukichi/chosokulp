@@ -229,4 +229,60 @@ document.addEventListener('DOMContentLoaded', function () {
     copy.innerHTML = copy.innerHTML.replace(/\d{4}/, year);
   }
 
+  /* ----------------------------------------------------------------
+     8. AI提案文のタイプライター生成（画面内に入ったら1回だけ実行）
+     ---------------------------------------------------------------- */
+  const typeEl = document.querySelector('.mock-ai-text[data-typewriter]');
+  if (typeEl) {
+    const fullText = typeEl.getAttribute('data-typewriter') || '';
+    const card = typeEl.closest('.mock-ai');
+    const title = card ? card.querySelector('.mock-ai-title') : null;
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let started = false;
+
+    function finish() {
+      typeEl.textContent = fullText;
+      typeEl.classList.add('is-done');
+      if (card) { card.classList.add('is-typed'); }
+      if (title) { title.textContent = '提案文の下書きが完成しました'; }
+    }
+
+    function runTypewriter() {
+      if (started) { return; }
+      started = true;
+      if (reduceMotion) { finish(); return; }
+      let i = 0;
+      (function tick() {
+        typeEl.textContent = fullText.slice(0, i);
+        i++;
+        if (i <= fullText.length) {
+          // 句読点で少し溜める
+          const ch = fullText.charAt(i - 2);
+          const delay = (ch === '。' || ch === '、') ? 220 : 48;
+          window.setTimeout(tick, delay);
+        } else {
+          window.setTimeout(function () {
+            typeEl.classList.add('is-done');
+            if (card) { card.classList.add('is-typed'); }
+            if (title) { title.textContent = '提案文の下書きが完成しました'; }
+          }, 350);
+        }
+      })();
+    }
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runTypewriter();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      io.observe(card || typeEl);
+    } else {
+      runTypewriter();
+    }
+  }
+
 });
