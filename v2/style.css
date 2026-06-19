@@ -603,13 +603,15 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
   gap: clamp(28px, 5vw, 64px);
   padding: clamp(36px, 5vw, 56px) 4px;
 }
-/* 項目間の区切り線 */
-.why-item + .why-item::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--c-border-strong), transparent);
+/* 偶数番（02, 04, 06）は左右を入れ替え */
+.why-item:nth-child(even) .why-figure { order: 2; }
+.why-item:nth-child(even) .why-text   { order: 1; }
+/* 画像プレースホルダー（中身なし・スペースのみ確保） */
+.why-figure {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 10 / 7;
 }
-.why-figure { margin: 0; }
-.why-figure img { width: 100%; height: auto; display: block; border-radius: 20px; }
 .why-num {
   display: block;
   font-family: var(--font-en); font-weight: 800;
@@ -907,7 +909,10 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .step-body { padding-top: 4px; }
   .step-body p { max-width: none; margin: 0; }
   .why-item { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
-  .why-figure img { border-radius: 16px; }
+  /* スマホでは並びを元に戻す（画像→テキスト） */
+  .why-item:nth-child(even) .why-figure { order: 0; }
+  .why-item:nth-child(even) .why-text   { order: 0; }
+  .why-figure { aspect-ratio: 16 / 10; }
   .why-text h3 { font-size: clamp(1.35rem, 5.4vw, 1.7rem); margin-bottom: 12px; }
   .why-text p { font-size: .95rem; }
   .feature-cards { grid-template-columns: 1fr; gap: 16px; }
