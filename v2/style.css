@@ -515,39 +515,36 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .demo-cta-btn .ico { width: 20px; height: 20px; }
 .demo-note {
   max-width: 720px; margin: 18px auto 0;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  font-size: .85rem; color: var(--c-muted); text-align: center; line-height: 1.7;
+  font-size: .85rem; color: var(--c-muted); text-align: center; line-height: 1.9;
 }
-.demo-note .ico { width: 16px; height: 16px; color: var(--c-primary-600); flex: none; }
-.demo-note a { color: var(--c-primary-700); text-decoration: underline; font-weight: 600; }
+.demo-note .ico { display: inline-block; width: 16px; height: 16px; color: var(--c-primary-600); vertical-align: -3px; margin-right: 6px; }
+.demo-note a { color: var(--c-primary-700); text-decoration: underline; font-weight: 600; white-space: nowrap; }
 
 /* ===================================================================
-   FEATURES (tabs)
+   FEATURES (6カードグリッド)
    =================================================================== */
-.tabs { max-width: 960px; margin: 0 auto; }
-.tab-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 36px; }
-.tab-btn {
-  font-size: .92rem; font-weight: 700; color: var(--c-text-sub);
-  background: var(--c-bg); border: 1.5px solid var(--c-border); border-radius: var(--radius-pill);
-  padding: 10px 20px; transition: all .25s var(--ease);
+.feature-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.feature-card {
+  display: flex; flex-direction: column;
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg); padding: 30px 26px; box-shadow: var(--sh-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
 }
-.tab-btn:hover { border-color: var(--c-primary-600); color: var(--c-primary-700); }
-.tab-btn.is-active { background: var(--grad-brand); color: #fff; border-color: transparent; box-shadow: var(--sh-blue); }
-
-.tab-panels { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-lg); box-shadow: var(--sh-md); }
-.section--alt .tab-panels { background: var(--c-surface); }
-.tab-panel { display: none; }
-.tab-panel.is-active { display: block; animation: fadeUp .45s var(--ease); }
-.tab-content { padding: clamp(28px, 4vw, 48px); text-align: center; max-width: 720px; margin: 0 auto; }
-.tab-icon { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: var(--grad-brand); color: #fff; margin-bottom: 22px; box-shadow: var(--sh-blue); }
-.tab-icon .ico { width: 30px; height: 30px; }
-.tab-content h3 { font-size: clamp(1.25rem, 2.5vw, 1.6rem); font-weight: 900; margin-bottom: 16px; }
-.tab-content > p { color: var(--c-text-sub); margin-bottom: 24px; }
-.tab-points { display: inline-flex; flex-direction: column; gap: 10px; text-align: left; }
-.tab-points li { position: relative; padding-left: 28px; font-size: .95rem; font-weight: 500; }
-.tab-points li::before {
-  content: ""; position: absolute; left: 0; top: 8px; width: 16px; height: 16px; border-radius: 50%;
-  background: rgba(16,185,129,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
+.feature-card:hover { transform: translateY(-6px); box-shadow: var(--sh-md); border-color: var(--c-border-strong); }
+.feature-card-ico {
+  display: inline-grid; place-items: center; width: 54px; height: 54px;
+  border-radius: 15px; background: var(--grad-brand); color: #fff;
+  box-shadow: var(--sh-blue); margin-bottom: 18px;
+}
+.feature-card-ico .ico { width: 27px; height: 27px; }
+.feature-card-title { font-size: 1.12rem; font-weight: 800; margin-bottom: 10px; line-height: 1.5; }
+.feature-card-desc { font-size: .9rem; color: var(--c-text-sub); line-height: 1.85; margin-bottom: 18px; }
+.feature-card-points { margin-top: auto; display: grid; gap: 9px; }
+.feature-card-points li { position: relative; padding-left: 22px; font-size: .83rem; font-weight: 600; color: var(--c-text); line-height: 1.6; }
+.feature-card-points li::before {
+  content: ""; position: absolute; left: 3px; top: .35em;
+  width: 5px; height: 9px; border: solid var(--c-accent); border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* ===================================================================
@@ -799,6 +796,7 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .container { padding-inline: 3%; }
   .hero-inner { gap: 32px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-cards { grid-template-columns: repeat(2, 1fr); }
   .mock-phone { width: 110px; height: 220px; right: -6px; }
 }
 
@@ -852,6 +850,7 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 
   .steps { grid-template-columns: 1fr; gap: 36px; }
   .why-grid { grid-template-columns: 1fr; }
+  .feature-cards { grid-template-columns: 1fr; gap: 16px; }
   .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .flow { flex-direction: column; }
