@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="業務フローの起点集約 を表すイラスト">
+  <defs>
+    <linearGradient id="bg03" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="brand03" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="url(#bg03)"/>
+
+  <!-- connecting lines -->
+  <g fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round">
+    <path d="M200 140 L 80 70"/>
+    <path d="M200 140 L 320 70"/>
+    <path d="M200 140 L 60 200"/>
+    <path d="M200 140 L 200 50"/>
+    <path d="M200 140 L 340 200"/>
+    <path d="M200 140 L 200 240"/>
+  </g>
+
+  <!-- outer nodes -->
+  <g font-family="'Noto Sans JP', sans-serif" font-size="11" font-weight="700" fill="#1E3A8A" text-anchor="middle">
+    <g transform="translate(50,40)">
+      <rect width="80" height="34" rx="17" fill="#fff" stroke="#CBD5E1"/>
+      <text x="40" y="22">自治体窓口</text>
+    </g>
+    <g transform="translate(280,40)">
+      <rect width="80" height="34" rx="17" fill="#fff" stroke="#CBD5E1"/>
+      <text x="40" y="22">路線価図</text>
+    </g>
+    <g transform="translate(160,16)">
+      <rect width="80" height="30" rx="15" fill="#fff" stroke="#CBD5E1"/>
+      <text x="40" y="20">公示地価</text>
+    </g>
+    <g transform="translate(20,180)">
+      <rect width="84" height="34" rx="17" fill="#fff" stroke="#CBD5E1"/>
+      <text x="42" y="22">物件ポータル</text>
+    </g>
+    <g transform="translate(296,180)">
+      <rect width="84" height="34" rx="17" fill="#fff" stroke="#CBD5E1"/>
+      <text x="42" y="22">調査サイト</text>
+    </g>
+    <g transform="translate(160,234)">
+      <rect width="80" height="30" rx="15" fill="#fff" stroke="#CBD5E1"/>
+      <text x="40" y="20">ハザード</text>
+    </g>
+  </g>
+
+  <!-- center: 調速 hub -->
+  <circle cx="200" cy="140" r="50" fill="url(#brand03)"/>
+  <text x="200" y="135" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="900" fill="#fff">調速</text>
+  <text x="200" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#BAE6FD" letter-spacing="1">HUB</text>
+</svg>

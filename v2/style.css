@@ -590,41 +590,41 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 /* ===================================================================
    WHY
    =================================================================== */
-/* 大きな番号で見せるエディトリアル風リスト（カード型ではない） */
+/* 左イラスト・右に大きな数字＋タイトル の 2カラム構成 */
 .why-list {
   list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  column-gap: clamp(40px, 6vw, 88px); row-gap: 8px;
+  display: grid; gap: 0;
 }
 .why-item {
   position: relative;
-  display: grid; grid-template-columns: auto 1fr; align-items: start;
-  gap: clamp(18px, 2.4vw, 28px);
-  padding: 28px 4px 32px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 1.15fr;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  padding: clamp(36px, 5vw, 56px) 4px;
 }
-.why-item + .why-item { border-top: 0; }
-/* 隣接する区切り線（上段・下段共通） */
-.why-item::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+/* 項目間の区切り線 */
+.why-item + .why-item::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px;
   background: linear-gradient(90deg, transparent, var(--c-border-strong), transparent);
 }
-.why-item:nth-last-child(-n+2)::after { display: none; }
+.why-figure { margin: 0; }
+.why-figure img { width: 100%; height: auto; display: block; border-radius: 20px; }
 .why-num {
+  display: block;
   font-family: var(--font-en); font-weight: 800;
-  font-size: clamp(3.4rem, 6.5vw, 5rem); line-height: 1;
+  font-size: clamp(2.6rem, 5.4vw, 4rem); line-height: 1;
   background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
   letter-spacing: -.02em;
+  margin-bottom: 14px;
 }
 .why-text h3 {
-  font-size: clamp(1.1rem, 1.6vw, 1.25rem); font-weight: 800; line-height: 1.55;
-  margin: 6px 0 10px;
-  position: relative; padding-left: 14px;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 900; line-height: 1.45;
+  margin: 0 0 16px;
+  color: var(--c-text);
 }
-.why-text h3::before {
-  content: ""; position: absolute; left: 0; top: .35em; bottom: .35em; width: 4px;
-  border-radius: 4px; background: var(--grad-brand);
-}
-.why-text p { font-size: .94rem; color: var(--c-text-sub); line-height: 1.95; }
+.why-text p { font-size: 1rem; color: var(--c-text-sub); line-height: 1.95; }
 
 /* ===================================================================
    INTEGRATION
@@ -906,10 +906,10 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .step-marker { height: auto; margin-bottom: 0; }
   .step-body { padding-top: 4px; }
   .step-body p { max-width: none; margin: 0; }
-  .why-list { grid-template-columns: 1fr; column-gap: 0; }
-  .why-item { padding: 22px 0 26px; gap: 16px; }
-  .why-item:nth-last-child(-n+2)::after { display: block; }
-  .why-item:last-child::after { display: none; }
+  .why-item { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
+  .why-figure img { border-radius: 16px; }
+  .why-text h3 { font-size: clamp(1.35rem, 5.4vw, 1.7rem); margin-bottom: 12px; }
+  .why-text p { font-size: .95rem; }
   .feature-cards { grid-template-columns: 1fr; gap: 16px; }
   .footer-nav { grid-template-columns: 1fr 1fr; gap: 24px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
