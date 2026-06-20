@@ -52,6 +52,13 @@ $chosoku_logo  = get_theme_mod('chosoku_logo_yoko');
 			</button>
 
 			<div class="mobile-menu" id="mobileMenu">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-menu-logo" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+					<?php if ($chosoku_logo) : ?>
+						<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img">
+					<?php else : ?>
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-yoko.png')); ?>" alt="調速" class="logo-img" width="1774" height="887">
+					<?php endif; ?>
+				</a>
 				<ul>
 					<li><a href="#problem">課題</a></li>
 					<li><a href="#solution">特長</a></li>

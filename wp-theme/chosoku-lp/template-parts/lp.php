@@ -20,7 +20,6 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		</div>
 		<div class="container hero-inner">
 			<div class="hero-copy hero-anim">
-				<p class="hero-eyebrow">中小不動産業者向け　物件調査アシスタント</p>
 				<h1 class="hero-title">
 					住所を入れて、<span class="hero-accent">5分</span>。<br>
 					物件調査が、<br>提案資料まで終わる。
