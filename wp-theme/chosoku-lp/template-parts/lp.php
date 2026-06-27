@@ -510,31 +510,40 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				<h2 class="section-title">よくあるご質問</h2>
 			</div>
 
+			<?php
+			// 既定のFAQ（ACF未入力時のフォールバック）
+			$faq_defaults = array(
+				array('q' => 'どの自治体に対応していますか？', 'a' => '用途地域・ハザード・地価・取引事例などは全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。'),
+				array('q' => '路線価などの具体的な数値は表示されますか？', 'a' => 'アプリ内では具体的な金額数値は表示せず、一次情報源（国税庁など）へのリンクをご案内します。数値の確認はリンク先の公的情報、および宅地建物取引士による最終確認を前提とした設計です。'),
+				array('q' => 'AIが宅建士の代わりになるのですか？', 'a' => 'いいえ。AIはあくまで「窓口で確認すべき観点」を提示する補助です。最終的な判断・確認は宅地建物取引士が行う建付けとしています。'),
+				array('q' => '個人情報やデータは安全ですか？', 'a' => '物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。'),
+				array('q' => 'スマートフォンでも使えますか？', 'a' => 'はい。スマホ閲覧に最適化しており、専用のハンバーガーメニューで縦長ページも快適にご利用いただけます。外回りの営業中でも確認できます。'),
+				array('q' => '解約はできますか？', 'a' => 'サブスクリプションはいつでも解約可能です。プランや解約手続きの詳細は、お問い合わせフォームよりお気軽にご連絡ください。'),
+			);
+
+			// ACF（固定ページ）に入力があればそれを優先。質問が空の項目は非表示。
+			$faq_items = array();
+			if (function_exists('get_field')) {
+				$lp_pid = (int) get_option('page_on_front');
+				for ($i = 1; $i <= 6; $i++) {
+					$q = trim((string) get_field('faq_' . $i . '_q', $lp_pid ? $lp_pid : null));
+					$a = trim((string) get_field('faq_' . $i . '_a', $lp_pid ? $lp_pid : null));
+					if ($q !== '') {
+						$faq_items[] = array('q' => $q, 'a' => $a);
+					}
+				}
+			}
+			if (empty($faq_items)) {
+				$faq_items = $faq_defaults;
+			}
+			?>
 			<div class="faq-list reveal">
-				<details class="faq-item">
-					<summary>どの自治体に対応していますか？</summary>
-					<div class="faq-body"><p>用途地域・ハザード・地価・取引事例などは全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。</p></div>
-				</details>
-				<details class="faq-item">
-					<summary>路線価などの具体的な数値は表示されますか？</summary>
-					<div class="faq-body"><p>アプリ内では具体的な金額数値は表示せず、一次情報源（国税庁など）へのリンクをご案内します。数値の確認はリンク先の公的情報、および宅地建物取引士による最終確認を前提とした設計です。</p></div>
-				</details>
-				<details class="faq-item">
-					<summary>AIが宅建士の代わりになるのですか？</summary>
-					<div class="faq-body"><p>いいえ。AIはあくまで「窓口で確認すべき観点」を提示する補助です。最終的な判断・確認は宅地建物取引士が行う建付けとしています。</p></div>
-				</details>
-				<details class="faq-item">
-					<summary>個人情報やデータは安全ですか？</summary>
-					<div class="faq-body"><p>物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。</p></div>
-				</details>
-				<details class="faq-item">
-					<summary>スマートフォンでも使えますか？</summary>
-					<div class="faq-body"><p>はい。スマホ閲覧に最適化しており、専用のハンバーガーメニューで縦長ページも快適にご利用いただけます。外回りの営業中でも確認できます。</p></div>
-				</details>
-				<details class="faq-item">
-					<summary>解約はできますか？</summary>
-					<div class="faq-body"><p>サブスクリプションはいつでも解約可能です。プランや解約手続きの詳細は、お問い合わせフォームよりお気軽にご連絡ください。</p></div>
-				</details>
+				<?php foreach ($faq_items as $faq) : ?>
+					<details class="faq-item">
+						<summary><?php echo esc_html($faq['q']); ?></summary>
+						<div class="faq-body"><p><?php echo nl2br(esc_html($faq['a'])); ?></p></div>
+					</details>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

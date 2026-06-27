@@ -85,6 +85,7 @@ function chosoku_head_meta() {
 add_action('wp_head', 'chosoku_head_meta', 5);
 
 require get_theme_file_path('inc/customizer.php');
+require get_theme_file_path('inc/acf-fields.php');
 
 /**
  * 外部リンク取得ヘルパー（カスタマイザー値 → 既定値）
