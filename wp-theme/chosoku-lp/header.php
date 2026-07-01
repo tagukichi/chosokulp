@@ -5,7 +5,16 @@
  * @package chosoku-lp
  */
 $chosoku_login = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
-$chosoku_logo  = get_theme_mod('chosoku_logo_yoko');
+
+// ヘッダーロゴ: WP標準ロゴ（サイト基本情報 > ロゴ）→ 調速LP設定 > ロゴ → 同梱 の順で採用
+$chosoku_logo    = '';
+$chosoku_logo_id = get_theme_mod('custom_logo');
+if ($chosoku_logo_id) {
+	$chosoku_logo = wp_get_attachment_image_url($chosoku_logo_id, 'full');
+}
+if (!$chosoku_logo) {
+	$chosoku_logo = get_theme_mod('chosoku_logo_yoko');
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

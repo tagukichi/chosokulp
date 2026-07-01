@@ -17,15 +17,16 @@ function chosoku_customize_register($wp_customize) {
 		'priority' => 20,
 	));
 
-	/* ---------------- ロゴ ---------------- */
+	/* ---------------- ロゴ / アイコン ---------------- */
 	$wp_customize->add_section('chosoku_logo', array(
-		'title' => __('ロゴ', 'chosoku-lp'),
-		'panel' => 'chosoku_lp',
+		'title'       => __('ロゴ・アイコン', 'chosoku-lp'),
+		'description' => __('ヘッダーは「サイト基本情報 > ロゴ」でも変更できます。ブラウザのタブに出るアイコンは「サイト基本情報 > サイトアイコン」で設定してください。', 'chosoku-lp'),
+		'panel'       => 'chosoku_lp',
 	));
 	$wp_customize->add_setting('chosoku_logo_yoko', array('sanitize_callback' => 'esc_url_raw'));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'chosoku_logo_yoko', array(
 		'label'       => __('ヘッダーロゴ（横）', 'chosoku-lp'),
-		'description' => __('未設定の場合は同梱の横ロゴを表示します。', 'chosoku-lp'),
+		'description' => __('未設定なら「サイト基本情報 > ロゴ」→ 同梱の横ロゴ の順で表示します。', 'chosoku-lp'),
 		'section'     => 'chosoku_logo',
 	)));
 	$wp_customize->add_setting('chosoku_logo_tate', array('sanitize_callback' => 'esc_url_raw'));
