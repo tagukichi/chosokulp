@@ -142,6 +142,57 @@ function chosoku_register_acf_fields() {
 		'instructions' => 'YouTube / Vimeo のURLを貼ると埋め込み表示します（最優先）。',
 	);
 
+	/* -------- ソリューション（調査→提案→資料化 / 01-04） -------- */
+	$sol_defaults = array(
+		1 => array(
+			'title' => '住所1つで、12種類以上の調査結果',
+			'desc'  => '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。',
+			'li'    => array('13パネルをワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ'),
+		),
+		2 => array(
+			'title' => 'AIが、お客様向けの提案文を自動生成',
+			'desc'  => '周辺データを根拠に「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。',
+			'li'    => array('周辺データを根拠にした“暮らしの提案”', '担当者のメモを文章に反映', '最終確認は宅地建物取引士が行う建付け'),
+		),
+		3 => array(
+			'title' => 'プレゼンボードで、A4 1枚にまとめる',
+			'desc'  => '提案文・法令制限・周辺施設・人気店・価格情報・物件位置をブロック化。ドラッグ&ドロップで自由に並べ替え、不要なブロックは隠せます。そのままA4横でPDF印刷・Excel出力。',
+			'li'    => array('D&Dで並べ替え・ブロックごとに8色パレット', '編集レイアウトのままA4横で出力', '提案資料・社内回付資料にそのまま使える'),
+		),
+		4 => array(
+			'title' => '公的データだから、安心して使える',
+			'desc'  => '国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places を組み合わせ、AIが数値を“作らない”設計。一次情報源へのリンクを備え、最終確認は宅地建物取引士が行う前提で組み立てています。',
+			'li'    => array('出典は公的データ／一次情報源リンク付き', 'AIは「窓口で確認すべき観点」を提示', '断定ではなく、確認を支える建付け'),
+		),
+	);
+
+	$fields[] = array('key' => 'field_chosoku_sol_tab', 'label' => 'ソリューション（3ステップ）', 'type' => 'tab');
+	$fields[] = array(
+		'key'     => 'field_chosoku_sol_intro',
+		'label'   => '', 'name' => '', 'type' => 'message',
+		'message' => '「調査 → 提案 → 資料化」セクションの見出しと、01〜04の各項目（タイトル・説明・チェックリスト）を編集できます。<br>チェックリストは空欄の項目を非表示にできます。すべて未入力なら既定文を表示します。',
+	);
+	$fields[] = array('key' => 'field_chosoku_sol_eyebrow', 'label' => 'セクション：ラベル', 'name' => 'solution_eyebrow', 'type' => 'text', 'placeholder' => '調速 が、その全部を1画面に。');
+	$fields[] = array('key' => 'field_chosoku_sol_title', 'label' => 'セクション：見出し', 'name' => 'solution_title', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'instructions' => 'Enterで改行できます。', 'placeholder' => '調査 → 提案 → 資料化を、ひとつの流れに。');
+	$fields[] = array('key' => 'field_chosoku_sol_lead', 'label' => 'セクション：リード文', 'name' => 'solution_lead', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'placeholder' => 'バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。');
+
+	for ($n = 1; $n <= 4; $n++) {
+		$d = $sol_defaults[$n];
+		$fields[] = array('key' => 'field_chosoku_sol_' . $n . '_label', 'label' => '', 'name' => '', 'type' => 'message', 'message' => '<strong>0' . $n . '</strong>');
+		$fields[] = array('key' => 'field_chosoku_sol_' . $n . '_title', 'label' => '0' . $n . '：タイトル', 'name' => 'solution_' . $n . '_title', 'type' => 'text', 'placeholder' => $d['title']);
+		$fields[] = array('key' => 'field_chosoku_sol_' . $n . '_desc', 'label' => '0' . $n . '：説明文', 'name' => 'solution_' . $n . '_desc', 'type' => 'textarea', 'rows' => 3, 'new_lines' => '', 'placeholder' => $d['desc']);
+		for ($j = 1; $j <= 3; $j++) {
+			$fields[] = array(
+				'key'         => 'field_chosoku_sol_' . $n . '_li_' . $j,
+				'label'       => '0' . $n . '：チェック' . $j,
+				'name'        => 'solution_' . $n . '_li_' . $j,
+				'type'        => 'text',
+				'placeholder' => isset($d['li'][$j - 1]) ? $d['li'][$j - 1] : '',
+				'wrapper'     => array('width' => '33'),
+			);
+		}
+	}
+
 	acf_add_local_field_group(array(
 		'key'                   => 'group_chosoku_lp',
 		'title'                 => '調速LP コンテンツ',

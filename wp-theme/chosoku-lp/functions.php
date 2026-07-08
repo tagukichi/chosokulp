@@ -115,3 +115,49 @@ function chosoku_why_image($n) {
 		);
 	}
 }
+
+/**
+ * ACFテキスト取得。入力があればエスケープ＋改行反映した値、無ければ既定HTMLをそのまま返す。
+ *
+ * @param string $name         ACFフィールド名
+ * @param string $default_html 未入力時に出力する既定のHTML（テーマ内の信頼できる文字列）
+ * @return string 出力用HTML
+ */
+function chosoku_text($name, $default_html = '') {
+	if (function_exists('get_field')) {
+		$pid = get_option('page_on_front');
+		$pid = $pid ? $pid : null;
+		$v = trim((string) get_field($name, $pid));
+		if ($v !== '') {
+			return nl2br(esc_html($v));
+		}
+	}
+	return $default_html;
+}
+
+/**
+ * ACFの連番テキスト（$prefix.1〜$count）を配列で取得。
+ * 入力があるものだけを返し、1つも無ければ既定配列を返す。
+ *
+ * @param string $prefix   例 'solution_1_li_'
+ * @param array  $defaults 未入力時の既定配列
+ * @param int    $count    項目数
+ * @return array
+ */
+function chosoku_list($prefix, $defaults, $count = 3) {
+	if (function_exists('get_field')) {
+		$pid = get_option('page_on_front');
+		$pid = $pid ? $pid : null;
+		$items = array();
+		for ($i = 1; $i <= $count; $i++) {
+			$v = trim((string) get_field($prefix . $i, $pid));
+			if ($v !== '') {
+				$items[] = $v;
+			}
+		}
+		if (!empty($items)) {
+			return $items;
+		}
+	}
+	return $defaults;
+}

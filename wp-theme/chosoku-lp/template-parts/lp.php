@@ -138,21 +138,21 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 	<section data-section="solution" class="solution section" id="solution">
 		<div class="container">
 			<div class="section-head reveal">
-				<p class="eyebrow">調速 が、その全部を1画面に。</p>
-				<h2 class="section-title"><span class="nobr">調査 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れに。</span></h2>
-				<p class="section-lead">バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。</p>
+				<p class="eyebrow"><?php echo chosoku_text('solution_eyebrow', '調速 が、その全部を1画面に。'); ?></p>
+				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れに。</span>'); ?></h2>
+				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。'); ?></p>
 			</div>
 
 			<!-- 01 -->
 			<div class="sol-row">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">01</span>
-					<h3 class="sol-title">住所1つで、12種類以上の調査結果</h3>
-					<p class="sol-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。</p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_1_title', '住所1つで、12種類以上の調査結果'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。'); ?></p>
 					<ul class="sol-list">
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>13パネルをワンクリックで一覧表示</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>スーパー・学校・駅まで、距離と徒歩分数つき</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>路線価図索引はクリックで一次情報源へ</li>
+						<?php foreach (chosoku_list('solution_1_li_', array('13パネルをワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ')) as $li) : ?>
+							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
@@ -186,12 +186,12 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row sol-row--reverse">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">02</span>
-					<h3 class="sol-title"><span class="nobr">AIが、お客様向けの</span><span class="nobr">提案文を自動生成</span></h3>
-					<p class="sol-desc">周辺データを根拠に「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。</p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_2_title', '<span class="nobr">AIが、お客様向けの</span><span class="nobr">提案文を自動生成</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_2_desc', '周辺データを根拠に「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。'); ?></p>
 					<ul class="sol-list">
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>周辺データを根拠にした“暮らしの提案”</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>担当者のメモを文章に反映</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>最終確認は宅地建物取引士が行う建付け</li>
+						<?php foreach (chosoku_list('solution_2_li_', array('周辺データを根拠にした“暮らしの提案”', '担当者のメモを文章に反映', '最終確認は宅地建物取引士が行う建付け')) as $li) : ?>
+							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
@@ -212,12 +212,12 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">03</span>
-					<h3 class="sol-title"><span class="nobr">プレゼンボードで、</span><span class="nobr">A4 1枚にまとめる</span></h3>
-					<p class="sol-desc">提案文・法令制限・周辺施設・人気店・価格情報・物件位置をブロック化。ドラッグ&ドロップで自由に並べ替え、不要なブロックは隠せます。そのままA4横でPDF印刷・Excel出力。</p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_3_title', '<span class="nobr">プレゼンボードで、</span><span class="nobr">A4 1枚にまとめる</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_3_desc', '提案文・法令制限・周辺施設・人気店・価格情報・物件位置をブロック化。ドラッグ&ドロップで自由に並べ替え、不要なブロックは隠せます。そのままA4横でPDF印刷・Excel出力。'); ?></p>
 					<ul class="sol-list">
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>D&Dで並べ替え・ブロックごとに8色パレット</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>編集レイアウトのままA4横で出力</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>提案資料・社内回付資料にそのまま使える</li>
+						<?php foreach (chosoku_list('solution_3_li_', array('D&Dで並べ替え・ブロックごとに8色パレット', '編集レイアウトのままA4横で出力', '提案資料・社内回付資料にそのまま使える')) as $li) : ?>
+							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
@@ -245,12 +245,12 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row sol-row--reverse">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">04</span>
-					<h3 class="sol-title">公的データだから、安心して使える</h3>
-					<p class="sol-desc">国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places を組み合わせ、AIが数値を“作らない”設計。一次情報源へのリンクを備え、最終確認は宅地建物取引士が行う前提で組み立てています。</p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_4_title', '公的データだから、安心して使える'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_4_desc', '国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places を組み合わせ、AIが数値を“作らない”設計。一次情報源へのリンクを備え、最終確認は宅地建物取引士が行う前提で組み立てています。'); ?></p>
 					<ul class="sol-list">
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>出典は公的データ／一次情報源リンク付き</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>AIは「窓口で確認すべき観点」を提示</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>断定ではなく、確認を支える建付け</li>
+						<?php foreach (chosoku_list('solution_4_li_', array('出典は公的データ／一次情報源リンク付き', 'AIは「窓口で確認すべき観点」を提示', '断定ではなく、確認を支える建付け')) as $li) : ?>
+							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">

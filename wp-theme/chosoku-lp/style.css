@@ -988,6 +988,32 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .facility-grid { grid-template-columns: 1fr; }
 }
 
+/* ===================================================================
+   PC（751px以上）での最小テキストサイズ = 15px
+   本文・リンク・ボタン・フォーム等の可読テキストの下限を 15px に統一。
+   （eyebrow等のラベル、バッジ、モック内UIの微小テキストは意図的に据え置き）
+   =================================================================== */
+@media (min-width: 751px) {
+  .nav-login,
+  .btn-sm,
+  .hero-points li,
+  .marquee-track span,
+  .feature-card-desc,
+  .feature-card-points li,
+  .step-body p,
+  .flow-note,
+  .demo-note,
+  .contact-routes span,
+  .field label,
+  .field-check,
+  .field-error,
+  .footer-tagline,
+  .footer-col h4,
+  .footer-col a,
+  .footer-copy,
+  .footer-disclaimer { font-size: 15px; }
+}
+
 /* ---------- Accessibility: reduce motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
