@@ -685,6 +685,13 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .integration-media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--sh-lg); background: #0b1220; line-height: 0; }
 .integration-media img,
 .integration-media video { display: block; width: 100%; height: auto; }
+/* メディア設置時（PC）は右カラムを広げて動画・画像を大きく表示 */
+@media (min-width: 901px) {
+  .integration-inner:has(.integration-visual--media) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+    gap: clamp(28px, 4vw, 56px);
+  }
+}
 .integration-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; }
 .integration-embed iframe,
 .integration-embed video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

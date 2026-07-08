@@ -522,9 +522,9 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<?php if ($intg_embed !== '') : ?>
 						<div class="integration-media integration-embed"><?php echo $intg_embed; // WPコアのoEmbed（YouTube/Vimeo等） ?></div>
 					<?php elseif ($intg_url_file) : ?>
-						<div class="integration-media"><video src="<?php echo esc_url($intg_video_url); ?>" controls playsinline preload="metadata"></video></div>
+						<div class="integration-media"><video src="<?php echo esc_url($intg_video_url); ?>" autoplay muted loop playsinline preload="auto"></video></div>
 					<?php elseif ($intg_video !== '') : ?>
-						<div class="integration-media"><video src="<?php echo esc_url($intg_video); ?>" controls playsinline preload="metadata"></video></div>
+						<div class="integration-media"><video src="<?php echo esc_url($intg_video); ?>" autoplay muted loop playsinline preload="auto"></video></div>
 					<?php elseif ($intg_image !== '') : ?>
 						<div class="integration-media"><img src="<?php echo esc_url($intg_image); ?>" alt="" loading="lazy"></div>
 					<?php else : ?>
