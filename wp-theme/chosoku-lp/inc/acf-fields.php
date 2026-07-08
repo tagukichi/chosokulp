@@ -90,9 +90,11 @@ function chosoku_register_acf_fields() {
 		'key'          => 'field_chosoku_intg_title',
 		'label'        => '見出し',
 		'name'         => 'integration_title',
-		'type'         => 'text',
-		'instructions' => '改行したい位置で Enter を押すと反映されます。',
-		'placeholder'  => '案件管理「kanri」と、ひとつながり。',
+		'type'         => 'textarea',
+		'rows'         => 2,
+		'new_lines'    => '', // 改行はテンプレート側で <br> に変換
+		'instructions' => '改行したい位置で Enter を押すと、その位置で改行されます。',
+		'placeholder'  => "案件管理「kanri」と、\nひとつながり。",
 	);
 	$fields[] = array(
 		'key'         => 'field_chosoku_intg_lead',
