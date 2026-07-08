@@ -100,30 +100,6 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		</div>
 	</section>
 
-	<!-- ============================= 3つのポイント ============================= -->
-	<section data-section="points" class="points" aria-label="調速の3つのポイント">
-		<div class="container">
-			<p class="points-head reveal"><span class="eyebrow">POINT</span></p>
-			<div class="points-inner">
-				<div class="point reveal">
-					<span class="point-num">01</span>
-					<h3>物件を、すぐ調べられる</h3>
-					<p>住所を入れるだけで、12種類以上の調査結果を即時表示。窓口やサイトを回る時間がなくなります。</p>
-				</div>
-				<div class="point reveal">
-					<span class="point-num">02</span>
-					<h3>AIが、レポートを作成</h3>
-					<p>周辺データを根拠に提案文を自動で下書き。A4のプレゼンボードまで、そのまま資料になります。</p>
-				</div>
-				<div class="point reveal">
-					<span class="point-num">03</span>
-					<h3>案件管理に、すぐ登録</h3>
-					<p>調べた物件は、そのまま案件管理「kanri」へ。調査から案件登録までが途切れません。</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- ============================= 課題提起 ============================= -->
 	<section data-section="problem" class="problem section" id="problem">
 		<div class="container">

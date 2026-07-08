@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ----------------------------------------------------------------
      3. グリッド内の段階表示（--i を子要素に付与）
      ---------------------------------------------------------------- */
-  const staggerGroups = document.querySelectorAll('.problem-grid, .why-list, .steps, .feature-cards, .points-inner');
+  const staggerGroups = document.querySelectorAll('.problem-grid, .why-list, .steps, .feature-cards');
   staggerGroups.forEach(function (group) {
     Array.prototype.forEach.call(group.children, function (child, i) {
       child.style.setProperty('--i', i);

@@ -334,26 +334,6 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ===================================================================
-   POINTS — 3つのセールスポイント訴求帯
-   =================================================================== */
-.points { background: var(--c-surface); border-bottom: 1px solid var(--c-border); padding-block: clamp(44px, 6vw, 72px); }
-.points-head { text-align: center; margin-bottom: 26px; }
-.points-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.point {
-  position: relative;
-  background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-lg);
-  padding: 28px 26px 26px;
-}
-.point::before { content: ""; position: absolute; left: 26px; right: 26px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--grad-brand); }
-.point-num {
-  display: block; font-family: var(--font-en); font-weight: 800; font-size: 2rem; line-height: 1;
-  background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
-  margin-bottom: 12px;
-}
-.point h3 { font-size: 1.18rem; font-weight: 900; margin-bottom: 10px; }
-.point p { font-size: .9rem; color: var(--c-text-sub); line-height: 1.85; }
-
-/* ===================================================================
    PROBLEM  — 「こんなお悩み、ありませんか？」
    青グラデの背景＋全体を1枚のカードで囲い、下端は ▼ で次セクションへ
    =================================================================== */
@@ -933,9 +913,6 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .hero-visual { max-width: 540px; margin: 0 auto 4px; zoom: 0.8; }
   .hero-title { font-size: clamp(1.5rem, 6.6vw, 1.9rem); line-height: 1.5; }
   .hero-points { flex-direction: column; align-items: center; gap: 10px; }
-
-  .points-inner { grid-template-columns: 1fr; gap: 14px; }
-  .point { padding: 22px 20px; }
 
   .problem-list { margin-top: 32px; padding: 4px 20px; border-radius: 18px; }
   .problem-item { padding: 16px 0; gap: 12px; }
