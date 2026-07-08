@@ -465,38 +465,89 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 	</section>
 
 	<!-- ============================= 連携・拡張 ============================= -->
+	<?php
+	// 連携（kanri）セクション：ACF優先、未入力は既定値
+	$intg_pid = (int) get_option('page_on_front');
+	$intg_pid = $intg_pid ? $intg_pid : null;
+	$intg_gf  = function_exists('get_field');
+
+	$intg_title = $intg_gf ? trim((string) get_field('integration_title', $intg_pid)) : '';
+	if ($intg_title === '') { $intg_title = "案件管理「kanri」と、\nひとつながり。"; }
+
+	$intg_lead = $intg_gf ? trim((string) get_field('integration_lead', $intg_pid)) : '';
+	if ($intg_lead === '') { $intg_lead = '「kanri」は、会社の案件を社内でまとめて管理できる案件管理ツールです。営業担当は自分が抱える案件を個人単位で管理でき、調速で調べた物件は、そのまま案件として引き継げます。'; }
+
+	$intg_checks_default = array(
+		'会社の案件を、社内でまとめて一元管理',
+		'営業担当は、自分の案件を個人単位で管理',
+		'調速で調べた物件を、そのまま案件として登録',
+		'顧客管理から案件登録までを、1つの動線で',
+	);
+	$intg_checks = array();
+	if ($intg_gf) {
+		for ($i = 1; $i <= 4; $i++) {
+			$c = trim((string) get_field('integration_check_' . $i, $intg_pid));
+			if ($c !== '') { $intg_checks[] = $c; }
+		}
+	}
+	if (empty($intg_checks)) { $intg_checks = $intg_checks_default; }
+
+	// 右側メディア：動画URL(埋め込み) > 動画URL(mp4等) > 動画ファイル > 画像 > 既定図
+	$intg_video_url = $intg_gf ? trim((string) get_field('integration_video_url', $intg_pid)) : '';
+	$intg_video     = $intg_gf ? trim((string) get_field('integration_media_video', $intg_pid)) : '';
+	$intg_image     = $intg_gf ? trim((string) get_field('integration_media_image', $intg_pid)) : '';
+	$intg_embed = '';
+	if ($intg_video_url !== '' && function_exists('wp_oembed_get')) {
+		$intg_embed = wp_oembed_get($intg_video_url);
+		if (!$intg_embed) { $intg_embed = ''; }
+	}
+	$intg_url_file = ($intg_video_url !== '' && preg_match('/\.(mp4|webm|ogg|mov)(\?.*)?$/i', $intg_video_url));
+	$intg_has_media = ($intg_embed !== '' || $intg_url_file || $intg_video !== '' || $intg_image !== '');
+	?>
 	<section data-section="integration" class="integration section" id="integration">
 		<div class="container">
 			<div class="integration-inner">
 				<div class="integration-text reveal">
 					<p class="eyebrow">INTEGRATION</p>
-					<h2 class="section-title">案件管理「kanri」と、<br>ひとつながり。</h2>
-					<p class="section-lead">調速はスタンドアロンの調査ツールではありません。案件管理アプリ kanri と1アカウントで連携し、顧客管理から物件調査、案件登録までを途切れさせません。</p>
+					<h2 class="section-title"><?php echo nl2br(esc_html($intg_title)); ?></h2>
+					<p class="section-lead"><?php echo nl2br(esc_html($intg_lead)); ?></p>
 					<ul class="integration-list">
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>1つのアカウントで連携・データ共有</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>案件付きで開けば「保存」、単独なら「新規登録」</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>自治体マスターは管理アプリから自動同期</li>
+						<?php foreach ($intg_checks as $c) : ?>
+							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($c); ?></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 
-				<div class="integration-visual reveal" aria-hidden="true">
-					<div class="flow">
-						<div class="flow-node">
-							<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
-							<span class="flow-label">顧客管理<small>kanri</small></span>
+				<div class="integration-visual reveal<?php echo $intg_has_media ? ' integration-visual--media' : ''; ?>">
+					<?php if ($intg_embed !== '') : ?>
+						<div class="integration-media integration-embed"><?php echo $intg_embed; // WPコアのoEmbed（YouTube/Vimeo等） ?></div>
+					<?php elseif ($intg_url_file) : ?>
+						<div class="integration-media"><video src="<?php echo esc_url($intg_video_url); ?>" controls playsinline preload="metadata"></video></div>
+					<?php elseif ($intg_video !== '') : ?>
+						<div class="integration-media"><video src="<?php echo esc_url($intg_video); ?>" controls playsinline preload="metadata"></video></div>
+					<?php elseif ($intg_image !== '') : ?>
+						<div class="integration-media"><img src="<?php echo esc_url($intg_image); ?>" alt="" loading="lazy"></div>
+					<?php else : ?>
+						<div aria-hidden="true">
+							<div class="flow">
+								<div class="flow-node">
+									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+									<span class="flow-label">顧客管理<small>kanri</small></span>
+								</div>
+								<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+								<div class="flow-node flow-node--primary">
+									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+									<span class="flow-label">物件調査<small>調速</small></span>
+								</div>
+								<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+								<div class="flow-node">
+									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+									<span class="flow-label">案件登録<small>kanri</small></span>
+								</div>
+							</div>
+							<p class="flow-note">社内の案件管理から物件調査、案件登録までを1動線で。</p>
 						</div>
-						<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-						<div class="flow-node flow-node--primary">
-							<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-							<span class="flow-label">物件調査<small>調速</small></span>
-						</div>
-						<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-						<div class="flow-node">
-							<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
-							<span class="flow-label">案件登録<small>kanri</small></span>
-						</div>
-					</div>
-					<p class="flow-note">1アカウント・1動線で、情報を二重入力しない。</p>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

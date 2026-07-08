@@ -66,6 +66,80 @@ function chosoku_register_acf_fields() {
 		);
 	}
 
+	/* -------- 連携（kanri）セクション -------- */
+	$intg_checks = array(
+		'会社の案件を、社内でまとめて一元管理',
+		'営業担当は、自分の案件を個人単位で管理',
+		'調速で調べた物件を、そのまま案件として登録',
+		'顧客管理から案件登録までを、1つの動線で',
+	);
+
+	$fields[] = array(
+		'key'   => 'field_chosoku_intg_tab',
+		'label' => '連携（kanri）',
+		'type'  => 'tab',
+	);
+	$fields[] = array(
+		'key'     => 'field_chosoku_intg_intro',
+		'label'   => '',
+		'name'    => '',
+		'type'    => 'message',
+		'message' => '「案件管理kanri」セクションの見出し・説明・チェックリスト・右側メディアを編集できます。<br>右側は <strong>動画URL（YouTube等）→ 動画ファイル → 画像</strong> の順に表示し、すべて未設定なら既定の図を表示します。',
+	);
+	$fields[] = array(
+		'key'          => 'field_chosoku_intg_title',
+		'label'        => '見出し',
+		'name'         => 'integration_title',
+		'type'         => 'text',
+		'instructions' => '改行したい位置で Enter を押すと反映されます。',
+		'placeholder'  => '案件管理「kanri」と、ひとつながり。',
+	);
+	$fields[] = array(
+		'key'         => 'field_chosoku_intg_lead',
+		'label'       => '説明文',
+		'name'        => 'integration_lead',
+		'type'        => 'textarea',
+		'rows'        => 3,
+		'new_lines'   => '',
+		'placeholder' => '「kanri」は、会社の案件を社内でまとめて管理できる案件管理ツールです。営業担当は自分が抱える案件を個人単位で管理でき、調速で調べた物件は、そのまま案件として引き継げます。',
+	);
+	for ($i = 1; $i <= 4; $i++) {
+		$fields[] = array(
+			'key'         => 'field_chosoku_intg_check_' . $i,
+			'label'       => 'チェックリスト' . $i,
+			'name'        => 'integration_check_' . $i,
+			'type'        => 'text',
+			'placeholder' => isset($intg_checks[$i - 1]) ? $intg_checks[$i - 1] : '',
+		);
+	}
+	$fields[] = array(
+		'key'           => 'field_chosoku_intg_image',
+		'label'         => '右側：画像',
+		'name'          => 'integration_media_image',
+		'type'          => 'image',
+		'return_format' => 'url',
+		'preview_size'  => 'medium',
+		'library'       => 'all',
+		'instructions'  => 'kanriの画面キャプチャなど。動画が未設定のとき表示されます。',
+	);
+	$fields[] = array(
+		'key'           => 'field_chosoku_intg_video',
+		'label'         => '右側：動画ファイル',
+		'name'          => 'integration_media_video',
+		'type'          => 'file',
+		'return_format' => 'url',
+		'library'       => 'all',
+		'mime_types'    => 'mp4,webm,ogg,mov',
+		'instructions'  => 'MP4等をアップロード。動画URLが未設定のとき表示されます。',
+	);
+	$fields[] = array(
+		'key'          => 'field_chosoku_intg_video_url',
+		'label'        => '右側：動画URL（YouTube / Vimeo）',
+		'name'         => 'integration_video_url',
+		'type'         => 'url',
+		'instructions' => 'YouTube / Vimeo のURLを貼ると埋め込み表示します（最優先）。',
+	);
+
 	acf_add_local_field_group(array(
 		'key'                   => 'group_chosoku_lp',
 		'title'                 => '調速LP コンテンツ',
