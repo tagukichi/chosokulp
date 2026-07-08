@@ -622,22 +622,6 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<p class="eyebrow">CONTACT</p>
 					<h2 class="section-title">まずは、お気軽にご相談ください。</h2>
 					<p class="section-lead">無料お試し・資料請求・導入のご相談を承っています。内容を確認のうえ、担当者よりご連絡いたします。</p>
-					<ul class="contact-routes">
-						<li>
-							<span class="contact-route-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></span>
-							<div>
-								<strong>ご検討中の方</strong>
-								<span>右のフォームから無料お試し・資料請求・ご相談を。</span>
-							</div>
-						</li>
-						<li>
-							<span class="contact-route-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg></span>
-							<div>
-								<strong>すでにアカウントをお持ちの方</strong>
-								<span><a href="<?php echo esc_url($chosoku_login); ?>" target="_blank" rel="noopener">本体アプリのログイン画面へ ↗</a></span>
-							</div>
-						</li>
-					</ul>
 				</div>
 
 				<?php if ($chosoku_cf7 !== '') : ?>
