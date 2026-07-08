@@ -1,6 +1,6 @@
 <?php
 /**
- * 調速 LP (Chosoku LP) theme functions
+ * 調速 LP（ちょーはや）theme functions
  *
  * @package chosoku-lp
  */
@@ -68,7 +68,7 @@ add_filter('wp_resource_hints', 'chosoku_resource_hints', 10, 2);
 function chosoku_head_meta() {
 	$desc = get_theme_mod(
 		'chosoku_meta_description',
-		'中小不動産業者向けの物件調査支援ツール「調速（Chosoku）」。住所1つで12種類以上の調査結果を即時表示し、AIが提案文・A4プレゼンボードまで自動で組み上げます。公的データ × AI で不動産営業の生産性を最大化。'
+		'中小不動産業者向けの物件調査支援ツール「調速（ちょーはや）」。住所1つで12種類以上の調査結果を即時表示し、AIが提案文・A4プレゼンボードまで自動で組み上げます。公的データ × AI で不動産営業の生産性を最大化。'
 	);
 	$title = wp_get_document_title();
 	echo "\n" . '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";

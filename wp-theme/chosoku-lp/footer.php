@@ -15,7 +15,7 @@ $chosoku_terms    = chosoku_url('chosoku_terms_url', '#');
 	<footer data-section="footer" class="site-footer">
 		<div class="container footer-inner">
 			<div class="footer-brand">
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-chip" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-chip" aria-label="調速（ちょーはや）不動産調査アプリ ホーム">
 					<?php if ($chosoku_logo_t) : ?>
 						<img src="<?php echo esc_url($chosoku_logo_t); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--tate">
 					<?php else : ?>
@@ -58,7 +58,7 @@ $chosoku_terms    = chosoku_url('chosoku_terms_url', '#');
 
 		<div class="footer-bottom">
 			<div class="container">
-				<p class="footer-copy">&copy; 2026 調速（Chosoku）. All rights reserved.</p>
+				<p class="footer-copy">&copy; 2026 調速（ちょーはや）. All rights reserved.</p>
 				<p class="footer-disclaimer">※ 本サービスは物件調査を支援するものです。各種法令・地価・取引価格等の最終確認は、一次情報源および宅地建物取引士の判断によります。</p>
 			</div>
 		</div>

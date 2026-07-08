@@ -32,7 +32,7 @@ if (!$chosoku_logo) {
 	<!-- ============================= HEADER ============================= -->
 	<header data-section="header" class="site-header" id="top">
 		<nav class="nav container">
-			<a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+			<a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo" aria-label="調速（ちょーはや）不動産調査アプリ ホーム">
 				<?php if ($chosoku_logo) : ?>
 					<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--yoko">
 				<?php else : ?>
@@ -61,7 +61,7 @@ if (!$chosoku_logo) {
 			</button>
 
 			<div class="mobile-menu" id="mobileMenu">
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-menu-logo" aria-label="調速（チョーソク）不動産調査アプリ ホーム">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-menu-logo" aria-label="調速（ちょーはや）不動産調査アプリ ホーム">
 					<?php if ($chosoku_logo) : ?>
 						<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img">
 					<?php else : ?>

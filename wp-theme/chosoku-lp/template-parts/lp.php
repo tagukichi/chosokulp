@@ -421,60 +421,32 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 	<section data-section="why" class="why section section--alt" id="why">
 		<div class="container">
 			<div class="section-head reveal">
-				<p class="eyebrow">WHY CHOSOKU</p>
-				<h2 class="section-title"><span class="nobr">調速が、</span><span class="nobr">現場に選ばれる理由</span></h2>
-				<p class="section-lead">スピードだけでなく、不動産業務の“正確さ”と“安心”を支える設計にこだわりました。</p>
+				<p class="eyebrow"><?php echo chosoku_text('why_eyebrow', 'WHY 調速'); ?></p>
+				<h2 class="section-title"><?php echo chosoku_text('why_title', '<span class="nobr">調速が、</span><span class="nobr">現場に選ばれる理由</span>'); ?></h2>
+				<p class="section-lead"><?php echo chosoku_text('why_lead', 'スピードだけでなく、不動産業務の“正確さ”と“安心”を支える設計にこだわりました。'); ?></p>
 			</div>
 
+			<?php
+			$why_texts = array(
+				1 => array('公的データ100%', '国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places の組み合わせ。AIが数値を作らない設計です。'),
+				2 => array('宅建士の判断を支える設計', 'AIは「窓口で確認すべき観点」を提示する補助役。最終確認は宅地建物取引士が行う建付けです。'),
+				3 => array('業務フローの起点集約', '自治体窓口・路線価図・主要ポータル・調査サイトへの遷移を1画面に。探し回る時間をなくします。'),
+				4 => array('印刷・Excel出力が標準装備', 'A4横のPDF／Excelがそのまま提案資料・社内回付資料に。作り直しの手間がありません。'),
+				5 => array('kanri との完全統合', '顧客管理 → 物件調査 → 案件登録 を1アカウント・1動線で。情報の二重入力をなくします。'),
+				6 => array('全国対応', '用途地域・ハザード・地価・取引事例等は全国対応。一部自治体は窓口リンク集付きで、順次拡充します。'),
+			);
+			?>
 			<ol class="why-list">
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(1); ?></figure>
-					<div class="why-text">
-						<span class="why-num">01</span>
-						<h3>公的データ100%</h3>
-						<p>国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places の組み合わせ。AIが数値を作らない設計です。</p>
-					</div>
-				</li>
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(2); ?></figure>
-					<div class="why-text">
-						<span class="why-num">02</span>
-						<h3>宅建士の判断を支える設計</h3>
-						<p>AIは「窓口で確認すべき観点」を提示する補助役。最終確認は宅地建物取引士が行う建付けです。</p>
-					</div>
-				</li>
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(3); ?></figure>
-					<div class="why-text">
-						<span class="why-num">03</span>
-						<h3>業務フローの起点集約</h3>
-						<p>自治体窓口・路線価図・主要ポータル・調査サイトへの遷移を1画面に。探し回る時間をなくします。</p>
-					</div>
-				</li>
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(4); ?></figure>
-					<div class="why-text">
-						<span class="why-num">04</span>
-						<h3>印刷・Excel出力が標準装備</h3>
-						<p>A4横のPDF／Excelがそのまま提案資料・社内回付資料に。作り直しの手間がありません。</p>
-					</div>
-				</li>
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(5); ?></figure>
-					<div class="why-text">
-						<span class="why-num">05</span>
-						<h3>kanri との完全統合</h3>
-						<p>顧客管理 → 物件調査 → 案件登録 を1アカウント・1動線で。情報の二重入力をなくします。</p>
-					</div>
-				</li>
-				<li class="why-item reveal">
-					<figure class="why-figure"><?php chosoku_why_image(6); ?></figure>
-					<div class="why-text">
-						<span class="why-num">06</span>
-						<h3>全国対応</h3>
-						<p>用途地域・ハザード・地価・取引事例等は全国対応。一部自治体は窓口リンク集付きで、順次拡充します。</p>
-					</div>
-				</li>
+				<?php foreach ($why_texts as $n => $wt) : ?>
+					<li class="why-item reveal">
+						<figure class="why-figure"><?php chosoku_why_image($n); ?></figure>
+						<div class="why-text">
+							<span class="why-num"><?php echo esc_html(sprintf('%02d', $n)); ?></span>
+							<h3><?php echo chosoku_text('why_' . $n . '_title', esc_html($wt[0])); ?></h3>
+							<p><?php echo chosoku_text('why_' . $n . '_desc', esc_html($wt[1])); ?></p>
+						</div>
+					</li>
+				<?php endforeach; ?>
 			</ol>
 		</div>
 	</section>

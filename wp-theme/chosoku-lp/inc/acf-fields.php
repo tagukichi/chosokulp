@@ -193,6 +193,32 @@ function chosoku_register_acf_fields() {
 		}
 	}
 
+	/* -------- 選ばれる理由（WHY / 01-06） -------- */
+	$why_defaults = array(
+		1 => array('title' => '公的データ100%', 'desc' => '国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places の組み合わせ。AIが数値を作らない設計です。'),
+		2 => array('title' => '宅建士の判断を支える設計', 'desc' => 'AIは「窓口で確認すべき観点」を提示する補助役。最終確認は宅地建物取引士が行う建付けです。'),
+		3 => array('title' => '業務フローの起点集約', 'desc' => '自治体窓口・路線価図・主要ポータル・調査サイトへの遷移を1画面に。探し回る時間をなくします。'),
+		4 => array('title' => '印刷・Excel出力が標準装備', 'desc' => 'A4横のPDF／Excelがそのまま提案資料・社内回付資料に。作り直しの手間がありません。'),
+		5 => array('title' => 'kanri との完全統合', 'desc' => '顧客管理 → 物件調査 → 案件登録 を1アカウント・1動線で。情報の二重入力をなくします。'),
+		6 => array('title' => '全国対応', 'desc' => '用途地域・ハザード・地価・取引事例等は全国対応。一部自治体は窓口リンク集付きで、順次拡充します。'),
+	);
+
+	$fields[] = array('key' => 'field_chosoku_why_txt_tab', 'label' => '選ばれる理由（テキスト）', 'type' => 'tab');
+	$fields[] = array(
+		'key'     => 'field_chosoku_why_intro',
+		'label'   => '', 'name' => '', 'type' => 'message',
+		'message' => '「選ばれる理由」セクションの見出しと、01〜06 の各タイトル・説明文を編集できます（画像は「選ばれる理由 画像」タブで設定）。未入力なら既定文を表示します。',
+	);
+	$fields[] = array('key' => 'field_chosoku_why_eyebrow', 'label' => 'セクション：ラベル', 'name' => 'why_eyebrow', 'type' => 'text', 'placeholder' => 'WHY 調速');
+	$fields[] = array('key' => 'field_chosoku_why_title', 'label' => 'セクション：見出し', 'name' => 'why_title', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'instructions' => 'Enterで改行できます。', 'placeholder' => '調速が、現場に選ばれる理由');
+	$fields[] = array('key' => 'field_chosoku_why_lead', 'label' => 'セクション：リード文', 'name' => 'why_lead', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'placeholder' => 'スピードだけでなく、不動産業務の“正確さ”と“安心”を支える設計にこだわりました。');
+	for ($n = 1; $n <= 6; $n++) {
+		$d = $why_defaults[$n];
+		$fields[] = array('key' => 'field_chosoku_why_' . $n . '_label', 'label' => '', 'name' => '', 'type' => 'message', 'message' => '<strong>0' . $n . '</strong>');
+		$fields[] = array('key' => 'field_chosoku_why_' . $n . '_title', 'label' => '0' . $n . '：タイトル', 'name' => 'why_' . $n . '_title', 'type' => 'text', 'placeholder' => $d['title']);
+		$fields[] = array('key' => 'field_chosoku_why_' . $n . '_desc', 'label' => '0' . $n . '：説明文', 'name' => 'why_' . $n . '_desc', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'placeholder' => $d['desc']);
+	}
+
 	acf_add_local_field_group(array(
 		'key'                   => 'group_chosoku_lp',
 		'title'                 => '調速LP コンテンツ',
