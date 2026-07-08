@@ -100,6 +100,30 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		</div>
 	</section>
 
+	<!-- ============================= 3つのポイント ============================= -->
+	<section data-section="points" class="points" aria-label="調速の3つのポイント">
+		<div class="container">
+			<p class="points-head reveal"><span class="eyebrow">POINT</span></p>
+			<div class="points-inner">
+				<div class="point reveal">
+					<span class="point-num">01</span>
+					<h3>物件を、すぐ調べられる</h3>
+					<p>住所を入れるだけで、12種類以上の調査結果を即時表示。窓口やサイトを回る時間がなくなります。</p>
+				</div>
+				<div class="point reveal">
+					<span class="point-num">02</span>
+					<h3>AIが、レポートを作成</h3>
+					<p>周辺データを根拠に提案文を自動で下書き。A4のプレゼンボードまで、そのまま資料になります。</p>
+				</div>
+				<div class="point reveal">
+					<span class="point-num">03</span>
+					<h3>案件管理に、すぐ登録</h3>
+					<p>調べた物件は、そのまま案件管理「kanri」へ。調査から案件登録までが途切れません。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- ============================= 課題提起 ============================= -->
 	<section data-section="problem" class="problem section" id="problem">
 		<div class="container">
@@ -151,20 +175,32 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<p class="sol-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。</p>
 					<ul class="sol-list">
 						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>13パネルをワンクリックで一覧表示</li>
+						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>スーパー・学校・駅まで、距離と徒歩分数つき</li>
 						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>路線価図索引はクリックで一次情報源へ</li>
-						<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>人口推移・取引事例の平均/中央値も</li>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
-					<div class="mock-card">
-						<div class="mock-card-head"><span class="mock-panel-tag">物件調査</span></div>
-						<div class="mock-grid mock-grid--sm">
-							<div class="mock-panel mock-panel--map"><div class="mock-map"><span class="mock-pin"></span></div></div>
-							<div class="mock-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">地震</span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">学区</span><span class="mock-skel w60"></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:50%"></i><i style="height:80%"></i><i style="height:65%"></i></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">周辺施設</span><span class="mock-skel w80"></span></div>
+					<div class="mock-card mock-facility">
+						<div class="mock-card-head"><span class="mock-panel-tag">生活利便施設（最寄り）</span></div>
+						<div class="facility-grid">
+							<div class="facility-panel">
+								<span class="facility-cat">スーパー</span>
+								<div class="facility-item"><span class="facility-name">〇〇スーパー △△店</span><span class="facility-meta"><b>約450m</b><i>徒歩6分</i></span></div>
+								<div class="facility-item"><span class="facility-name">生鮮市場 □□通り店</span><span class="facility-meta"><b>約540m</b><i>徒歩7分</i></span></div>
+							</div>
+							<div class="facility-panel">
+								<span class="facility-cat">コンビニ</span>
+								<div class="facility-item"><span class="facility-name">〇〇マート △△町店</span><span class="facility-meta"><b>約140m</b><i>徒歩2分</i></span></div>
+								<div class="facility-item"><span class="facility-name">□□ストア 駅前店</span><span class="facility-meta"><b>約280m</b><i>徒歩4分</i></span></div>
+							</div>
+							<div class="facility-panel">
+								<span class="facility-cat">小学校</span>
+								<div class="facility-item"><span class="facility-name">市立〇〇小学校</span><span class="facility-meta"><b>約260m</b><i>徒歩4分</i></span></div>
+							</div>
+							<div class="facility-panel">
+								<span class="facility-cat">駅</span>
+								<div class="facility-item"><span class="facility-name">〇〇線 △△駅</span><span class="facility-meta"><b>約800m</b><i>徒歩10分</i></span></div>
+							</div>
 						</div>
 					</div>
 				</div>

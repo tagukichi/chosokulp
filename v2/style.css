@@ -334,6 +334,26 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ===================================================================
+   POINTS — 3つのセールスポイント訴求帯
+   =================================================================== */
+.points { background: var(--c-surface); border-bottom: 1px solid var(--c-border); padding-block: clamp(44px, 6vw, 72px); }
+.points-head { text-align: center; margin-bottom: 26px; }
+.points-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.point {
+  position: relative;
+  background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-lg);
+  padding: 28px 26px 26px;
+}
+.point::before { content: ""; position: absolute; left: 26px; right: 26px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--grad-brand); }
+.point-num {
+  display: block; font-family: var(--font-en); font-weight: 800; font-size: 2rem; line-height: 1;
+  background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 12px;
+}
+.point h3 { font-size: 1.18rem; font-weight: 900; margin-bottom: 10px; }
+.point p { font-size: .9rem; color: var(--c-text-sub); line-height: 1.85; }
+
+/* ===================================================================
    PROBLEM  — 「こんなお悩み、ありませんか？」
    青グラデの背景＋全体を1枚のカードで囲い、下端は ▼ で次セクションへ
    =================================================================== */
@@ -486,6 +506,18 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .mock-block.c3 { background: rgba(245,158,11,.1); border-color: rgba(245,158,11,.22); color: #B45309; }
 .mock-block.c4 { background: rgba(139,92,246,.1); border-color: rgba(139,92,246,.22); color: #6D28D9; }
 .mock-grab { position: absolute; top: 8px; right: 8px; width: 14px; height: 14px; border-radius: 4px; background: repeating-linear-gradient(0deg, currentColor 0 2px, transparent 2px 4px); opacity: .35; }
+
+/* facility card（距離つき周辺施設調査のモック） */
+.mock-facility { background: linear-gradient(160deg, #fff, #F8FBFF); }
+.facility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.facility-panel { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; padding: 12px 14px; }
+.facility-cat { display: block; font-size: .72rem; font-weight: 700; color: var(--c-muted); margin-bottom: 8px; }
+.facility-item + .facility-item { margin-top: 10px; }
+.facility-name { display: block; font-size: .8rem; font-weight: 600; color: var(--c-text); line-height: 1.5; }
+.facility-meta { display: block; font-size: .78rem; font-weight: 700; margin-top: 2px; }
+.facility-meta b { color: var(--c-primary-600); font-weight: 800; }
+.facility-meta i { font-style: normal; color: #EA580C; margin-left: 6px; }
+.facility-meta i::before { content: "/ "; color: var(--c-border-strong); font-weight: 400; }
 
 /* sources card */
 .mock-sources { background: linear-gradient(160deg, #fff, #F7FAFC); }
@@ -902,6 +934,9 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .hero-title { font-size: clamp(1.5rem, 6.6vw, 1.9rem); line-height: 1.5; }
   .hero-points { flex-direction: column; align-items: center; gap: 10px; }
 
+  .points-inner { grid-template-columns: 1fr; gap: 14px; }
+  .point { padding: 22px 20px; }
+
   .problem-list { margin-top: 32px; padding: 4px 20px; border-radius: 18px; }
   .problem-item { padding: 16px 0; gap: 12px; }
   .problem-item p { font-size: .95rem; }
@@ -953,6 +988,7 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 @media (max-width: 420px) {
   .footer-nav { grid-template-columns: 1fr; }
   .hero-cta .btn { width: 100%; }
+  .facility-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Accessibility: reduce motion ---------- */
