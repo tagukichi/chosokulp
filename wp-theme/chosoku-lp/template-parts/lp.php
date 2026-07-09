@@ -124,11 +124,11 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-					<p>お客様向けの資料を、<span class="nobr">毎回ゼロから手作りしている</span></p>
+					<p>お客様向けの資料を、<span class="nobr">毎回定型文から作成している</span></p>
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-					<p>新人とベテランで、<span class="nobr">調査品質にばらつきが出てしまう</span></p>
+					<p>新人とベテランで、<span class="nobr">調査品質にバラツキが出てしまう</span></p>
 				</li>
 			</ul>
 		</div>
@@ -138,7 +138,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 	<section data-section="solution" class="solution section" id="solution">
 		<div class="container">
 			<div class="section-head reveal">
-				<p class="eyebrow"><?php echo chosoku_text('solution_eyebrow', '調速 が、その全部を1画面に。'); ?></p>
+				<p class="eyebrow"><?php echo chosoku_text('solution_eyebrow', '調速 が、その悩みを1画面に。'); ?></p>
 				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れに。</span>'); ?></h2>
 				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。'); ?></p>
 			</div>
@@ -150,7 +150,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<h3 class="sol-title"><?php echo chosoku_text('solution_1_title', '住所1つで、12種類以上の調査結果'); ?></h3>
 					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_1_li_', array('13パネルをワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_1_li_', array('12種類以上をワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
@@ -308,7 +308,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="feature-cards">
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-					<h3 class="feature-card-title">ワンクリック多面調査<span class="nobr">（13パネル）</span></h3>
+					<h3 class="feature-card-title">ワンクリック多面調査<span class="nobr">（12種類以上）</span></h3>
 					<p class="feature-card-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。住所1つで多面的な調査結果を一覧表示します。</p>
 					<ul class="feature-card-points">
 						<li>クリック可能な路線価図索引で一次情報源へ</li>

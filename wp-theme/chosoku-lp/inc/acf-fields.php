@@ -147,7 +147,7 @@ function chosoku_register_acf_fields() {
 		1 => array(
 			'title' => '住所1つで、12種類以上の調査結果',
 			'desc'  => '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。',
-			'li'    => array('13パネルをワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ'),
+			'li'    => array('12種類以上をワンクリックで一覧表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ'),
 		),
 		2 => array(
 			'title' => 'AIが、お客様向けの提案文を自動生成',
@@ -172,7 +172,7 @@ function chosoku_register_acf_fields() {
 		'label'   => '', 'name' => '', 'type' => 'message',
 		'message' => '「調査 → 提案 → 資料化」セクションの見出しと、01〜04の各項目（タイトル・説明・チェックリスト）を編集できます。<br>チェックリストは空欄の項目を非表示にできます。すべて未入力なら既定文を表示します。',
 	);
-	$fields[] = array('key' => 'field_chosoku_sol_eyebrow', 'label' => 'セクション：ラベル', 'name' => 'solution_eyebrow', 'type' => 'text', 'placeholder' => '調速 が、その全部を1画面に。');
+	$fields[] = array('key' => 'field_chosoku_sol_eyebrow', 'label' => 'セクション：ラベル', 'name' => 'solution_eyebrow', 'type' => 'text', 'placeholder' => '調速 が、その悩みを1画面に。');
 	$fields[] = array('key' => 'field_chosoku_sol_title', 'label' => 'セクション：見出し', 'name' => 'solution_title', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'instructions' => 'Enterで改行できます。', 'placeholder' => '調査 → 提案 → 資料化を、ひとつの流れに。');
 	$fields[] = array('key' => 'field_chosoku_sol_lead', 'label' => 'セクション：リード文', 'name' => 'solution_lead', 'type' => 'textarea', 'rows' => 2, 'new_lines' => '', 'placeholder' => 'バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。');
 
