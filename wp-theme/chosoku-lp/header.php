@@ -51,7 +51,7 @@ if (!$chosoku_logo) {
 
 			<div class="nav-actions">
 				<a href="<?php echo esc_url($chosoku_login); ?>" class="nav-login" target="_blank" rel="noopener">ログイン</a>
-				<a href="#contact" class="btn btn-primary btn-sm">無料で試す</a>
+				<a href="#contact" class="btn btn-primary btn-sm">お問い合わせ</a>
 			</div>
 
 			<button class="hamburger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobileMenu">
@@ -80,7 +80,7 @@ if (!$chosoku_logo) {
 				</ul>
 				<div class="mobile-menu-actions">
 					<a href="<?php echo esc_url($chosoku_login); ?>" class="btn btn-ghost" target="_blank" rel="noopener">ログイン</a>
-					<a href="#contact" class="btn btn-primary">無料で試す</a>
+					<a href="#contact" class="btn btn-primary">お問い合わせ</a>
 				</div>
 			</div>
 		</nav>
