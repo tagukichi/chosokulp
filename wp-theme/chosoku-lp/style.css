@@ -1,7 +1,7 @@
 /*
 Theme Name: 調速 LP（ちょーはや）
 Theme URI: https://github.com/tagukichi/chosokulp
-Description: 物件調査アシスタント「調速（ちょーはや）」のランディングページ用テーマ。1ページ完結型LP。Contact Form 7 連携、WHY画像・ロゴ・各種URLを「外観 > カスタマイズ」から差し替え可能。利用規約ページテンプレート同梱。
+Description: 物件調査アシスタント「調速（ちょーはや）」のランディングページ用テーマ。1ページ完結型LP。Contact Form 7 連携、WHY画像・ロゴ・各種URLを「外観 > カスタマイズ」から差し替え可能。利用規約・特定商取引法ページテンプレート同梱。
 Author: ちょーはや
 Version: 1.0.0
 Requires at least: 6.0
@@ -1032,6 +1032,19 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 .legal .tm-sig { text-align: right; margin: 4px 0 0; font-weight: 600; }
 @media (max-width: 750px) {
   .legal .tm-sub { padding-left: 1.8em; text-indent: -1.3em; }
+}
+
+/* 特商法など「項目：内容」の表 */
+.legal-note { background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; border-radius: 10px; padding: 12px 16px; font-size: 14px; line-height: 1.8; margin: 0 0 24px; }
+.legal-table { border: 1px solid var(--c-border); border-radius: 12px; overflow: hidden; background: var(--c-surface); margin-top: 8px; }
+.legal-table > div { display: grid; grid-template-columns: 220px 1fr; }
+.legal-table > div + div { border-top: 1px solid var(--c-border); }
+.legal-table dt { font-weight: 700; padding: 14px 16px; background: var(--c-surface-2); font-size: 15px; }
+.legal-table dd { margin: 0; padding: 14px 16px; font-size: 15px; line-height: 1.9; color: var(--c-text); }
+.legal-ph { color: var(--c-primary-600); font-weight: 600; }
+@media (max-width: 640px) {
+  .legal-table > div { grid-template-columns: 1fr; }
+  .legal-table dt { padding-bottom: 4px; }
 }
 
 /* ---------- Accessibility: reduce motion ---------- */

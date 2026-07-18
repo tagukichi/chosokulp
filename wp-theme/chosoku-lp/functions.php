@@ -140,6 +140,29 @@ function chosoku_terms_url() {
 }
 
 /**
+ * 特定商取引法に基づく表記のリンク先URLを返す。
+ * 優先順：カスタマイザー指定 →「特定商取引法に基づく表記」テンプレートを使う固定ページ → '#'
+ */
+function chosoku_tokusho_url() {
+	$v = get_theme_mod('chosoku_tokusho_url', '#');
+	if ($v && $v !== '#') {
+		return $v;
+	}
+	$pages = get_posts(array(
+		'post_type'   => 'page',
+		'post_status' => 'publish',
+		'numberposts' => 1,
+		'fields'      => 'ids',
+		'meta_key'    => '_wp_page_template',
+		'meta_value'  => 'template-tokusho.php',
+	));
+	if (!empty($pages)) {
+		return get_permalink($pages[0]);
+	}
+	return '#';
+}
+
+/**
  * ACFテキスト取得。入力があればエスケープ＋改行反映した値、無ければ既定HTMLをそのまま返す。
  *
  * @param string $name         ACFフィールド名

@@ -7,7 +7,7 @@
 $chosoku_login    = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
 $chosoku_logo_t   = get_theme_mod('chosoku_logo_tate');
 $chosoku_company  = chosoku_url('chosoku_company_url', '#');
-$chosoku_tokusho  = chosoku_url('chosoku_tokusho_url', '#');
+$chosoku_tokusho  = chosoku_tokusho_url();
 $chosoku_privacy  = chosoku_url('chosoku_privacy_url', '#');
 $chosoku_terms    = chosoku_terms_url();
 ?>
