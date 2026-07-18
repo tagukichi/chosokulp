@@ -1,7 +1,7 @@
 /*
 Theme Name: 調速 LP（ちょーはや）
 Theme URI: https://github.com/tagukichi/chosokulp
-Description: 物件調査アシスタント「調速（ちょーはや）」のランディングページ用テーマ。1ページ完結型LP。Contact Form 7 連携、WHY画像・ロゴ・各種URLを「外観 > カスタマイズ」から差し替え可能。
+Description: 物件調査アシスタント「調速（ちょーはや）」のランディングページ用テーマ。1ページ完結型LP。Contact Form 7 連携、WHY画像・ロゴ・各種URLを「外観 > カスタマイズ」から差し替え可能。利用規約ページテンプレート同梱。
 Author: ちょーはや
 Version: 1.0.0
 Requires at least: 6.0
@@ -1013,6 +1013,25 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .footer-col a,
   .footer-copy,
   .footer-disclaimer { font-size: 15px; }
+}
+
+/* ===================================================================
+   利用規約 / 規約系ページ
+   =================================================================== */
+.legal-page { background: var(--c-bg); }
+.legal { max-width: 860px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) 20px clamp(48px, 8vw, 88px); }
+.legal-back { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 22px; color: var(--c-primary-600); font-weight: 600; font-size: 15px; }
+.legal-back:hover { text-decoration: underline; }
+.legal h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: .02em; }
+.legal .legal-meta { color: var(--c-muted); font-size: 15px; margin: 8px 0 8px; }
+.legal .tm-chapter { font-size: 1.28rem; font-weight: 800; color: var(--c-primary-900); margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--c-border); }
+.legal .tm-article { font-size: 1.08rem; font-weight: 800; margin: 28px 0 10px; }
+.legal p { font-size: 15px; line-height: 1.95; color: var(--c-text); margin-bottom: 12px; }
+.legal .tm-num { padding-left: 1.5em; text-indent: -1.5em; }
+.legal .tm-sub { padding-left: 2.6em; text-indent: -1.5em; color: var(--c-text-sub); }
+.legal .tm-sig { text-align: right; margin: 4px 0 0; font-weight: 600; }
+@media (max-width: 750px) {
+  .legal .tm-sub { padding-left: 1.8em; text-indent: -1.3em; }
 }
 
 /* ---------- Accessibility: reduce motion ---------- */
