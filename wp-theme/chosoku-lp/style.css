@@ -976,7 +976,6 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .feature-card-points li,
   .step-body p,
   .flow-note,
-  .demo-note,
   .contact-routes span,
   .field label,
   .field-check,
