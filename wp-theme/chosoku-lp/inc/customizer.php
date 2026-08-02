@@ -72,7 +72,6 @@ function chosoku_customize_register($wp_customize) {
 	));
 	$links = array(
 		'chosoku_login_url'   => array(__('ログインURL（本体アプリ）', 'chosoku-lp'), 'https://real-estate-research-app.vercel.app/'),
-		'chosoku_demo_url'    => array(__('デモURL', 'chosoku-lp'), 'https://kanri-chi.vercel.app/demo'),
 		'chosoku_privacy_url' => array(__('プライバシーポリシー URL', 'chosoku-lp'), '#'),
 		'chosoku_terms_url'   => array(__('利用規約 URL', 'chosoku-lp'), '#'),
 		'chosoku_tokusho_url' => array(__('特定商取引法に基づく表記 URL', 'chosoku-lp'), '#'),

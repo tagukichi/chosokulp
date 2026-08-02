@@ -4,7 +4,6 @@
  *
  * @package chosoku-lp
  */
-$chosoku_demo    = chosoku_url('chosoku_demo_url', 'https://kanri-chi.vercel.app/demo');
 $chosoku_login   = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
 $chosoku_privacy = chosoku_url('chosoku_privacy_url', '#');
 $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
@@ -269,34 +268,6 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<!-- ============================= デモ ============================= -->
-	<section data-section="demo" class="demo section" id="demo">
-		<div class="container">
-			<div class="section-head reveal">
-				<p class="eyebrow">DEMO</p>
-				<h2 class="section-title"><span class="nobr">実際の画面を、</span><span class="nobr">その場で体験。</span></h2>
-				<p class="section-lead">登録は不要です。実際の画面で、調速の使い心地をその場でお試しいただけます。</p>
-			</div>
-
-			<div class="demo-cta reveal">
-				<span class="demo-cta-badge" aria-hidden="true">
-					<svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 4 2.5-4 2.5z"/></svg>
-				</span>
-				<h3>ブラウザですぐに操作できます</h3>
-				<p>住所の入力から調査結果の表示まで、実際の画面で体験いただけます。デモは新しいタブで開きます。</p>
-				<a href="<?php echo esc_url($chosoku_demo); ?>" target="_blank" rel="noopener" class="btn btn-primary btn-lg demo-cta-btn">
-					デモを試す
-					<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/></svg>
-				</a>
-			</div>
-
-			<p class="demo-note reveal">
-				<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
-				表示される内容はデモ用です。実際のデータや機能の範囲はプランにより異なります。詳しくは<a href="#contact">お問い合わせ</a>ください。
-			</p>
 		</div>
 	</section>
 

@@ -30,7 +30,6 @@ $chosoku_terms    = chosoku_terms_url();
 					<h4>プロダクト</h4>
 					<ul>
 						<li><a href="#solution">特長</a></li>
-						<li><a href="#demo">デモ</a></li>
 						<li><a href="#features">機能</a></li>
 						<li><a href="#how">使い方</a></li>
 						<li><a href="#integration">kanri 連携</a></li>

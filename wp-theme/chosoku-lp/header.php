@@ -43,7 +43,6 @@ if (!$chosoku_logo) {
 			<ul class="nav-links">
 				<li><a href="#problem">課題</a></li>
 				<li><a href="#solution">特長</a></li>
-				<li><a href="#demo">デモ</a></li>
 				<li><a href="#features">機能</a></li>
 				<li><a href="#how">使い方</a></li>
 				<li><a href="#faq">FAQ</a></li>
@@ -71,7 +70,6 @@ if (!$chosoku_logo) {
 				<ul>
 					<li><a href="#problem">課題</a></li>
 					<li><a href="#solution">特長</a></li>
-					<li><a href="#demo">デモ</a></li>
 					<li><a href="#features">機能</a></li>
 					<li><a href="#how">使い方</a></li>
 					<li><a href="#integration">連携</a></li>

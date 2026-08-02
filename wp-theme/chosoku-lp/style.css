@@ -529,33 +529,6 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
 .mock-source-link { margin-left: auto; color: var(--c-sky-500); font-weight: 700; }
 
 /* ===================================================================
-   DEMO（別タブで開くCTA）
-   =================================================================== */
-.demo.section { background: linear-gradient(180deg, var(--c-bg) 0%, #EFF6FF 100%); }
-.demo-cta {
-  max-width: 720px; margin: 0 auto; text-align: center;
-  background: var(--c-surface); border: 1px solid var(--c-border);
-  border-radius: var(--radius-lg); box-shadow: var(--sh-lg);
-  padding: clamp(34px, 5vw, 56px);
-}
-.demo-cta-badge {
-  display: inline-grid; place-items: center; width: 64px; height: 64px;
-  border-radius: 18px; background: var(--grad-brand); color: #fff;
-  margin-bottom: 22px; box-shadow: var(--sh-blue);
-}
-.demo-cta-badge .ico { width: 30px; height: 30px; }
-.demo-cta h3 { font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-weight: 900; margin-bottom: 12px; }
-.demo-cta p { color: var(--c-text-sub); margin-bottom: 28px; }
-.demo-cta-btn { gap: 10px; min-width: min(380px, 100%); }
-.demo-cta-btn .ico { width: 20px; height: 20px; }
-.demo-note {
-  max-width: 720px; margin: 18px auto 0;
-  font-size: .85rem; color: var(--c-muted); text-align: center; line-height: 1.9;
-}
-.demo-note .ico { display: inline-block; width: 16px; height: 16px; color: var(--c-primary-600); vertical-align: -3px; margin-right: 6px; }
-.demo-note a { color: var(--c-primary-700); text-decoration: underline; font-weight: 600; white-space: nowrap; }
-
-/* ===================================================================
    FEATURES (6カードグリッド)
    =================================================================== */
 .feature-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
