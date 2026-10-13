@@ -15,14 +15,14 @@ $chosoku_terms    = chosoku_terms_url();
 	<footer data-section="footer" class="site-footer">
 		<div class="container footer-inner">
 			<div class="footer-brand">
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-chip" aria-label="調速（ちょーはや）不動産調査アプリ ホーム">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-chip" aria-label="調速（ちょーはや）不動産調査業務支援ソフト ホーム">
 					<?php if ($chosoku_logo_t) : ?>
 						<img src="<?php echo esc_url($chosoku_logo_t); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--tate">
 					<?php else : ?>
 						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-tate.png')); ?>" alt="調速" class="logo-img logo-img--tate" width="1254" height="1254">
 					<?php endif; ?>
 				</a>
-				<p class="footer-tagline">公的データ × AI で、<br>不動産営業の生産性を最大化。</p>
+				<p class="footer-tagline">不動産調査業務を支援する、<br>クラウド型ソフトウェア。</p>
 			</div>
 
 			<nav class="footer-nav" aria-label="フッターメニュー">
@@ -58,7 +58,7 @@ $chosoku_terms    = chosoku_terms_url();
 		<div class="footer-bottom">
 			<div class="container">
 				<p class="footer-copy">&copy; 2026 調速（ちょーはや）. All rights reserved.</p>
-				<p class="footer-disclaimer">※ 本サービスは物件調査を支援するものです。各種法令・地価・取引価格等の最終確認は、一次情報源および宅地建物取引士の判断によります。</p>
+				<p class="footer-disclaimer">※ 調速は、不動産調査業務を支援するソフトウェアです。不動産の調査代行・評価・鑑定は行いません。各種法令・地価・取引価格等の最終確認は、一次情報源および宅地建物取引士の判断によります。</p>
 			</div>
 		</div>
 	</footer>

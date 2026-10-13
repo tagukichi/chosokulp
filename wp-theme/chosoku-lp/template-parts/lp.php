@@ -20,12 +20,12 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		<div class="container hero-inner">
 			<div class="hero-copy hero-anim">
 				<h1 class="hero-title">
-					住所を入れて、<span class="hero-accent">5分</span>。<br>
-					物件調査が、<br>提案資料まで終わる。
+					住所を入力して、<span class="hero-accent">約5分</span>。<br>
+					不動産調査業務を効率化する<br>クラウド型ソフトウェア。
 				</h1>
 				<p class="hero-lead">
-					<span class="hero-accent">公的データ × AI</span> で、不動産営業の生産性を最大化。<br class="pc-only">
-					12種類以上の調査結果を住所1つで即時表示し、提案文・A4資料まで自動で組み上げます。
+					<span class="hero-accent">公的データ × AI</span> で、不動産調査業務の生産性を最大化。<br class="pc-only">
+					公的データの取得・整理から提案文・A4資料の作成までを、1つの画面で支援します。
 				</p>
 				<div class="hero-cta">
 					<a href="#contact" class="btn btn-primary btn-lg">お問い合わせはこちら</a>
@@ -33,7 +33,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				<ul class="hero-points">
 					<li>
 						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-						調査時間を約1/10に
+						調査業務の時間を約1/10に
 					</li>
 					<li>
 						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
@@ -52,7 +52,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 
 			<!-- 製品モック（PC + スマホ合成） -->
 			<div class="hero-visual hero-anim-visual">
-				<div class="mock-window" aria-label="調速 物件調査画面のイメージ" role="img">
+				<div class="mock-window" aria-label="調速 の画面イメージ" role="img">
 					<div class="mock-bar">
 						<span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
 						<span class="mock-url">app.chosoku.jp</span>
@@ -142,16 +142,16 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		<div class="container">
 			<div class="section-head reveal">
 				<p class="eyebrow"><?php echo chosoku_text('solution_eyebrow', '調速 が、その悩みを1画面に。'); ?></p>
-				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れに。</span>'); ?></h2>
-				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を集約。住所を入れるだけで、その先の資料づくりまで一気通貫で進みます。'); ?></p>
+				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査業務 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れで支援。</span>'); ?></h2>
+				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を1画面に集約。住所の入力から資料づくりまで、業務の流れをソフトウェアが一気通貫で支援します。'); ?></p>
 			</div>
 
 			<!-- 01 -->
 			<div class="sol-row">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">01</span>
-					<h3 class="sol-title"><?php echo chosoku_text('solution_1_title', '住所1つで、12種類以上の調査結果'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。これまで何時間もかかっていた多面調査が、1つの画面に即時で並びます。'); ?></p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_1_title', '<span class="nobr">公的データの取得・整理を、</span><span class="nobr">住所1つで</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。調査に必要な公的データを自動で取得し、12種類以上の項目として1つの画面に整理して表示します。'); ?></p>
 					<ul class="sol-list">
 						<?php foreach (chosoku_list('solution_1_li_', array('調査地付近の人口統計や不動産取引事例を表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
@@ -189,10 +189,10 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row sol-row--reverse">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">02</span>
-					<h3 class="sol-title"><?php echo chosoku_text('solution_2_title', '<span class="nobr">AIが、お客様向けの</span><span class="nobr">提案文を自動生成</span>'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_2_desc', '周辺データを根拠に「この街で暮らすイメージ」が湧く提案文を生成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。'); ?></p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_2_title', '<span class="nobr">お客様向け提案文の作成を、</span><span class="nobr">AIが支援</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_2_desc', '周辺データを根拠に「この街で暮らすイメージ」が湧く提案文の下書きを作成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_2_li_', array('周辺データを根拠にした“暮らしの提案”', '担当者のメモを文章に反映', '最終確認は宅地建物取引士が行う建付け')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_2_li_', array('周辺データを根拠にした“暮らしの提案”の下書き', '担当者のメモを文章に反映', '最終確認は宅地建物取引士が行う建付け')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
@@ -277,18 +277,18 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="section-head reveal">
 				<p class="eyebrow">FEATURES</p>
 				<h2 class="section-title">業務の一日を支える、6つの機能</h2>
-				<p class="section-lead">調査から提案、案件登録まで。現場で本当に必要な機能だけを、迷わない導線でまとめました。</p>
+				<p class="section-lead">調査業務から提案、案件登録まで。現場で本当に必要な機能だけを、迷わない導線でまとめました。</p>
 			</div>
 
 			<div class="feature-cards">
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
 					<h3 class="feature-card-title">ワンクリック多面調査</h3>
-					<p class="feature-card-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。住所1つで多面的な調査結果を一覧表示します。</p>
+					<p class="feature-card-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。調査に必要な公的データを住所1つで取得し、多面的に整理して一覧表示します。</p>
 					<ul class="feature-card-points">
 						<li>クリック可能な路線価図索引で一次情報源へ</li>
 						<li>市全体＋周辺メッシュの人口推移</li>
-						<li>取引事例は平均・中央値・㎡単価で把握</li>
+						<li>取引事例は平均・中央値・㎡単価で比較表示</li>
 					</ul>
 				</article>
 
@@ -317,10 +317,10 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div>
 					<h3 class="feature-card-title">案件管理ダッシュボード<span class="nobr">（kanri 連携）</span></h3>
-					<p class="feature-card-desc">案件管理アプリ「kanri」と1つのアカウントで連携・データ共有。調査 → 提案 → 案件登録までを、ひとつの動線で行えます。</p>
+					<p class="feature-card-desc">案件管理アプリ「kanri」と1つのアカウントで連携・データ共有。調査業務 → 提案 → 案件登録までを、ひとつの動線で行えます。</p>
 					<ul class="feature-card-points">
-						<li>1アカウントで調査と案件管理を横断</li>
-						<li>調査 → 提案 → 案件登録を1動線に</li>
+						<li>1アカウントで調査業務と案件管理を横断</li>
+						<li>調査業務 → 提案 → 案件登録を1動線に</li>
 						<li>自治体マスターは自動同期</li>
 					</ul>
 				</article>
@@ -338,10 +338,10 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg></div>
-					<h3 class="feature-card-title">営業判断価格パネル</h3>
-					<p class="feature-card-desc">起点データ4種（取引中央値／㎡単価×面積／公示地価×面積／手動入力）から選択。スライダーや調整理由の入力に対応し、資料へ自動反映します。</p>
+					<h3 class="feature-card-title">参考価格の試算パネル</h3>
+					<p class="feature-card-desc">起点データ4種（取引中央値／㎡単価×面積／公示地価×面積／手動入力）から選択。スライダーや調整理由の入力に対応し、試算結果は資料へ自動反映します。不動産の評価・鑑定を行う機能ではありません。</p>
 					<ul class="feature-card-points">
-						<li>AIによる参考価格表示</li>
+						<li>参考価格の試算・比較を支援する機能</li>
 						<li>スライダーで素早く価格レンジ調整</li>
 						<li>調整理由を残してチーム共有</li>
 					</ul>
@@ -356,7 +356,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="section-head reveal">
 				<p class="eyebrow">HOW IT WORKS</p>
 				<h2 class="section-title"><span class="nobr">使い方は、</span><span class="nobr">たったの3ステップ</span></h2>
-				<p class="section-lead">特別な準備は不要。住所を入れるだけで、お客様に渡せる資料まで辿り着きます。</p>
+				<p class="section-lead">特別な準備は不要。住所の入力から、お客様に渡せる資料の作成までをソフトウェアが支援します。</p>
 			</div>
 
 			<ol class="steps steps--timeline">
@@ -372,7 +372,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<div class="step-marker"><span class="step-num">2</span></div>
 					<div class="step-body">
 						<span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-						<h3>12種類以上の調査が自動表示</h3>
+						<h3>12種類以上の調査項目を自動表示</h3>
 						<p>地図・法令・ハザード・地価・取引事例・周辺施設が一画面に並びます。</p>
 					</div>
 				</li>
@@ -381,7 +381,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<div class="step-body">
 						<span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></span>
 						<h3>AI提案文＋資料をお客様へ</h3>
-						<p>提案文とA4プレゼンボードを生成。PDF・Excelで出力してそのまま提示。</p>
+						<p>提案文の下書きとA4プレゼンボードを作成。PDF・Excelで出力してそのまま提示。</p>
 					</div>
 				</li>
 			</ol>
@@ -408,7 +408,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				3 => array('業務フローの起点集約', '自治体の窓口ページ、路線価図、主要な不動産ポータルや調査サイトへのリンクを1画面に集約。複数のサイトを探し回ったり、同じ物件情報を何度も入力し直したりする手間をなくし、調査の起点をひとつにまとめます。'),
 				4 => array('印刷・Excel出力が標準装備', '編集したレイアウトのまま、A4横のPDFやExcelとして出力できます。出力した資料はそのままお客様への提案書や、社内での回付・保管用の書類として使えるので、資料をつくり直す手間がかかりません。'),
 				5 => array('kanri との完全統合', '案件管理ダッシュボード「kanri」と1つのアカウントで連携。顧客管理から物件調査、案件登録までを同じ画面の流れで行えるため、同じ情報を二度入力する必要がなく、社内での案件共有もスムーズになります。'),
-				6 => array('全国対応', '用途地域・ハザード・地価・取引事例などの調査は全国のエリアに対応しています。一部の自治体は窓口リンク集付きで、対応エリアも順次拡充しているため、地域を問わず日々の物件調査に活用いただけます。'),
+				6 => array('全国対応', '用途地域・ハザード・地価・取引事例などのデータ表示は全国のエリアに対応しています。一部の自治体は窓口リンク集付きで、対応エリアも順次拡充しているため、地域を問わず日々の調査業務に活用いただけます。'),
 			);
 			?>
 			<ol class="why-list">
@@ -526,9 +526,9 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<?php
 			// 既定のFAQ（ACF未入力時のフォールバック）
 			$faq_defaults = array(
-				array('q' => 'どの自治体に対応していますか？', 'a' => '用途地域・ハザード・地価・取引事例などは全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。'),
+				array('q' => 'どの自治体に対応していますか？', 'a' => '用途地域・ハザード・地価・取引事例などのデータ表示は全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。'),
 				array('q' => '路線価などの具体的な数値は表示されますか？', 'a' => 'アプリ内では具体的な金額数値は表示せず、一次情報源（国税庁など）へのリンクをご案内します。数値の確認はリンク先の公的情報、および宅地建物取引士による最終確認を前提とした設計です。'),
-				array('q' => 'AIが宅建士の代わりになるのですか？', 'a' => 'いいえ。AIはあくまで「窓口で確認すべき観点」を提示する補助です。最終的な判断・確認は宅地建物取引士が行う建付けとしています。'),
+				array('q' => 'AIが宅建士の代わりになるのですか？', 'a' => 'いいえ。調速は、お客様ご自身が行う不動産調査業務を支援するクラウド型ソフトウェアであり、調査の代行や不動産の評価・鑑定は行いません。AIは「窓口で確認すべき観点」を提示する補助で、最終的な判断・確認は宅地建物取引士が行う建付けとしています。'),
 				array('q' => '個人情報やデータは安全ですか？', 'a' => '物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。'),
 				array('q' => 'スマートフォンでも使えますか？', 'a' => 'はい。スマホ閲覧に最適化しており、専用のハンバーガーメニューで縦長ページも快適にご利用いただけます。外回りの営業中でも確認できます。'),
 				array('q' => '解約はできますか？', 'a' => 'サブスクリプションはいつでも解約可能です。プランや解約手続きの詳細は、お問い合わせフォームよりお気軽にご連絡ください。'),

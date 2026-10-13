@@ -18,6 +18,7 @@ get_header();
 				<div><dt>電話番号</dt><dd><span class="legal-ph">（電話番号を記載）</span><br><small>※お問い合わせはお問い合わせフォーム・メールにて承ります。</small></dd></div>
 				<div><dt>メールアドレス</dt><dd><span class="legal-ph">（連絡先メールアドレスを記載）</span></dd></div>
 				<div><dt>ホームページURL</dt><dd><span class="legal-ph">（LPのURLを記載）</span></dd></div>
+				<div><dt>販売するサービス</dt><dd>不動産調査業務を支援するクラウド型ソフトウェア「調速（ちょーはや）」の利用提供（SaaS）。</dd></div>
 				<div><dt>販売価格</dt><dd>各プランの利用料金は、お見積り・お申込み時にご案内します（別途消費税）。</dd></div>
 				<div><dt>商品代金以外の必要料金</dt><dd>初期申込金（お申込み時にご案内）。振込手数料等はお客様のご負担となります。</dd></div>
 				<div><dt>お支払い方法</dt><dd>銀行振込 ほか、お申込み時にご案内する方法。</dd></div>
