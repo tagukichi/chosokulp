@@ -230,7 +230,8 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
   mask-image: radial-gradient(900px 500px at 70% 0%, #000, transparent 75%);
 }
 .hero-inner {
-  display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center;
+  /* 見出しを3行で収めるため、コピー側を広く・ビジュアル側を小さく配分 */
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
   padding-bottom: clamp(56px, 8vw, 96px);
 }
 .hero-eyebrow {
@@ -239,7 +240,7 @@ h1, h2, h3, h4 { line-height: 1.4; font-weight: 700; }
   padding: 7px 16px; border-radius: var(--radius-pill); margin-bottom: 24px;
 }
 .hero-title {
-  font-size: clamp(1.6rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.65rem);
   font-weight: 900; line-height: 1.4; letter-spacing: .005em; color: var(--c-text);
   text-wrap: pretty;
 }
