@@ -55,7 +55,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				<div class="mock-window" aria-label="調速 の画面イメージ" role="img">
 					<div class="mock-bar">
 						<span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-						<span class="mock-url">app.chosoku.jp</span>
+						<span class="mock-url">app.cho-haya.com</span>
 					</div>
 					<div class="mock-body">
 						<div class="mock-search">
