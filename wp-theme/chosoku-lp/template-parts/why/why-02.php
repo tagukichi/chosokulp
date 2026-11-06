@@ -5,7 +5,7 @@
  * @package chosoku-lp
  */
 ?>
-						<svg class="why-svg" viewBox="0 0 400 280" role="img" aria-label="AIの目安を参考に、営業担当が営業決定価格と判断理由を入力し、宅地建物取引士が確認するイメージ">
+						<svg class="why-svg" viewBox="0 0 400 280" role="img" aria-label="AIの目安を参考に、営業担当が判断して営業決定価格と判断理由を入力・記録するイメージ">
 						<defs><linearGradient id="wvG2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient><filter id="wvS2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0F172A" flood-opacity=".1"/></filter></defs>
 						<g class="wv-pop" style="--d:.1s">
 						<rect class="wv-card" x="40" y="22" width="320" height="78" rx="12" filter="url(#wvS2)"/>
@@ -31,8 +31,8 @@
 						<rect class="wv-sk wv-grow" style="--d:2.25s" x="222" y="212" width="100" height="7" rx="3.5"/>
 						</g>
 						<g class="wv-pop" style="--d:2.6s">
-						<rect x="210" y="230" width="136" height="24" rx="12" fill="#ECFDF5" stroke="#34D399"/>
-						<circle cx="226" cy="242" r="8" fill="#10B981"/><path d="M222 242 l3 3 l5 -5.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-						<text class="wv-ok" x="286" y="246.5" text-anchor="middle">宅建士が確認</text>
+						<rect x="210" y="230" width="136" height="24" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
+						<g transform="translate(219 234)"><circle cx="7" cy="5" r="3.6" fill="none" stroke="#475569" stroke-width="1.8"/><path d="M1 16 a6 6 0 0 1 12 0" fill="none" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/></g>
+						<text class="wv-s" x="285" y="246.5" text-anchor="middle" style="fill:#334155">担当者が判断・記録</text>
 						</g>
 						</svg>
