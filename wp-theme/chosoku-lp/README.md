@@ -92,7 +92,7 @@ chosoku-lp/
 └─ assets/
    ├─ css/（※スタイルは style.css に内包）
    ├─ js/lp.js          メニュー/リビール/AIの作成アニメーション 等
-   └─ img/              logo-yoko.png, screens/（アプリ画面画像）
+   └─ img/              logo-chohaya.png（ヘッダー・フッター共通ロゴ）, screens/（アプリ画面画像）
 ```
 
 ## 備考

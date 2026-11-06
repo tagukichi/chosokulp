@@ -29,7 +29,7 @@ $chosoku_logo = chosoku_logo_url();
 				<?php if ($chosoku_logo) : ?>
 					<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--yoko">
 				<?php else : ?>
-					<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-yoko.png')); ?>" alt="調速" class="logo-img logo-img--yoko" width="1774" height="887">
+					<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-chohaya.png')); ?>" alt="調速" class="logo-img logo-img--yoko" width="795" height="220">
 				<?php endif; ?>
 			</a>
 
@@ -58,7 +58,7 @@ $chosoku_logo = chosoku_logo_url();
 					<?php if ($chosoku_logo) : ?>
 						<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img">
 					<?php else : ?>
-						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-yoko.png')); ?>" alt="調速" class="logo-img" width="1774" height="887">
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-chohaya.png')); ?>" alt="調速" class="logo-img" width="795" height="220">
 					<?php endif; ?>
 				</a>
 				<ul>

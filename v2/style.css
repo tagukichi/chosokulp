@@ -1469,3 +1469,12 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .lk-head, .link-diagram.is-visible .lk-head { animation: none; opacity: 1; }
   .link-diagram.is-visible .lk-node--kanri { animation: none; }
 }
+
+/* ロゴ（ちょーはや版・余白なしの横長）の表示サイズ */
+.nav-logo .logo-img--yoko { height: 46px; }
+.mobile-menu-logo .logo-img { height: 44px; }
+.footer-logo-chip .logo-img--yoko { height: 46px; }
+@media (max-width: 750px) {
+  .nav-logo .logo-img--yoko { height: 38px; }
+  .footer-logo-chip .logo-img--yoko { height: 40px; }
+}

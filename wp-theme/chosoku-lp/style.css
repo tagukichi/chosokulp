@@ -3,7 +3,7 @@ Theme Name: 調速 LP（ちょーはや）
 Theme URI: https://github.com/tagukichi/chosokulp
 Description: 不動産調査業務を支援するクラウド型ソフトウェア「調速（ちょーはや）」のランディングページ用テーマ。1ページ完結型LP。Contact Form 7 連携、WHY画像・ロゴ・各種URLを「外観 > カスタマイズ」から差し替え可能。特定商取引法ページテンプレート同梱。
 Author: ちょーはや
-Version: 1.2.0
+Version: 1.2.1
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -1482,4 +1482,13 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .lkt-rows, .link-diagram.is-visible .lkt-rows { animation: none; transform: translateY(18px); }
   .lk-head, .link-diagram.is-visible .lk-head { animation: none; opacity: 1; }
   .link-diagram.is-visible .lk-node--kanri { animation: none; }
+}
+
+/* ロゴ（ちょーはや版・余白なしの横長）の表示サイズ */
+.nav-logo .logo-img--yoko { height: 46px; }
+.mobile-menu-logo .logo-img { height: 44px; }
+.footer-logo-chip .logo-img--yoko { height: 46px; }
+@media (max-width: 750px) {
+  .nav-logo .logo-img--yoko { height: 38px; }
+  .footer-logo-chip .logo-img--yoko { height: 40px; }
 }
