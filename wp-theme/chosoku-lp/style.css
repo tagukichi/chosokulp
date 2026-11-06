@@ -1387,67 +1387,57 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 }
 
 /* ===================================================================
-   連携図：調速 ⇄ 案件管理表（SVGアニメーション）
+   連携図：調速で調べる → 案件管理表に登録 → 自社案件として管理（SVGアニメーション）
    =================================================================== */
 .link-diagram {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr);
-  align-items: center; gap: 18px; max-width: 980px; margin: 0 auto clamp(40px, 6vw, 64px);
-  padding: clamp(24px, 3.5vw, 36px); background: linear-gradient(160deg, #F4F8FF 0%, #EAF2FC 100%);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr) minmax(0, 1fr);
+  align-items: center; gap: 22px 18px; max-width: 900px; margin: 0 auto clamp(40px, 6vw, 64px);
+  padding: clamp(26px, 3.5vw, 40px); background: linear-gradient(160deg, #F4F8FF 0%, #EAF2FC 100%);
   border: 1px solid #DCE7F6; border-radius: var(--radius-lg);
 }
 .lk-node {
   position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
-  background: #fff; border: 1.5px solid #CFE0F7; border-radius: 18px; padding: 22px 16px 20px;
+  background: #fff; border: 1.5px solid #CFE0F7; border-radius: 18px; padding: 24px 16px 22px;
   box-shadow: var(--sh-sm);
 }
-.lk-node--research { border-top: 4px solid var(--c-primary-600); animation: lkPulseResearch 2.4s ease-out 1.2s infinite; }
+.lk-node--research { border-top: 4px solid var(--c-primary-600); }
 .lk-node--kanri    { border-top: 4px solid #3E6FCB; animation: lkPulseKanri 2.4s ease-out infinite; }
-.lk-ico { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--grad-brand); color: #fff; box-shadow: var(--sh-blue); margin-bottom: 10px; }
+.lk-ico { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 15px; background: var(--grad-brand); color: #fff; box-shadow: var(--sh-blue); margin-bottom: 12px; }
 .lk-node--kanri .lk-ico { background: linear-gradient(135deg, #2D4F99 0%, #3E6FCB 100%); }
-.lk-ico .ico { width: 24px; height: 24px; }
-.lk-badge { margin: 0; font-size: .74rem; font-weight: 700; color: var(--c-muted); letter-spacing: .04em; }
-.lk-title { margin: 2px 0 2px; font-size: 1.35rem; font-weight: 900; color: var(--c-text); }
-.lk-sub { margin: 0 0 12px; font-size: .86rem; font-weight: 700; color: var(--c-primary-700); }
+.lk-ico .ico { width: 26px; height: 26px; }
+.lk-title { margin: 0 0 4px; font-size: 1.4rem; font-weight: 900; color: var(--c-text); }
+.lk-sub { margin: 0; font-size: .92rem; font-weight: 700; color: var(--c-primary-700); }
 .lk-node--kanri .lk-sub { color: #3E6FCB; }
-.lk-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-.lk-chips li { font-size: .74rem; font-weight: 700; color: var(--c-text-sub); background: #F1F5FB; border: 1px solid #DCE5F2; border-radius: 999px; padding: 4px 10px; }
+.lk-chips { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.lk-chips li { font-size: .76rem; font-weight: 700; color: var(--c-text-sub); background: #F1F5FB; border: 1px solid #DCE5F2; border-radius: 999px; padding: 4px 11px; }
 
-.lk-flow { display: flex; flex-direction: column; gap: 14px; }
-.lk-lane { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
-.lk-label { margin: 0; text-align: center; font-size: .82rem; line-height: 1.6; color: var(--c-text-sub); }
-.lk-label b { display: block; font-size: .92rem; color: var(--c-primary-700); }
-.lk-lane--back .lk-label b { color: var(--c-accent-600); }
+.lk-flow { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
+.lk-label { margin: 0; text-align: center; font-size: .95rem; font-weight: 800; color: var(--c-primary-700); }
 .lk-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .lk-svg--v { display: none; }
 .lk-path { fill: none; stroke: var(--c-primary-600); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 7; animation: lkDash 1s linear infinite; }
 .lk-head { fill: none; stroke: var(--c-primary-600); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.lk-dot  { fill: var(--c-sky-500); filter: drop-shadow(0 0 4px rgba(14, 165, 233, .8)); }
-.lk-lane--back .lk-path, .lk-lane--back .lk-head { stroke: var(--c-accent); }
-.lk-lane--back .lk-dot { fill: var(--c-accent); filter: drop-shadow(0 0 4px rgba(16, 185, 129, .8)); }
+.lk-dot  { fill: var(--c-sky-500); filter: drop-shadow(0 0 5px rgba(14, 165, 233, .85)); }
+.lk-message { grid-column: 1 / -1; margin: 4px 0 0; text-align: center; font-size: clamp(1.05rem, 2.1vw, 1.3rem); font-weight: 900; color: var(--c-text); line-height: 1.6; }
+.lk-message em { font-style: normal; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
 @keyframes lkDash { to { stroke-dashoffset: -14; } }
+/* 点が届いたタイミングで、案件管理表の枠が光る */
 @keyframes lkPulseKanri {
   0%, 82%, 100% { box-shadow: var(--sh-sm); }
   92% { box-shadow: 0 0 0 4px rgba(62, 111, 203, .22), 0 10px 30px rgba(62, 111, 203, .25); }
 }
-@keyframes lkPulseResearch {
-  0%, 82%, 100% { box-shadow: var(--sh-sm); }
-  92% { box-shadow: 0 0 0 4px rgba(16, 185, 129, .22), 0 10px 30px rgba(16, 185, 129, .22); }
-}
 @media (min-width: 751px) {
-  .lk-chips li, .lk-label, .lk-badge, .lk-sub { font-size: 15px; }
-  .lk-label b { font-size: 16px; }
+  .lk-chips li, .lk-sub, .lk-label { font-size: 15px; }
 }
 @media (max-width: 900px) {
-  .link-diagram { grid-template-columns: 1fr; gap: 10px; max-width: 520px; }
-  /* スマホ：2本の矢印を縦に並べ、矢印の右に説明文 */
-  .lk-flow { flex-direction: column; gap: 4px; }
-  .lk-lane { flex-direction: row; align-items: center; justify-content: center; gap: 12px; }
-  .lk-lane--to { flex-direction: row-reverse; }
-  .lk-label, .lk-lane--back .lk-label { flex: 0 1 250px; text-align: left; }
+  .link-diagram { grid-template-columns: 1fr; gap: 8px; max-width: 460px; }
+  /* スマホ：縦の矢印1本＋右に「案件管理表に登録」 */
+  .lk-flow { flex-direction: row-reverse; align-items: center; justify-content: center; gap: 12px; padding: 2px 0; }
   .lk-svg--h { display: none; }
   .lk-svg--v { display: block; width: 24px; flex: none; }
+  .lk-message { margin-top: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lk-path, .lk-node--research, .lk-node--kanri { animation: none; }
+  .lk-path, .lk-node--kanri { animation: none; }
   .lk-dot { display: none; }
 }

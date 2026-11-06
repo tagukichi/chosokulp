@@ -608,52 +608,36 @@
           <p class="section-lead">案件管理表は、案件管理・顧客管理・ポートフォリオの3つの機能を備えた、不動産会社向けの業務アプリです。調速で調べた物件は、案件詳細の「調査データ」にそのまま入ります。</p>
         </div>
 
-        <!-- 連携図：調速で調べて登録 → 案件管理表で管理 → 次の物件調査へ（SVGアニメーション） -->
-        <div class="link-diagram reveal" role="img" aria-label="調速で調べた物件・営業決定価格・判断理由を案件管理表に登録し、案件・顧客の管理から次の物件調査へつなげる流れ">
+        <!-- 連携図：調速で調べた物件を、案件管理表に登録して自社案件として管理（SVGアニメーション） -->
+        <div class="link-diagram reveal" role="img" aria-label="調速で調べた物件を案件管理表に登録し、自社の案件として管理する流れ">
           <div class="lk-node lk-node--research">
             <span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-            <p class="lk-badge">物件調査</p>
             <h3 class="lk-title">調速</h3>
-            <p class="lk-sub">調べる・価格を決める</p>
-            <ul class="lk-chips"><li>調査結果</li><li>AI参考価格</li><li>営業決定価格</li><li>プレゼンシート</li></ul>
+            <p class="lk-sub">物件を調べる</p>
           </div>
 
           <div class="lk-flow" aria-hidden="true">
-            <div class="lk-lane lk-lane--to">
-              <p class="lk-label"><b>登録する</b>調査データ・営業決定価格・<br class="pc-only">判断理由をそのまま反映</p>
-              <svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
-                <path class="lk-path" d="M6 18 H224"/>
-                <path class="lk-head" d="M220 10 L232 18 L220 26"/>
-                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M6 18 H224"/></circle>
-              </svg>
-              <svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
-                <path class="lk-path" d="M18 4 V82"/>
-                <path class="lk-head" d="M10 78 L18 90 L26 78"/>
-                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M18 4 V82"/></circle>
-              </svg>
-            </div>
-            <div class="lk-lane lk-lane--back">
-              <svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
-                <path class="lk-path" d="M234 18 H16"/>
-                <path class="lk-head" d="M20 10 L8 18 L20 26"/>
-                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M234 18 H16"/></circle>
-              </svg>
-              <svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
-                <path class="lk-path" d="M18 92 V14"/>
-                <path class="lk-head" d="M10 18 L18 6 L26 18"/>
-                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M18 92 V14"/></circle>
-              </svg>
-              <p class="lk-label"><b>次の調査へ</b>案件・顧客の管理から、<br class="pc-only">次の物件調査へ</p>
-            </div>
+            <p class="lk-label">案件管理表に登録</p>
+            <svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
+              <path class="lk-path" d="M6 18 H224"/>
+              <path class="lk-head" d="M220 10 L232 18 L220 26"/>
+              <circle class="lk-dot" r="6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M6 18 H224"/></circle>
+            </svg>
+            <svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
+              <path class="lk-path" d="M18 4 V82"/>
+              <path class="lk-head" d="M10 78 L18 90 L26 78"/>
+              <circle class="lk-dot" r="6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M18 4 V82"/></circle>
+            </svg>
           </div>
 
           <div class="lk-node lk-node--kanri">
             <span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-            <p class="lk-badge">案件・顧客の管理</p>
             <h3 class="lk-title">案件管理表</h3>
-            <p class="lk-sub">登録して、管理する</p>
+            <p class="lk-sub">自社の案件として管理</p>
             <ul class="lk-chips"><li>案件管理</li><li>顧客管理</li><li>ポートフォリオ</li></ul>
           </div>
+
+          <p class="lk-message"><span class="nobr">調べて終わりにしない。</span><span class="nobr">自社の案件として、<em>しっかり管理。</em></span></p>
         </div>
 
         <div class="kanri-cards">
