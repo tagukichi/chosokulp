@@ -566,14 +566,14 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 				<div class="lk-flow" aria-hidden="true">
 					<p class="lk-label">案件管理表に登録</p>
 					<svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
-						<path class="lk-path" d="M6 18 H224"/>
-						<path class="lk-head" d="M220 10 L232 18 L220 26"/>
-						<circle class="lk-dot" r="6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M6 18 H224"/></circle>
+						<defs><linearGradient id="lkGradH" gradientUnits="userSpaceOnUse" x1="6" y1="0" x2="230" y2="0"><stop offset="0" stop-color="#1E3A8A"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
+						<path class="lk-path" pathLength="100" stroke="url(#lkGradH)" d="M6 18 H222"/>
+						<path class="lk-head" stroke="#0EA5E9" d="M212 7 L228 18 L212 29"/>
 					</svg>
 					<svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
-						<path class="lk-path" d="M18 4 V82"/>
-						<path class="lk-head" d="M10 78 L18 90 L26 78"/>
-						<circle class="lk-dot" r="6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M18 4 V82"/></circle>
+						<defs><linearGradient id="lkGradV" gradientUnits="userSpaceOnUse" x1="0" y1="4" x2="0" y2="88"><stop offset="0" stop-color="#1E3A8A"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
+						<path class="lk-path" pathLength="100" stroke="url(#lkGradV)" d="M18 4 V84"/>
+						<path class="lk-head" stroke="#0EA5E9" d="M7 74 L18 90 L29 74"/>
 					</svg>
 				</div>
 

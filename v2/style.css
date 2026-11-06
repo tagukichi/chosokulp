@@ -1387,7 +1387,7 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   box-shadow: var(--sh-sm);
 }
 .lk-node--research { border-top: 4px solid var(--c-primary-600); }
-.lk-node--kanri    { border-top: 4px solid #3E6FCB; animation: lkPulseKanri 2.4s ease-out infinite; }
+.lk-node--kanri    { border-top: 4px solid #3E6FCB; }
 .lk-ico { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 15px; background: var(--grad-brand); color: #fff; box-shadow: var(--sh-blue); margin-bottom: 12px; }
 .lk-node--kanri .lk-ico { background: linear-gradient(135deg, #2D4F99 0%, #3E6FCB 100%); }
 .lk-ico .ico { width: 26px; height: 26px; }
@@ -1401,16 +1401,19 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
 .lk-label { margin: 0; text-align: center; font-size: .95rem; font-weight: 800; color: var(--c-primary-700); }
 .lk-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .lk-svg--v { display: none; }
-.lk-path { fill: none; stroke: var(--c-primary-600); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 7; animation: lkDash 1s linear infinite; }
-.lk-head { fill: none; stroke: var(--c-primary-600); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.lk-dot  { fill: var(--c-sky-500); filter: drop-shadow(0 0 5px rgba(14, 165, 233, .85)); }
+.lk-path { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
+.lk-head { fill: none; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+/* 図が画面に入ったら1回だけ：線が伸びる → 矢印の先が出る → 案件管理表の枠が光る */
+.link-diagram.is-visible .lk-path { animation: lkDraw .9s cubic-bezier(.4, 0, .2, 1) .35s forwards; }
+.link-diagram.is-visible .lk-head { animation: lkHead .3s ease-out 1.15s forwards; }
+.link-diagram.is-visible .lk-node--kanri { animation: lkPulseKanri 1.4s ease-out 1.3s 1; }
 .lk-message { grid-column: 1 / -1; margin: 4px 0 0; text-align: center; font-size: clamp(1.05rem, 2.1vw, 1.3rem); font-weight: 900; color: var(--c-text); line-height: 1.6; }
 .lk-message em { font-style: normal; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
-@keyframes lkDash { to { stroke-dashoffset: -14; } }
-/* 点が届いたタイミングで、案件管理表の枠が光る */
+@keyframes lkDraw { to { stroke-dashoffset: 0; } }
+@keyframes lkHead { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
 @keyframes lkPulseKanri {
-  0%, 82%, 100% { box-shadow: var(--sh-sm); }
-  92% { box-shadow: 0 0 0 4px rgba(62, 111, 203, .22), 0 10px 30px rgba(62, 111, 203, .25); }
+  0%, 100% { box-shadow: var(--sh-sm); }
+  35% { box-shadow: 0 0 0 5px rgba(62, 111, 203, .22), 0 12px 32px rgba(62, 111, 203, .28); }
 }
 @media (min-width: 751px) {
   .lk-chips li, .lk-sub, .lk-label { font-size: 15px; }
@@ -1420,10 +1423,13 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   /* スマホ：縦の矢印1本＋右に「案件管理表に登録」 */
   .lk-flow { flex-direction: row-reverse; align-items: center; justify-content: center; gap: 12px; padding: 2px 0; }
   .lk-svg--h { display: none; }
-  .lk-svg--v { display: block; width: 24px; flex: none; }
+  .lk-svg--v { display: block; width: 30px; flex: none; }
+  .link-diagram.is-visible .lk-svg--v .lk-head { animation-name: lkHeadV; }
   .lk-message { margin-top: 10px; }
 }
+@keyframes lkHeadV { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .lk-path, .lk-node--kanri { animation: none; }
-  .lk-dot { display: none; }
+  .lk-path, .link-diagram.is-visible .lk-path { animation: none; stroke-dashoffset: 0; }
+  .lk-head, .link-diagram.is-visible .lk-head { animation: none; opacity: 1; }
+  .link-diagram.is-visible .lk-node--kanri { animation: none; }
 }
