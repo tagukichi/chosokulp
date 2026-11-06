@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('CHOSOKU_VER')) {
-	define('CHOSOKU_VER', '1.2.1');
+	define('CHOSOKU_VER', '1.3.0');
 }
 
 /**
@@ -96,8 +96,8 @@ function chosoku_url($mod, $default = '#') {
 }
 
 /**
- * 「選ばれる理由」の画像（figure 要素ごと）を出力
- * カスタマイザーで画像が設定されていればそれを、無ければ同梱のアプリ画面画像を表示。
+ * 「選ばれる理由」の図（figure 要素ごと）を出力
+ * カスタマイザーで画像が設定されていればそれを、無ければ同梱の SVG アニメーションを表示。
  *
  * @param int $n 1〜6
  */
@@ -110,31 +110,8 @@ function chosoku_why_figure($n) {
 		);
 		return;
 	}
-	// ファイル名, 幅, 高さ, alt, スマホ画面か
-	$defaults = array(
-		1 => array(array('why-01.jpg', 900, 630, 'AI解体費の注意書きと参照したWebページ', false)),
-		2 => array(array('why-02.jpg', 400, 669, '最終判断（営業決定価格・判断理由）のスマホ表示', true)),
-		3 => array(array('why-03.jpg', 900, 794, '物件詳細の入力（構造の表記・間取り）', false)),
-		4 => array(array('why-04.jpg', 900, 412, 'プレゼンシートの印刷（PDF）', false)),
-		5 => array(array('why-05.jpg', 900, 547, 'PC の案件一覧 + スマホの案件詳細の合成', false)),
-		6 => array(
-			array('why-06a.jpg', 300, 600, '用途地域（本庄市の例）のスマホ表示', true),
-			array('why-06b.jpg', 300, 600, '周辺取引事例（所沢市の例）のスマホ表示', true),
-		),
-	);
-	$imgs = isset($defaults[$n]) ? $defaults[$n] : array();
-	$cls  = 'why-figure why-figure--screen' . (count($imgs) > 1 ? ' why-figure--duo' : '');
-	echo '<figure class="' . esc_attr($cls) . '">';
-	foreach ($imgs as $img) {
-		printf(
-			'<img class="why-img%s" src="%s" alt="%s" width="%d" height="%d" loading="lazy">',
-			$img[4] ? ' why-img--sp' : '',
-			esc_url(get_theme_file_uri('assets/img/screens/' . $img[0])),
-			esc_attr($img[3]),
-			$img[1],
-			$img[2]
-		);
-	}
+	echo '<figure class="why-figure why-figure--svg">';
+	get_template_part('template-parts/why/why-' . sprintf('%02d', $n));
 	echo '</figure>';
 }
 

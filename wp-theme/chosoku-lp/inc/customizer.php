@@ -33,7 +33,7 @@ function chosoku_customize_register($wp_customize) {
 	/* ---------------- WHY 画像 ---------------- */
 	$wp_customize->add_section('chosoku_why', array(
 		'title'       => __('「選ばれる理由」画像', 'chosoku-lp'),
-		'description' => __('01〜06 の各項目に表示する画像。未設定の項目は、同梱のアプリ画面画像を表示します。', 'chosoku-lp'),
+		'description' => __('01〜06 の各項目に表示する画像。未設定の項目は、同梱のアニメーション（図解）を表示します。', 'chosoku-lp'),
 		'panel'       => 'chosoku_lp',
 	));
 	for ($i = 1; $i <= 6; $i++) {

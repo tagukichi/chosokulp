@@ -501,7 +501,6 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 					</li>
 				<?php endforeach; ?>
 			</ol>
-			<p class="shot-cap shot-cap--center"><?php echo esc_html($chosoku_cap); ?></p>
 		</div>
 	</section>
 
