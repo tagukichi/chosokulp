@@ -4,7 +4,7 @@
  *
  * @package chosoku-lp
  */
-$chosoku_login = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
+$chosoku_login = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/');
 
 // ヘッダーロゴ: WP標準ロゴ（サイト基本情報 > ロゴ）→ 調速LP設定 > ロゴ → 同梱 の順で採用
 $chosoku_logo    = '';
@@ -45,6 +45,7 @@ if (!$chosoku_logo) {
 				<li><a href="#solution">特長</a></li>
 				<li><a href="#features">機能</a></li>
 				<li><a href="#how">使い方</a></li>
+				<li><a href="#integration">案件管理表</a></li>
 				<li><a href="#faq">FAQ</a></li>
 			</ul>
 
@@ -72,7 +73,7 @@ if (!$chosoku_logo) {
 					<li><a href="#solution">特長</a></li>
 					<li><a href="#features">機能</a></li>
 					<li><a href="#how">使い方</a></li>
-					<li><a href="#integration">連携</a></li>
+					<li><a href="#integration">案件管理表</a></li>
 					<li><a href="#faq">FAQ</a></li>
 					<li><a href="#contact">お問い合わせ</a></li>
 				</ul>

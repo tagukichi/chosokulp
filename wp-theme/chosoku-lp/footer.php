@@ -4,7 +4,7 @@
  *
  * @package chosoku-lp
  */
-$chosoku_login    = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
+$chosoku_login    = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/');
 $chosoku_logo_t   = get_theme_mod('chosoku_logo_tate');
 $chosoku_company  = chosoku_url('chosoku_company_url', '#');
 $chosoku_tokusho  = chosoku_tokusho_url();
@@ -32,7 +32,7 @@ $chosoku_terms    = chosoku_terms_url();
 						<li><a href="#solution">特長</a></li>
 						<li><a href="#features">機能</a></li>
 						<li><a href="#how">使い方</a></li>
-						<li><a href="#integration">kanri 連携</a></li>
+						<li><a href="#integration">案件管理表</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">

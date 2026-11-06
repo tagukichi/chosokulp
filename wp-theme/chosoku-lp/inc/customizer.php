@@ -39,7 +39,7 @@ function chosoku_customize_register($wp_customize) {
 	/* ---------------- WHY 画像 ---------------- */
 	$wp_customize->add_section('chosoku_why', array(
 		'title'       => __('「選ばれる理由」画像', 'chosoku-lp'),
-		'description' => __('01〜06 の各項目に表示する画像。未設定は薄いグレーのプレースホルダー。', 'chosoku-lp'),
+		'description' => __('01〜06 の各項目に表示する画像。未設定の項目は、同梱のアプリ画面画像を表示します。', 'chosoku-lp'),
 		'panel'       => 'chosoku_lp',
 	));
 	for ($i = 1; $i <= 6; $i++) {
@@ -71,7 +71,7 @@ function chosoku_customize_register($wp_customize) {
 		'panel' => 'chosoku_lp',
 	));
 	$links = array(
-		'chosoku_login_url'   => array(__('ログインURL（本体アプリ）', 'chosoku-lp'), 'https://real-estate-research-app.vercel.app/'),
+		'chosoku_login_url'   => array(__('ログインURL（本体アプリ）', 'chosoku-lp'), 'https://app.cho-haya.com/'),
 		'chosoku_privacy_url' => array(__('プライバシーポリシー URL', 'chosoku-lp'), '#'),
 		'chosoku_terms_url'   => array(__('利用規約 URL', 'chosoku-lp'), '#'),
 		'chosoku_tokusho_url' => array(__('特定商取引法に基づく表記 URL', 'chosoku-lp'), '#'),

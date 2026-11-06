@@ -4,9 +4,10 @@
  *
  * @package chosoku-lp
  */
-$chosoku_login   = chosoku_url('chosoku_login_url', 'https://real-estate-research-app.vercel.app/');
+$chosoku_login   = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/');
 $chosoku_privacy = chosoku_url('chosoku_privacy_url', '#');
 $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
+$chosoku_cap     = '※ 画面はイメージです。数値・住所はダミーです。';
 ?>
 <main>
 
@@ -25,7 +26,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				</h1>
 				<p class="hero-lead">
 					<span class="hero-accent">公的データ × AI</span> で、不動産調査業務の生産性を最大化。<br class="pc-only">
-					公的データの取得・整理から提案文・A4資料の作成までを、1つの画面で支援します。
+					公的データの取得・整理から価格判断、提案資料、案件管理までを、ひとつの流れで支援します。
 				</p>
 				<div class="hero-cta">
 					<a href="#contact" class="btn btn-primary btn-lg">お問い合わせはこちら</a>
@@ -37,61 +38,102 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					</li>
 					<li>
 						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-						公的データ100%
+						価格判断の支援まで
+					</li>
+					<li>
+						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+						案件管理表と連携
 					</li>
 					<li>
 						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
 						スマホ対応
 					</li>
-					<li>
-						<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-						案件管理ダッシュボード
-					</li>
 				</ul>
 			</div>
 
-			<!-- 製品モック（PC + スマホ合成） -->
+			<!-- 製品画面（実画面：PC + スマホ） -->
 			<div class="hero-visual hero-anim-visual">
-				<div class="mock-window" aria-label="調速 の画面イメージ" role="img">
+				<!-- 製品モック：実際の調査画面の構成（左＝番号付きの調査結果、右＝調査メニュー）に似せたアニメーション -->
+				<div class="mock-window" role="img" aria-label="調速の調査画面のイメージ（左に調査結果、右に調査メニュー）">
 					<div class="mock-bar">
 						<span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
 						<span class="mock-url">app.cho-haya.com</span>
 					</div>
-					<div class="mock-body">
-						<div class="mock-search">
-							<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-							<span class="mock-search-text">東京都〇〇区〇〇 1-2-3</span>
-							<span class="mock-search-btn">調査</span>
-						</div>
-						<div class="mock-grid">
-							<div class="mock-panel mock-panel--map">
-								<span class="mock-panel-tag">地図</span>
-								<div class="mock-map"><span class="mock-pin"></span></div>
+					<div class="fvm-body" aria-hidden="true">
+						<div class="fvm-main">
+							<div class="fvm-track">
+								<section class="fvm-card fvm-card--9">
+									<h4><span class="fvm-no">9</span>土地評価額</h4>
+									<div class="fvm-row"><span class="mock-skel w40"></span><span class="mock-skel w30"></span></div>
+								</section>
+								<section class="fvm-card fvm-card--10">
+									<h4><span class="fvm-no">10</span>周辺取引事例</h4>
+									<div class="fvm-seg"><span class="is-on">〜500m</span><span>〜1km</span><span>〜2km</span><span>市全体</span></div>
+									<div class="fvm-chart"><span class="mock-bars"><i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:62%"></i><i style="height:76%"></i></span></div>
+									<div class="fvm-row"><span class="mock-skel w90"></span></div>
+								</section>
+								<section class="fvm-card fvm-card--11">
+									<h4><span class="fvm-no">11</span>AI参考価格</h4>
+									<div class="fvm-cols">
+										<div class="fvm-box">
+											<span class="fvm-label">AI参考価格（売買）</span>
+											<div class="fvm-ai fvm-ai--glow"><span class="fvm-ai-head">AIが作成した内容</span><span class="mock-skel w90"></span><span class="mock-skel w70"></span><span class="mock-skel w80"></span></div>
+										</div>
+										<div class="fvm-box">
+											<span class="fvm-label">AI参考価格（賃貸）</span>
+											<div class="fvm-ai"><span class="fvm-ai-head">AIが作成した内容</span><span class="fvm-big"></span><span class="mock-skel w80"></span><span class="mock-skel w60"></span></div>
+										</div>
+									</div>
+								</section>
+								<section class="fvm-card fvm-card--12">
+									<h4><span class="fvm-no">12</span>ポータルサイトで検索</h4>
+									<div class="fvm-chips"><span></span><span></span><span></span><span></span></div>
+								</section>
+								<section class="fvm-card fvm-card--13">
+									<h4><span class="fvm-no">13</span>営業決定価格</h4>
+									<div class="fvm-calc"><span class="fvm-cell"></span><b>×</b><span class="fvm-cell"></span><b>=</b><span class="fvm-cell fvm-cell--result"></span></div>
+									<div class="fvm-final"><span class="fvm-final-tag">最終判断</span><span class="mock-skel w50"></span></div>
+								</section>
+								<section class="fvm-card fvm-card--14">
+									<h4><span class="fvm-no">14</span>AIレポート</h4>
+									<span class="mock-skel w90"></span><span class="mock-skel w70"></span>
+								</section>
 							</div>
-							<div class="mock-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span><span class="mock-skel w40"></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">建蔽率 / 容積率</span><span class="mock-skel w60"></span><span class="mock-skel w50"></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">土砂</span><span class="mock-chip">地震</span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">学区</span><span class="mock-skel w80"></span><span class="mock-skel w50"></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">地価（一次情報源リンク）</span><span class="mock-skel w70"></span><span class="mock-link-skel">国税庁で確認 ↗</span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:85%"></i></span></div>
-							<div class="mock-panel"><span class="mock-panel-tag">生活利便施設</span><span class="mock-skel w90"></span><span class="mock-skel w60"></span></div>
+						</div>
+						<div class="fvm-menu">
+							<span class="fvm-btn fvm-btn--ghost">新規物件調査</span>
+							<span class="fvm-btn">プレゼンシートを作成</span>
+							<span class="fvm-btn">案件管理表に登録</span>
+							<span class="fvm-btn fvm-btn--ghost">印刷 / PDF保存</span>
+							<span class="fvm-menu-label">調査メニュー</span>
+							<ol class="fvm-menu-list">
+								<li class="fvm-menu-active"></li>
+								<li><span>9</span>土地評価額</li>
+								<li><span>10</span>周辺取引事例</li>
+								<li><span>11</span>AI参考価格</li>
+								<li><span>12</span>ポータル検索</li>
+								<li><span>13</span>営業決定価格</li>
+								<li><span>14</span>AIレポート</li>
+							</ol>
 						</div>
 					</div>
 				</div>
 
 				<div class="mock-phone" aria-hidden="true">
 					<div class="mock-phone-notch"></div>
-					<div class="mock-phone-screen">
-						<div class="mock-phone-search"><span></span></div>
-						<div class="mock-phone-map"><span class="mock-pin"></span></div>
-						<div class="mock-phone-panels">
-							<div class="mock-phone-panel"><span class="mock-panel-tag">用途地域</span><span class="mock-skel w70"></span></div>
-							<div class="mock-phone-panel"><span class="mock-panel-tag">ハザード</span><span class="mock-chip">浸水</span><span class="mock-chip">地震</span></div>
-							<div class="mock-phone-panel"><span class="mock-panel-tag">地価</span><span class="mock-skel w60"></span></div>
-							<div class="mock-phone-panel"><span class="mock-panel-tag">取引事例</span><span class="mock-bars"><i style="height:50%"></i><i style="height:80%"></i><i style="height:60%"></i></span></div>
+					<div class="mock-phone-screen fvm-phone">
+						<span class="fvm-phone-btn">PowerPointで出力</span>
+						<div class="fvm-phone-card">
+							<b>物件調査サマリー</b>
+							<span class="mock-skel w70"></span>
+						</div>
+						<div class="fvm-phone-card">
+							<span class="mock-panel-tag">物件概要</span>
+							<div class="fvm-phone-rows"><i></i><span class="mock-skel w80"></span><i></i><span class="mock-skel w60"></span><i></i><span class="mock-skel w70"></span><i></i><span class="mock-skel w50"></span></div>
 						</div>
 					</div>
 				</div>
+				<p class="shot-cap shot-cap--hero">※ 画面はイメージです。</p>
 			</div>
 		</div>
 
@@ -115,19 +157,23 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<ul class="problem-list reveal" aria-label="営業の現場でよくあるお悩み">
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-					<p>自治体の窓口を何カ所も回り、<span class="nobr">移動と待ち時間で半日が消えてしまう</span></p>
+					<p>自治体の窓口やポータルサイトを行き来して、<span class="nobr">移動と待ち時間で半日が消えてしまう</span></p>
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-					<p>複数の不動産ポータル・調査サイトを、<span class="nobr">毎回ハシゴして打ち直している</span></p>
+					<p>調べる項目が多く、<span class="nobr">市街化調整区域などの確認漏れが心配</span></p>
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-					<p>調べる項目が多く、<span class="nobr">確認漏れや抜け漏れが起きてしまう</span></p>
+					<p>価格の根拠をそろえるのに、<span class="nobr">取引事例や相場を何度も調べ直している</span></p>
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
 					<p>お客様向けの資料を、<span class="nobr">毎回定型文から作成している</span></p>
+				</li>
+				<li class="problem-item">
+					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+					<p>案件・顧客・保有物件の情報が、<span class="nobr">Excelや紙に散らばっている</span></p>
 				</li>
 				<li class="problem-item">
 					<span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -142,8 +188,8 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		<div class="container">
 			<div class="section-head reveal">
 				<p class="eyebrow"><?php echo chosoku_text('solution_eyebrow', '調速 が、その悩みを1画面に。'); ?></p>
-				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査業務 → 提案 → 資料化を、</span><span class="nobr">ひとつの流れで支援。</span>'); ?></h2>
-				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を1画面に集約。住所の入力から資料づくりまで、業務の流れをソフトウェアが一気通貫で支援します。'); ?></p>
+				<h2 class="section-title"><?php echo chosoku_text('solution_title', '<span class="nobr">調査 → 価格判断 →</span> <span class="nobr">資料化を、</span><span class="nobr">ひとつの流れで支援。</span>'); ?></h2>
+				<p class="section-lead"><?php echo chosoku_text('solution_lead', 'バラバラだった作業を1画面に集約。住所の入力から価格の判断、お客様に渡す資料づくりまで、業務の流れをソフトウェアが一気通貫で支援します。'); ?></p>
 			</div>
 
 			<!-- 01 -->
@@ -151,37 +197,18 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">01</span>
 					<h3 class="sol-title"><?php echo chosoku_text('solution_1_title', '<span class="nobr">公的データの取得・整理を、</span><span class="nobr">住所1つで</span>'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。調査に必要な公的データを自動で取得し、12種類以上の項目として1つの画面に整理して表示します。'); ?></p>
+					<p class="sol-desc"><?php echo chosoku_text('solution_1_desc', '地図・用途地域・建蔽率/容積率・ハザード・学区・地価・周辺取引事例・周辺施設まで。調査に必要な公的データを自動で取得し、17のセクションに整理して1つの画面に表示します。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_1_li_', array('調査地付近の人口統計や不動産取引事例を表示', 'スーパー・学校・駅まで、距離と徒歩分数つき', '路線価図索引はクリックで一次情報源へ')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_1_li_', array('周辺取引事例は500m・1km・2kmから、事例のある一番近い範囲を自動で選択', 'スーパー・学校・駅まで、距離と徒歩分数つき', '右側の調査メニューで、見たい項目へすぐ移動')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
-					<div class="mock-card mock-facility">
-						<div class="mock-card-head"><span class="mock-panel-tag">生活利便施設（最寄り）</span></div>
-						<div class="facility-grid">
-							<div class="facility-panel">
-								<span class="facility-cat">スーパー</span>
-								<div class="facility-item"><span class="facility-name">〇〇スーパー △△店</span><span class="facility-meta"><b>約450m</b><i>徒歩6分</i></span></div>
-								<div class="facility-item"><span class="facility-name">生鮮市場 □□通り店</span><span class="facility-meta"><b>約540m</b><i>徒歩7分</i></span></div>
-							</div>
-							<div class="facility-panel">
-								<span class="facility-cat">コンビニ</span>
-								<div class="facility-item"><span class="facility-name">〇〇マート △△町店</span><span class="facility-meta"><b>約140m</b><i>徒歩2分</i></span></div>
-								<div class="facility-item"><span class="facility-name">□□ストア 駅前店</span><span class="facility-meta"><b>約280m</b><i>徒歩4分</i></span></div>
-							</div>
-							<div class="facility-panel">
-								<span class="facility-cat">小学校</span>
-								<div class="facility-item"><span class="facility-name">市立〇〇小学校</span><span class="facility-meta"><b>約260m</b><i>徒歩4分</i></span></div>
-							</div>
-							<div class="facility-panel">
-								<span class="facility-cat">駅</span>
-								<div class="facility-item"><span class="facility-name">〇〇線 △△駅</span><span class="facility-meta"><b>約800m</b><i>徒歩10分</i></span></div>
-							</div>
-						</div>
-					</div>
+					<figure class="shot">
+						<?php echo chosoku_screen_img('solution_1_image', 'assets/img/screens/sol-01.jpg', 1040, 498, '周辺取引事例（表示範囲と取引事例一覧）'); ?>
+						<figcaption class="shot-cap"><?php echo esc_html($chosoku_cap); ?></figcaption>
+					</figure>
 				</div>
 			</div>
 
@@ -189,24 +216,79 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row sol-row--reverse">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">02</span>
-					<h3 class="sol-title"><?php echo chosoku_text('solution_2_title', '<span class="nobr">お客様向け提案文の作成を、</span><span class="nobr">AIが支援</span>'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_2_desc', '周辺データを根拠に「この街で暮らすイメージ」が湧く提案文の下書きを作成。営業担当のフリーメモも自然に文章へ反映します。金額数値はAIに渡さない、ハルシネーション抑制設計です。'); ?></p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_2_title', '<span class="nobr">価格の目安と提案文づくりを、</span><span class="nobr">AIが支援</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_2_desc', '周辺の取引事例・公示地価やWeb上の募集賃料をもとに、坪単価・家賃の目安を築年別の表で整理。解体して売る場合の解体費の概算や、お客様向け提案文の下書きも作成します。いずれも営業担当の判断を支える社内向けの参考情報です。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_2_li_', array('周辺データを根拠にした“暮らしの提案”の下書き', '担当者のメモを文章に反映', '最終確認は宅地建物取引士が行う建付け')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_2_li_', array('AI参考価格（売買・賃貸）：築年別の目安を表で', 'AI解体費（概算）：坪単価に含まれない費用も明示', 'AIが作成した部分は枠で囲んで表示')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
+					<p class="sol-note"><?php echo chosoku_text('solution_2_note', '※ AIの目安は参考値です。不動産の評価・鑑定を行う機能ではありません。最終的な価格判断は宅地建物取引士の確認のもとで行ってください。'); ?></p>
 				</div>
 				<div class="sol-visual reveal reveal--right">
-					<div class="mock-card mock-ai">
-						<div class="mock-ai-head">
-							<svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>
-							<span class="mock-ai-title">AIが提案文を生成中…</span>
+					<div class="mock-card aim" data-ai-demo aria-label="AIが価格の目安・解体費・提案文を作成するイメージ">
+						<div class="aim-tabs">
+							<button type="button" class="aim-tab is-active" data-tab="price">AI参考価格</button>
+							<button type="button" class="aim-tab" data-tab="demolition">AI解体費</button>
+							<button type="button" class="aim-tab" data-tab="proposal">AI提案文</button>
 						</div>
-						<div class="mock-ai-body">
-							<p class="mock-ai-text" data-typewriter="最寄り駅まで徒歩8分。周辺にはスーパーや小学校が揃い、子育て世帯にも暮らしやすいエリアです。落ち着いた住環境で、はじめてのマイホームにも安心してお選びいただけます。"></p>
+						<div class="aim-panes">
+							<div class="aim-pane is-active" data-pane="price">
+								<div class="aim-head"><span class="aim-ico">¥</span><p><b>AI参考価格（売買）</b><small>周辺の取引事例と公示地価から、坪単価の目安を整理します。</small></p></div>
+								<div class="aim-range"><span class="is-on">500m</span><span>1km</span><span>2km</span></div>
+								<div class="aim-frame">
+									<div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+									<div class="aim-frame-body">
+										<p class="aim-text" data-type="対象地から500m圏・直近1年の取引事例をもとにした坪単価の目安です。周辺は築30〜40年の戸建てが中心で、公示地価の水準とも大きな乖離はありません。"></p>
+										<table class="aim-table">
+											<thead><tr><th>区分</th><th>坪単価の目安</th></tr></thead>
+											<tbody>
+												<tr><td>築10年未満</td><td><span class="aim-bar" style="width:86%"></span></td></tr>
+												<tr><td>築10〜20年</td><td><span class="aim-bar" style="width:76%"></span></td></tr>
+												<tr><td>築20〜30年</td><td><span class="aim-bar" style="width:68%"></span></td></tr>
+												<tr class="is-hl"><td>築30〜40年</td><td><span class="aim-bar" style="width:60%"></span></td></tr>
+												<tr><td>築40〜50年</td><td><span class="aim-bar" style="width:52%"></span></td></tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+								</div>
+							</div>
+
+							<div class="aim-pane" data-pane="demolition">
+								<div class="aim-head"><span class="aim-ico">解</span><p><b>AI解体費（概算）</b><small>構造別の解体費の相場から、延床面積をもとに総額の目安を計算します。</small></p></div>
+								<div class="aim-frame">
+									<div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+									<div class="aim-frame-body">
+										<p class="aim-text" data-type="対象地域の構造別の相場をもとに、延床面積から解体費の総額の目安を計算しました。実際の費用は解体業者の見積もりで確認してください。"></p>
+										<table class="aim-table">
+											<thead><tr><th>構造</th><th>坪単価の目安</th></tr></thead>
+											<tbody>
+												<tr class="is-hl"><td>木造</td><td><span class="aim-bar" style="width:50%"></span></td></tr>
+												<tr><td>軽量鉄骨造</td><td><span class="aim-bar" style="width:62%"></span></td></tr>
+												<tr><td>重量鉄骨造</td><td><span class="aim-bar" style="width:72%"></span></td></tr>
+												<tr><td>RC造</td><td><span class="aim-bar" style="width:84%"></span></td></tr>
+											</tbody>
+										</table>
+										<p class="aim-note aim-reveal"><b>坪単価に含まれない費用（別途）</b>付帯工事・残置物の処分・地中埋設物の撤去・アスベストの事前調査</p>
+									</div>
+									<div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+								</div>
+							</div>
+
+							<div class="aim-pane" data-pane="proposal">
+								<div class="aim-head"><span class="aim-ico">文</span><p><b>AI提案文</b><small>周辺データと担当者のメモから、お客様向けの文章を下書きします。</small></p></div>
+								<div class="aim-memo"><span>担当者メモ</span>子育て世帯向け・駅近を強調</div>
+								<div class="aim-frame">
+									<div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+									<div class="aim-frame-body">
+										<p class="aim-text aim-text--long" data-type="最寄り駅まで徒歩8分。周辺にはスーパーや小学校が揃い、子育て世帯にも暮らしやすいエリアです。落ち着いた住環境で、はじめてのマイホームにも安心してお選びいただけます。"></p>
+									</div>
+									<div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+								</div>
+							</div>
 						</div>
-						<div class="mock-ai-foot"><span class="mock-chip green">下書き完成</span></div>
+						<div class="aim-status"><span class="aim-dot"></span><span class="aim-status-text">AIが作成します</span></div>
 					</div>
 				</div>
 			</div>
@@ -215,32 +297,20 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">03</span>
-					<h3 class="sol-title"><?php echo chosoku_text('solution_3_title', '<span class="nobr">プレゼンボードで、</span><span class="nobr">A4 1枚にまとめる</span>'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_3_desc', '提案文・法令制限・周辺施設・人気店・価格情報・物件位置をブロック化。ドラッグ&ドロップで自由に並べ替え、不要なブロックは隠せます。そのままA4横でPDF印刷・Excel出力。'); ?></p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_3_title', '<span class="nobr">価格を決めて、</span><span class="nobr">そのまま提案資料に</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_3_desc', '価格の計算表で「自分の考える坪単価」「AIの目安」「解体更地の場合」の3通りを並べて計算。ボタンひとつで営業決定価格に入れ、判断理由とあわせて保存できます。決めた内容はプレゼンシートと案件管理表に反映されます。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_3_li_', array('ドラッグ&ドロップで並べ替え・ブロックごとに8色パレット', '編集レイアウトのままA4横で出力', '提案資料・社内回付資料にそのまま使える')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_3_li_', array('プレゼンシートは太字・下線・大きさ・色を編集（物件概要の表はマスごと）', '印刷（PDF）・PowerPoint・Excelで出力', 'お客様向けのシートにはAIの参考価格を載せない設計')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
-					<div class="mock-card mock-board">
-						<div class="mock-board-head">
-							<span class="mock-panel-tag">プレゼンボード（A4横）</span>
-							<span class="mock-board-tools"><i></i><i></i><i></i></span>
-						</div>
-						<div class="mock-board-grid mock-board-grid--2col">
-							<div class="mock-block mock-block--map c1">
-								<span class="mock-panel-tag">物件位置</span>
-								<div class="mock-map"><span class="mock-pin"></span></div>
-							</div>
-							<div class="mock-block mock-block--text c2 swap-c"><span class="mock-panel-tag">AI提案文</span><span class="mock-skel w80"></span><span class="mock-grab"></span></div>
-							<div class="mock-block c3 swap-a"><span class="mock-panel-tag">法令制限</span><span class="mock-skel w70"></span><span class="mock-grab"></span></div>
-							<div class="mock-block c2 swap-b"><span class="mock-panel-tag">周辺施設</span><span class="mock-skel w60"></span><span class="mock-grab"></span></div>
-							<div class="mock-block c1"><span class="mock-panel-tag">価格情報</span><span class="mock-skel w50"></span></div>
-							<div class="mock-block c4 swap-d"><span class="mock-panel-tag">人気店</span><span class="mock-skel w60"></span><span class="mock-grab"></span></div>
-						</div>
-					</div>
+					<figure class="shot shot--layered">
+						<?php echo chosoku_screen_img('solution_3_image', 'assets/img/screens/sol-03.jpg', 1040, 858, '価格の計算表と最終判断（営業決定価格・判断理由）'); ?>
+						<?php echo chosoku_screen_img('solution_3_image_sub', 'assets/img/screens/sol-03b.jpg', 560, 593, 'プレゼンシートの書式編集ツール（太字・下線・大きさ・色）', 'shot-overlay'); ?>
+						<figcaption class="shot-cap"><?php echo esc_html($chosoku_cap); ?></figcaption>
+					</figure>
 				</div>
 			</div>
 
@@ -248,24 +318,19 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="sol-row sol-row--reverse">
 				<div class="sol-text reveal reveal--left">
 					<span class="sol-num">04</span>
-					<h3 class="sol-title"><?php echo chosoku_text('solution_4_title', '公的データだから、安心して使える'); ?></h3>
-					<p class="sol-desc"><?php echo chosoku_text('solution_4_desc', '国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places を組み合わせ、AIが数値を“作らない”設計。一次情報源へのリンクを備え、最終確認は宅地建物取引士が行う前提で組み立てています。'); ?></p>
+					<h3 class="sol-title"><?php echo chosoku_text('solution_4_title', '<span class="nobr">建築に制限がある土地に、</span><span class="nobr">調査の最初で気づける</span>'); ?></h3>
+					<p class="sol-desc"><?php echo chosoku_text('solution_4_desc', '市街化調整区域、またはその境界付近と判定された物件は、赤い枠で「要確認」と表示。確認の手順と国土交通省の地図を開くボタンを用意し、都市計画課への確認漏れを防ぎます。'); ?></p>
 					<ul class="sol-list">
-						<?php foreach (chosoku_list('solution_4_li_', array('出典は公的データ／一次情報源リンク付き', 'AIは「窓口で確認すべき観点」を提示', '断定ではなく、確認を支える建付け')) as $li) : ?>
+						<?php foreach (chosoku_list('solution_4_li_', array('確認の手順を①②③で案内', '出典は一次情報源へのリンク付き', 'AIは補助、最終判断は宅地建物取引士')) as $li) : ?>
 							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($li); ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
 				<div class="sol-visual reveal reveal--right">
-					<div class="mock-card mock-sources">
-						<span class="mock-panel-tag">データソース</span>
-						<div class="mock-source-list">
-							<div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国土交通省<span class="mock-source-link">↗</span></div>
-							<div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国税庁（路線価）<span class="mock-source-link">↗</span></div>
-							<div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>国土地理院<span class="mock-source-link">↗</span></div>
-							<div class="mock-source"><span class="mock-source-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>e-Stat / Google Maps<span class="mock-source-link">↗</span></div>
-						</div>
-					</div>
+					<figure class="shot shot--narrow">
+						<?php echo chosoku_screen_img('solution_4_image', 'assets/img/screens/sol-04.jpg', 1010, 1395, '市街化調整区域の境界付近を知らせる赤い枠と確認の手順'); ?>
+						<figcaption class="shot-cap">※ 画面はイメージです。住所はダミーです。</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
@@ -276,74 +341,74 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		<div class="container">
 			<div class="section-head reveal">
 				<p class="eyebrow">FEATURES</p>
-				<h2 class="section-title">業務の一日を支える、6つの機能</h2>
-				<p class="section-lead">調査業務から提案、案件登録まで。現場で本当に必要な機能だけを、迷わない導線でまとめました。</p>
+				<h2 class="section-title"><span class="nobr">業務の一日を支える、</span><span class="nobr">6つの機能</span></h2>
+				<p class="section-lead">調査業務から価格判断、提案、案件登録まで。現場で本当に必要な機能を、迷わない導線でまとめました。</p>
 			</div>
 
 			<div class="feature-cards">
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
 					<h3 class="feature-card-title">ワンクリック多面調査</h3>
-					<p class="feature-card-desc">地図・用途地域・建蔽率/容積率・ハザード・学区・地価・取引事例・周辺施設まで。調査に必要な公的データを住所1つで取得し、多面的に整理して一覧表示します。</p>
+					<p class="feature-card-desc">地図・法令・ハザード・地価・周辺取引事例・周辺施設まで、17のセクションで一覧表示します。</p>
 					<ul class="feature-card-points">
-						<li>クリック可能な路線価図索引で一次情報源へ</li>
-						<li>市全体＋周辺メッシュの人口推移</li>
-						<li>取引事例は平均・中央値・㎡単価で比較表示</li>
+						<li>取引事例は期間・種別・用途地域で絞り込み、Excel出力も</li>
+						<li>人口推移・路線価図索引</li>
+						<li>調査メニューで項目へすぐ移動</li>
 					</ul>
 				</article>
 
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg></div>
-					<h3 class="feature-card-title">AI提案文</h3>
-					<p class="feature-card-desc">周辺データを根拠に、お客様向けの提案文をAIが下書き。担当者のメモも自然に反映します。最終確認は宅地建物取引士が行う前提です。</p>
+					<h3 class="feature-card-title">AI参考価格<span class="nobr">（売買・賃貸）</span></h3>
+					<p class="feature-card-desc">取引事例・公示地価や募集賃料をもとに、坪単価・家賃の目安を築年別に整理。価格判断を支える社内向けの参考情報です。</p>
 					<ul class="feature-card-points">
-						<li>周辺データを根拠にした暮らしの提案</li>
-						<li>担当者のメモを文章へ自然に反映</li>
-						<li>AIは補助、最終判断は人が行う設計</li>
+						<li>坪単価の目安と売り目線（売買）</li>
+						<li>間取り別・築年別の家賃目安（賃貸）</li>
+						<li>道路付・土地形状などの条件を反映した補正後の目安</li>
+					</ul>
+				</article>
+
+				<article class="feature-card reveal">
+					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m15 12-8.4 8.4a2.1 2.1 0 0 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.9-1.9a2 2 0 0 1-.6-1.4V7l-2.3-2.3a6 6 0 0 0-4.2-1.7H9l.9.8A6.2 6.2 0 0 1 12 8.4V10l2 2h1.2a2 2 0 0 1 1.4.6l1.9 1.9"/></svg></div>
+					<h3 class="feature-card-title">AI解体費<span class="nobr">（概算）</span></h3>
+					<p class="feature-card-desc">地域の構造別の解体費の相場から、延床面積をもとに総額の目安を計算します。</p>
+					<ul class="feature-card-points">
+						<li>総額の平均と範囲を表示</li>
+						<li>付帯工事・残置物・地中埋設物・アスベスト調査は別途費用になることを明示</li>
+						<li>解体業者の見積もりで確認する前提</li>
+					</ul>
+				</article>
+
+				<article class="feature-card reveal">
+					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M16 14v4M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg></div>
+					<h3 class="feature-card-title">価格の計算表と最終判断</h3>
+					<p class="feature-card-desc">3通りの計算を並べ、ボタンひとつで営業決定価格へ。判断理由とあわせて自動保存します。</p>
+					<ul class="feature-card-points">
+						<li>自分の坪単価・AIの目安・解体更地の場合を比較</li>
+						<li>「この金額を使う」で最終判断へ反映</li>
+						<li>プレゼンシート・案件管理表に自動で反映</li>
 					</ul>
 				</article>
 
 				<article class="feature-card reveal">
 					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2M16 18v2"/></svg></div>
-					<h3 class="feature-card-title">プレゼンボード</h3>
-					<p class="feature-card-desc">各情報をブロック化し、ドラッグ&ドロップで自由に並べ替え。8色パレットで色変更も。編集レイアウトのままA4横でPDF・Excel出力できます。</p>
+					<h3 class="feature-card-title">プレゼンシート</h3>
+					<p class="feature-card-desc">各ブロックの本文も物件概要の表も、太字・下線・大きさ・色を変えられます。</p>
 					<ul class="feature-card-points">
-						<li>ドラッグ&ドロップで直感的にレイアウト編集</li>
-						<li>編集レイアウトのままA4横でPDF印刷</li>
-						<li>Excel出力で社内回付資料にも</li>
+						<li>物件概要の表はマスごとに編集</li>
+						<li>印刷（PDF）・PowerPoint・Excelで出力</li>
+						<li>自由記入ボックスを追加</li>
 					</ul>
 				</article>
 
 				<article class="feature-card reveal">
-					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div>
-					<h3 class="feature-card-title">案件管理ダッシュボード<span class="nobr">（kanri 連携）</span></h3>
-					<p class="feature-card-desc">案件管理アプリ「kanri」と1つのアカウントで連携・データ共有。調査業務 → 提案 → 案件登録までを、ひとつの動線で行えます。</p>
+					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+					<h3 class="feature-card-title">ポータルサイトで検索</h3>
+					<p class="feature-card-desc">主要なポータルサイトを、売買・賃貸を切り替えて町名・市名で検索。月極駐車場も地図で探せます。</p>
 					<ul class="feature-card-points">
-						<li>1アカウントで調査業務と案件管理を横断</li>
-						<li>調査業務 → 提案 → 案件登録を1動線に</li>
-						<li>自治体マスターは自動同期</li>
-					</ul>
-				</article>
-
-				<article class="feature-card reveal">
-					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></div>
-					<h3 class="feature-card-title">外部サイトショートカット</h3>
-					<p class="feature-card-desc">主要な不動産ポータルや調査サイトの検索結果へワンクリックで遷移。物件種別と町名で絞り込んだ状態で開くので、サイトを行き来する手間がなくなります。</p>
-					<ul class="feature-card-points">
-						<li>主要ポータル・調査サイトへ即遷移</li>
-						<li>物件種別・町名で絞り込み</li>
-						<li>業務の起点を1画面に集約</li>
-					</ul>
-				</article>
-
-				<article class="feature-card reveal">
-					<div class="feature-card-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg></div>
-					<h3 class="feature-card-title">参考価格の試算パネル</h3>
-					<p class="feature-card-desc">起点データ4種（取引中央値／㎡単価×面積／公示地価×面積／手動入力）から選択。スライダーや調整理由の入力に対応し、試算結果は資料へ自動反映します。不動産の評価・鑑定を行う機能ではありません。</p>
-					<ul class="feature-card-points">
-						<li>参考価格の試算・比較を支援する機能</li>
-						<li>スライダーで素早く価格レンジ調整</li>
-						<li>調整理由を残してチーム共有</li>
+						<li>売買／賃貸の切り替え</li>
+						<li>町名／市名の切り替え</li>
+						<li>月極駐車場を地図と専門サイトで検索</li>
 					</ul>
 				</article>
 			</div>
@@ -356,7 +421,7 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 			<div class="section-head reveal">
 				<p class="eyebrow">HOW IT WORKS</p>
 				<h2 class="section-title"><span class="nobr">使い方は、</span><span class="nobr">たったの3ステップ</span></h2>
-				<p class="section-lead">特別な準備は不要。住所の入力から、お客様に渡せる資料の作成までをソフトウェアが支援します。</p>
+				<p class="section-lead">特別な準備は不要。住所の入力から、価格の判断、お客様に渡す資料の作成までをソフトウェアが支援します。</p>
 			</div>
 
 			<ol class="steps steps--timeline">
@@ -365,23 +430,23 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 					<div class="step-body">
 						<span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
 						<h3>住所を入力</h3>
-						<p>調べたい物件の住所を入力するだけ。難しい操作はありません。</p>
+						<p>調べたい物件の住所と、わかる範囲の物件情報を入力するだけ。</p>
 					</div>
 				</li>
 				<li class="step reveal">
 					<div class="step-marker"><span class="step-num">2</span></div>
 					<div class="step-body">
 						<span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-						<h3>12種類以上の調査項目を自動表示</h3>
-						<p>地図・法令・ハザード・地価・取引事例・周辺施設が一画面に並びます。</p>
+						<h3>調査結果とAIの目安を確認</h3>
+						<p>法令・ハザード・取引事例などの調査結果と、AIの参考価格・解体費の目安が一画面に並びます。</p>
 					</div>
 				</li>
 				<li class="step reveal">
 					<div class="step-marker"><span class="step-num">3</span></div>
 					<div class="step-body">
 						<span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></span>
-						<h3>AI提案文＋資料をお客様へ</h3>
-						<p>提案文の下書きとA4プレゼンボードを作成。PDF・Excelで出力してそのまま提示。</p>
+						<h3>価格を決めて、資料と案件に</h3>
+						<p>計算表で営業決定価格を決め、プレゼンシートを出力。案件管理表にもそのまま登録できます。</p>
 					</div>
 				</li>
 			</ol>
@@ -403,58 +468,38 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 
 			<?php
 			$why_texts = array(
-				1 => array('公的データ100%', '用途地域や地価、取引事例、ハザードなどの情報は、国土交通省・国税庁・国土地理院・e-Stat・Google Maps Places といった公的データを組み合わせて表示します。AIに数値をつくらせない設計なので、根拠のある情報だけをお客様に提示できます。'),
-				2 => array('宅建士の判断を支える設計', 'AIはあくまで「窓口で確認すべき観点」や調査の抜け漏れを補う補助役です。最終的な判断や重要事項の確認は宅地建物取引士が行う前提で設計しているため、AIまかせにならず、安心して日々の実務に組み込めます。'),
-				3 => array('業務フローの起点集約', '自治体の窓口ページ、路線価図、主要な不動産ポータルや調査サイトへのリンクを1画面に集約。複数のサイトを探し回ったり、同じ物件情報を何度も入力し直したりする手間をなくし、調査の起点をひとつにまとめます。'),
-				4 => array('印刷・Excel出力が標準装備', '編集したレイアウトのまま、A4横のPDFやExcelとして出力できます。出力した資料はそのままお客様への提案書や、社内での回付・保管用の書類として使えるので、資料をつくり直す手間がかかりません。'),
-				5 => array('kanri との完全統合', '案件管理ダッシュボード「kanri」と1つのアカウントで連携。顧客管理から物件調査、案件登録までを同じ画面の流れで行えるため、同じ情報を二度入力する必要がなく、社内での案件共有もスムーズになります。'),
-				6 => array('全国対応', '用途地域・ハザード・地価・取引事例などのデータ表示は全国のエリアに対応しています。一部の自治体は窓口リンク集付きで、対応エリアも順次拡充しているため、地域を問わず日々の調査業務に活用いただけます。'),
+				1 => array('出典が見える、根拠のある情報', '法令・地価・取引事例・ハザードは国土交通省などの公的データ、家賃や解体費の目安はWeb上の相場をもとに表示。出典や一次情報源へのリンクを添えています。'),
+				2 => array('宅建士の判断を支える設計', 'AIは目安や確認すべき観点を示す補助役。最終的な判断は宅地建物取引士が行う前提で設計しています。'),
+				3 => array('業務フローの起点集約', '自治体の窓口ページ、路線価図、ポータルサイトの検索を1画面に集約。同じ物件情報を何度も入力し直す手間をなくします。'),
+				4 => array('印刷・PowerPoint・Excel出力が標準装備', '編集したレイアウトのままA4で出力。提案書にも社内の回付資料にも、そのまま使えます。'),
+				5 => array('案件管理表とひとつながり', '調べた物件・営業決定価格・判断理由が、そのまま案件管理表に反映。同じ情報を二度入力する必要がありません。'),
+				6 => array('全国対応', '用途地域・ハザード・地価・取引事例などのデータ表示は全国に対応。一部の自治体は窓口リンク集付きです。'),
 			);
 			?>
 			<ol class="why-list">
 				<?php foreach ($why_texts as $n => $wt) : ?>
 					<li class="why-item reveal">
-						<figure class="why-figure"><?php chosoku_why_image($n); ?></figure>
+						<?php chosoku_why_figure($n); ?>
 						<div class="why-text">
 							<span class="why-num"><?php echo esc_html(sprintf('%02d', $n)); ?></span>
-							<h3><?php echo chosoku_text('why_' . $n . '_title', esc_html($wt[0])); ?></h3>
+							<h3><?php echo chosoku_text('why_' . $n . '_title', 4 === $n ? '<span class="nobr">印刷・PowerPoint・Excel出力が</span><span class="nobr">標準装備</span>' : esc_html($wt[0])); ?></h3>
 							<p><?php echo chosoku_text('why_' . $n . '_desc', esc_html($wt[1])); ?></p>
 						</div>
 					</li>
 				<?php endforeach; ?>
 			</ol>
+			<p class="shot-cap shot-cap--center"><?php echo esc_html($chosoku_cap); ?></p>
 		</div>
 	</section>
 
-	<!-- ============================= 連携・拡張 ============================= -->
+	<!-- ============================= 案件管理表 ============================= -->
 	<?php
-	// 連携（kanri）セクション：ACF優先、未入力は既定値
+	// 案件管理表セクション：ACF優先、未入力は既定値
 	$intg_pid = (int) get_option('page_on_front');
 	$intg_pid = $intg_pid ? $intg_pid : null;
 	$intg_gf  = function_exists('get_field');
 
-	$intg_title = $intg_gf ? trim((string) get_field('integration_title', $intg_pid)) : '';
-	if ($intg_title === '') { $intg_title = "案件管理「kanri」と、\nひとつながり。"; }
-
-	$intg_lead = $intg_gf ? trim((string) get_field('integration_lead', $intg_pid)) : '';
-	if ($intg_lead === '') { $intg_lead = '「kanri」は、会社の案件を社内でまとめて管理できる案件管理ツールです。営業担当は自分が抱える案件を個人単位で管理でき、調速で調べた物件は、そのまま案件として引き継げます。'; }
-
-	$intg_checks_default = array(
-		'会社の案件を、社内でまとめて一元管理',
-		'営業担当は、自分の案件を個人単位で管理',
-		'調速で調べた物件を、そのまま案件として登録',
-		'顧客管理から案件登録までを、1つの動線で',
-	);
-	$intg_checks = array();
-	if ($intg_gf) {
-		for ($i = 1; $i <= 4; $i++) {
-			$c = trim((string) get_field('integration_check_' . $i, $intg_pid));
-			if ($c !== '') { $intg_checks[] = $c; }
-		}
-	}
-	if (empty($intg_checks)) { $intg_checks = $intg_checks_default; }
-
-	// 右側メディア：動画URL(埋め込み) > 動画URL(mp4等) > 動画ファイル > 画像 > 既定図
+	// 任意のメディア（動画URL(埋め込み) > 動画URL(mp4等) > 動画ファイル > 画像）。未設定なら表示しない
 	$intg_video_url = $intg_gf ? trim((string) get_field('integration_video_url', $intg_pid)) : '';
 	$intg_video     = $intg_gf ? trim((string) get_field('integration_media_video', $intg_pid)) : '';
 	$intg_image     = $intg_gf ? trim((string) get_field('integration_media_image', $intg_pid)) : '';
@@ -464,54 +509,71 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 		if (!$intg_embed) { $intg_embed = ''; }
 	}
 	$intg_url_file = ($intg_video_url !== '' && preg_match('/\.(mp4|webm|ogg|mov)(\?.*)?$/i', $intg_video_url));
-	$intg_has_media = ($intg_embed !== '' || $intg_url_file || $intg_video !== '' || $intg_image !== '');
+
+	$kanri_cards = array(
+		1 => array(
+			'mod'   => 'case',
+			'title' => '案件管理',
+			'desc'  => '案件ごとに、顧客情報・調査データ・工程表・利回りシミュレーションを1ページで。',
+			'li'    => array('案件一覧は優先度・進行状況・担当者で絞り込み', '工程表と全体工程でスケジュールを管理', '全社共有管理・チェックシートで販売準備の遅れがひと目で'),
+			'img'   => array('assets/img/screens/kanri-case.jpg', 640, 391, '案件管理の画面'),
+		),
+		2 => array(
+			'mod'   => 'customer',
+			'title' => '顧客管理',
+			'desc'  => 'お客様を1か所で管理。温度感・進捗・次回アクションがひと目でわかります。',
+			'li'    => array('商談記録を6ステップで残せる', '次回アクションの期限切れはアラートでお知らせ', 'スマホは電話ボタンからそのまま発信'),
+			'img'   => array('assets/img/screens/kanri-customer.jpg', 640, 386, '顧客管理の画面'),
+		),
+		3 => array(
+			'mod'   => 'portfolio',
+			'title' => 'ポートフォリオ',
+			'desc'  => '保有物件・レントロール・借入・毎月の収支をまとめて管理。',
+			'li'    => array('空室30日超はアラートでお知らせ', 'もしも試算（金利・空室・家賃の変化）', '売却試算と全体まとめ（LTV・DSCR・稼働率など）'),
+			'img'   => array('assets/img/screens/kanri-portfolio.jpg', 640, 388, 'ポートフォリオの画面'),
+		),
+	);
 	?>
 	<section data-section="integration" class="integration section" id="integration">
 		<div class="container">
-			<div class="integration-inner">
-				<div class="integration-text reveal">
-					<p class="eyebrow">INTEGRATION</p>
-					<h2 class="section-title"><?php echo nl2br(esc_html($intg_title)); ?></h2>
-					<p class="section-lead"><?php echo nl2br(esc_html($intg_lead)); ?></p>
-					<ul class="integration-list">
-						<?php foreach ($intg_checks as $c) : ?>
-							<li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><?php echo esc_html($c); ?></li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
+			<div class="section-head reveal">
+				<p class="eyebrow">CASE MANAGEMENT</p>
+				<h2 class="section-title"><?php echo chosoku_text('integration_title', '<span class="nobr">案件・顧客・保有物件を、</span><span class="nobr">ひとつの画面で。</span>'); ?></h2>
+				<p class="section-lead"><?php echo chosoku_text('integration_lead', '案件管理表は、案件管理・顧客管理・ポートフォリオの3つの機能を備えた、不動産会社向けの業務アプリです。調速で調べた物件は、案件詳細の「調査データ」にそのまま入ります。'); ?></p>
+			</div>
 
-				<div class="integration-visual reveal<?php echo $intg_has_media ? ' integration-visual--media' : ''; ?>">
+			<?php if ($intg_embed !== '' || $intg_url_file || $intg_video !== '' || $intg_image !== '') : ?>
+				<div class="kanri-media reveal">
 					<?php if ($intg_embed !== '') : ?>
 						<div class="integration-media integration-embed"><?php echo $intg_embed; // WPコアのoEmbed（YouTube/Vimeo等） ?></div>
 					<?php elseif ($intg_url_file) : ?>
 						<div class="integration-media"><video src="<?php echo esc_url($intg_video_url); ?>" autoplay muted loop playsinline preload="auto"></video></div>
 					<?php elseif ($intg_video !== '') : ?>
 						<div class="integration-media"><video src="<?php echo esc_url($intg_video); ?>" autoplay muted loop playsinline preload="auto"></video></div>
-					<?php elseif ($intg_image !== '') : ?>
-						<div class="integration-media"><img src="<?php echo esc_url($intg_image); ?>" alt="" loading="lazy"></div>
 					<?php else : ?>
-						<div aria-hidden="true">
-							<div class="flow">
-								<div class="flow-node">
-									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
-									<span class="flow-label">顧客管理<small>kanri</small></span>
-								</div>
-								<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-								<div class="flow-node flow-node--primary">
-									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-									<span class="flow-label">物件調査<small>調速</small></span>
-								</div>
-								<span class="flow-arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-								<div class="flow-node">
-									<span class="flow-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
-									<span class="flow-label">案件登録<small>kanri</small></span>
-								</div>
-							</div>
-							<p class="flow-note">社内の案件管理から物件調査、案件登録までを1動線で。</p>
-						</div>
+						<div class="integration-media integration-media--light"><img src="<?php echo esc_url($intg_image); ?>" alt="" loading="lazy"></div>
 					<?php endif; ?>
 				</div>
+			<?php endif; ?>
+
+			<div class="kanri-cards">
+				<?php foreach ($kanri_cards as $n => $kc) : ?>
+					<article class="kanri-card kanri-card--<?php echo esc_attr($kc['mod']); ?> reveal">
+						<?php echo chosoku_screen_img('kanri_' . $n . '_image', $kc['img'][0], $kc['img'][1], $kc['img'][2], $kc['img'][3], 'kanri-card-img'); ?>
+						<div class="kanri-card-body">
+							<h3 class="kanri-card-title"><?php echo chosoku_text('kanri_' . $n . '_title', esc_html($kc['title'])); ?></h3>
+							<p class="kanri-card-desc"><?php echo chosoku_text('kanri_' . $n . '_desc', esc_html($kc['desc'])); ?></p>
+							<ul class="feature-card-points">
+								<?php foreach (chosoku_list('kanri_' . $n . '_li_', $kc['li']) as $li) : ?>
+									<li><?php echo esc_html($li); ?></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					</article>
+				<?php endforeach; ?>
 			</div>
+			<p class="kanri-note reveal"><?php echo chosoku_text('kanri_note', 'アラート・やることメモ・社内連絡も共通で使え、すべての機能がスマホに対応しています。'); ?></p>
+			<p class="shot-cap shot-cap--center">※ 画面はイメージです。会社名・人名・物件名・金額は架空のものです。</p>
 		</div>
 	</section>
 
@@ -525,20 +587,13 @@ $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 
 			<?php
 			// 既定のFAQ（ACF未入力時のフォールバック）
-			$faq_defaults = array(
-				array('q' => 'どの自治体に対応していますか？', 'a' => '用途地域・ハザード・地価・取引事例などのデータ表示は全国対応です。一部の自治体は窓口リンク集付きでご利用いただけ、対応は順次拡充しています。'),
-				array('q' => '路線価などの具体的な数値は表示されますか？', 'a' => 'アプリ内では具体的な金額数値は表示せず、一次情報源（国税庁など）へのリンクをご案内します。数値の確認はリンク先の公的情報、および宅地建物取引士による最終確認を前提とした設計です。'),
-				array('q' => 'AIが宅建士の代わりになるのですか？', 'a' => 'いいえ。調速は、お客様ご自身が行う不動産調査業務を支援するクラウド型ソフトウェアであり、調査の代行や不動産の評価・鑑定は行いません。AIは「窓口で確認すべき観点」を提示する補助で、最終的な判断・確認は宅地建物取引士が行う建付けとしています。'),
-				array('q' => '個人情報やデータは安全ですか？', 'a' => '物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。'),
-				array('q' => 'スマートフォンでも使えますか？', 'a' => 'はい。スマホ閲覧に最適化しており、専用のハンバーガーメニューで縦長ページも快適にご利用いただけます。外回りの営業中でも確認できます。'),
-				array('q' => '解約はできますか？', 'a' => 'サブスクリプションはいつでも解約可能です。プランや解約手続きの詳細は、お問い合わせフォームよりお気軽にご連絡ください。'),
-			);
+			$faq_defaults = chosoku_faq_defaults();
 
 			// ACF（固定ページ）に入力があればそれを優先。質問が空の項目は非表示。
 			$faq_items = array();
 			if (function_exists('get_field')) {
 				$lp_pid = (int) get_option('page_on_front');
-				for ($i = 1; $i <= 6; $i++) {
+				for ($i = 1; $i <= CHOSOKU_FAQ_MAX; $i++) {
 					$q = trim((string) get_field('faq_' . $i . '_q', $lp_pid ? $lp_pid : null));
 					$a = trim((string) get_field('faq_' . $i . '_a', $lp_pid ? $lp_pid : null));
 					if ($q !== '') {
