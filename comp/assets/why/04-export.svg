@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="印刷・Excel出力 を表すイラスト">
+  <defs>
+    <linearGradient id="bg04" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EFF6FF"/><stop offset="1" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="brand04" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="280" rx="20" fill="url(#bg04)"/>
+
+  <!-- A4 横の用紙 -->
+  <g transform="translate(48,60)">
+    <rect width="220" height="156" rx="6" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+    <rect x="14" y="14" width="80" height="10" rx="3" fill="url(#brand04)"/>
+    <rect x="14" y="34" width="120" height="6" rx="3" fill="#E2E8F0"/>
+    <rect x="14" y="46" width="100" height="6" rx="3" fill="#E2E8F0"/>
+    <!-- mini grid of panels -->
+    <g transform="translate(14,66)">
+      <rect width="60" height="40" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <rect x="68" width="60" height="40" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <rect x="136" width="60" height="40" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <rect y="48" width="92" height="30" rx="4" fill="#ECFDF5" stroke="#A7F3D0"/>
+      <rect x="100" y="48" width="96" height="30" rx="4" fill="#FFF7ED" stroke="#FED7AA"/>
+    </g>
+  </g>
+
+  <!-- printer -->
+  <g transform="translate(286,90)">
+    <rect x="0" y="22" width="80" height="44" rx="6" fill="url(#brand04)"/>
+    <rect x="10" y="8" width="60" height="20" rx="3" fill="#fff" stroke="#CBD5E1"/>
+    <rect x="10" y="60" width="60" height="34" rx="3" fill="#fff" stroke="#CBD5E1"/>
+    <rect x="18" y="70" width="44" height="4" rx="2" fill="#E2E8F0"/>
+    <rect x="18" y="78" width="32" height="4" rx="2" fill="#E2E8F0"/>
+    <circle cx="60" cy="44" r="3" fill="#10B981"/>
+  </g>
+
+  <!-- format badges -->
+  <g font-family="Inter, sans-serif" font-weight="800">
+    <g transform="translate(48,228)">
+      <rect width="62" height="28" rx="6" fill="#fff" stroke="#CBD5E1"/>
+      <text x="31" y="19" text-anchor="middle" font-size="12" fill="#DC2626">PDF</text>
+    </g>
+    <g transform="translate(118,228)">
+      <rect width="74" height="28" rx="6" fill="#fff" stroke="#CBD5E1"/>
+      <text x="37" y="19" text-anchor="middle" font-size="12" fill="#059669">Excel</text>
+    </g>
+    <g transform="translate(204,228)">
+      <rect width="64" height="28" rx="6" fill="#fff" stroke="#CBD5E1"/>
+      <text x="32" y="19" text-anchor="middle" font-size="11" fill="#1E3A8A">A4横</text>
+    </g>
+  </g>
+</svg>
