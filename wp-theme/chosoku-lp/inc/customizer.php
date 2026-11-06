@@ -20,19 +20,13 @@ function chosoku_customize_register($wp_customize) {
 	/* ---------------- ロゴ / アイコン ---------------- */
 	$wp_customize->add_section('chosoku_logo', array(
 		'title'       => __('ロゴ・アイコン', 'chosoku-lp'),
-		'description' => __('ヘッダーは「サイト基本情報 > ロゴ」でも変更できます。ブラウザのタブに出るアイコンは「サイト基本情報 > サイトアイコン」で設定してください。', 'chosoku-lp'),
+		'description' => __('ヘッダーとフッターは同じロゴを表示します（「サイト基本情報 > ロゴ」でも変更できます）。ブラウザのタブに出るアイコンは「サイト基本情報 > サイトアイコン」で設定してください。', 'chosoku-lp'),
 		'panel'       => 'chosoku_lp',
 	));
 	$wp_customize->add_setting('chosoku_logo_yoko', array('sanitize_callback' => 'esc_url_raw'));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'chosoku_logo_yoko', array(
-		'label'       => __('ヘッダーロゴ（横）', 'chosoku-lp'),
-		'description' => __('未設定なら「サイト基本情報 > ロゴ」→ 同梱の横ロゴ の順で表示します。', 'chosoku-lp'),
-		'section'     => 'chosoku_logo',
-	)));
-	$wp_customize->add_setting('chosoku_logo_tate', array('sanitize_callback' => 'esc_url_raw'));
-	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'chosoku_logo_tate', array(
-		'label'       => __('フッターロゴ（縦）', 'chosoku-lp'),
-		'description' => __('未設定の場合は同梱の縦ロゴを表示します。', 'chosoku-lp'),
+		'label'       => __('ロゴ（ヘッダー・フッター共通）', 'chosoku-lp'),
+		'description' => __('「サイト基本情報 > ロゴ」が未設定のときに使います。どちらも未設定なら同梱の横ロゴを表示します。', 'chosoku-lp'),
 		'section'     => 'chosoku_logo',
 	)));
 
@@ -73,7 +67,6 @@ function chosoku_customize_register($wp_customize) {
 	$links = array(
 		'chosoku_login_url'   => array(__('ログインURL（本体アプリ）', 'chosoku-lp'), 'https://app.cho-haya.com/'),
 		'chosoku_privacy_url' => array(__('プライバシーポリシー URL', 'chosoku-lp'), '#'),
-		'chosoku_terms_url'   => array(__('利用規約 URL', 'chosoku-lp'), '#'),
 		'chosoku_tokusho_url' => array(__('特定商取引法に基づく表記 URL', 'chosoku-lp'), '#'),
 		'chosoku_company_url' => array(__('運営会社 URL', 'chosoku-lp'), '#'),
 	);

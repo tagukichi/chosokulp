@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('CHOSOKU_VER')) {
-	define('CHOSOKU_VER', '1.1.0');
+	define('CHOSOKU_VER', '1.2.0');
 }
 
 /**
@@ -114,9 +114,9 @@ function chosoku_why_figure($n) {
 	$defaults = array(
 		1 => array(array('why-01.jpg', 900, 630, 'AI解体費の注意書きと参照したWebページ', false)),
 		2 => array(array('why-02.jpg', 400, 669, '最終判断（営業決定価格・判断理由）のスマホ表示', true)),
-		3 => array(array('why-03.jpg', 900, 716, '物件詳細の入力（構造の表記・間取り）', false)),
+		3 => array(array('why-03.jpg', 900, 794, '物件詳細の入力（構造の表記・間取り）', false)),
 		4 => array(array('why-04.jpg', 900, 412, 'プレゼンシートの印刷（PDF）', false)),
-		5 => array(array('why-05.jpg', 900, 553, 'PC の案件一覧 + スマホの案件詳細の合成', false)),
+		5 => array(array('why-05.jpg', 900, 547, 'PC の案件一覧 + スマホの案件詳細の合成', false)),
 		6 => array(
 			array('why-06a.jpg', 300, 600, '用途地域（本庄市の例）のスマホ表示', true),
 			array('why-06b.jpg', 300, 600, '周辺取引事例（所沢市の例）のスマホ表示', true),
@@ -196,31 +196,25 @@ function chosoku_faq_defaults() {
 		array('q' => 'AIが宅建士の代わりになるのですか？', 'a' => 'いいえ。調速は、お客様ご自身が行う不動産調査業務を支援するクラウド型ソフトウェアであり、調査の代行や不動産の評価・鑑定は行いません。AIは「窓口で確認すべき観点」を提示する補助で、最終的な判断・確認は宅地建物取引士が行う建付けとしています。'),
 		array('q' => '個人情報やデータは安全ですか？', 'a' => '物件住所はサーバー側で処理し、認証・通信は暗号化により保護しています。詳細はお問い合わせください。'),
 		array('q' => 'スマートフォンでも使えますか？', 'a' => 'はい。調査結果の閲覧と、案件管理表のすべての機能がスマホに対応しています。プレゼンシートの編集はPCで行ってください。'),
-		array('q' => '解約はできますか？', 'a' => '契約期間・更新・解約の手続きは利用規約に定めています。詳しくはお問い合わせください。'),
 	);
 }
 
 /**
- * 利用規約リンク先URLを返す。
- * 優先順：カスタマイザーで指定 → 「利用規約」テンプレートを使う固定ページ → '#'
+ * ヘッダー・フッター共通のロゴ画像URLを返す。
+ * 優先順：サイト基本情報 > ロゴ → 調速LP設定 > ロゴ → ''（空なら同梱の横ロゴを使う）
+ *
+ * @return string
  */
-function chosoku_terms_url() {
-	$v = get_theme_mod('chosoku_terms_url', '#');
-	if ($v && $v !== '#') {
-		return $v;
+function chosoku_logo_url() {
+	$url = '';
+	$id  = get_theme_mod('custom_logo');
+	if ($id) {
+		$url = (string) wp_get_attachment_image_url($id, 'full');
 	}
-	$pages = get_posts(array(
-		'post_type'   => 'page',
-		'post_status' => 'publish',
-		'numberposts' => 1,
-		'fields'      => 'ids',
-		'meta_key'    => '_wp_page_template',
-		'meta_value'  => 'template-terms.php',
-	));
-	if (!empty($pages)) {
-		return get_permalink($pages[0]);
+	if (!$url) {
+		$url = (string) get_theme_mod('chosoku_logo_yoko');
 	}
-	return '#';
+	return $url;
 }
 
 /**

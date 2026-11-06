@@ -5,21 +5,20 @@
  * @package chosoku-lp
  */
 $chosoku_login    = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/');
-$chosoku_logo_t   = get_theme_mod('chosoku_logo_tate');
+$chosoku_logo    = chosoku_logo_url(); // ヘッダーと同じロゴ
 $chosoku_company  = chosoku_url('chosoku_company_url', '#');
 $chosoku_tokusho  = chosoku_tokusho_url();
 $chosoku_privacy  = chosoku_url('chosoku_privacy_url', '#');
-$chosoku_terms    = chosoku_terms_url();
 ?>
 	<!-- ============================= FOOTER ============================= -->
 	<footer data-section="footer" class="site-footer">
 		<div class="container footer-inner">
 			<div class="footer-brand">
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo-chip" aria-label="調速（ちょーはや）不動産調査業務支援ソフト ホーム">
-					<?php if ($chosoku_logo_t) : ?>
-						<img src="<?php echo esc_url($chosoku_logo_t); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--tate">
+					<?php if ($chosoku_logo) : ?>
+						<img src="<?php echo esc_url($chosoku_logo); ?>" alt="<?php bloginfo('name'); ?>" class="logo-img logo-img--yoko">
 					<?php else : ?>
-						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-tate.png')); ?>" alt="調速" class="logo-img logo-img--tate" width="1254" height="1254">
+						<img src="<?php echo esc_url(get_theme_file_uri('assets/img/logo-yoko.png')); ?>" alt="調速" class="logo-img logo-img--yoko" width="1774" height="887">
 					<?php endif; ?>
 				</a>
 				<p class="footer-tagline">不動産調査業務を支援する、<br>クラウド型ソフトウェア。</p>
@@ -49,7 +48,6 @@ $chosoku_terms    = chosoku_terms_url();
 						<li><a href="<?php echo esc_url($chosoku_company); ?>">運営会社</a></li>
 						<li><a href="<?php echo esc_url($chosoku_tokusho); ?>">特定商取引法に基づく表記</a></li>
 						<li><a href="<?php echo esc_url($chosoku_privacy); ?>">プライバシーポリシー</a></li>
-						<li><a href="<?php echo esc_url($chosoku_terms); ?>">利用規約</a></li>
 					</ul>
 				</div>
 			</nav>

@@ -123,61 +123,74 @@
               <span class="mock-url">app.cho-haya.com</span>
             </div>
             <div class="fvm-body" aria-hidden="true">
-              <div class="fvm-main">
-                <div class="fvm-track">
-                  <section class="fvm-card fvm-card--9">
-                    <h4><span class="fvm-no">9</span>土地評価額</h4>
-                    <div class="fvm-row"><span class="mock-skel w40"></span><span class="mock-skel w30"></span></div>
-                  </section>
-                  <section class="fvm-card fvm-card--10">
-                    <h4><span class="fvm-no">10</span>周辺取引事例</h4>
-                    <div class="fvm-seg"><span class="is-on">〜500m</span><span>〜1km</span><span>〜2km</span><span>市全体</span></div>
-                    <div class="fvm-chart"><span class="mock-bars"><i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:62%"></i><i style="height:76%"></i></span></div>
-                    <div class="fvm-row"><span class="mock-skel w90"></span></div>
-                  </section>
-                  <section class="fvm-card fvm-card--11">
-                    <h4><span class="fvm-no">11</span>AI参考価格</h4>
-                    <div class="fvm-cols">
-                      <div class="fvm-box">
-                        <span class="fvm-label">AI参考価格（売買）</span>
-                        <div class="fvm-ai fvm-ai--glow"><span class="fvm-ai-head">AIが作成した内容</span><span class="mock-skel w90"></span><span class="mock-skel w70"></span><span class="mock-skel w80"></span></div>
-                      </div>
-                      <div class="fvm-box">
-                        <span class="fvm-label">AI参考価格（賃貸）</span>
-                        <div class="fvm-ai"><span class="fvm-ai-head">AIが作成した内容</span><span class="fvm-big"></span><span class="mock-skel w80"></span><span class="mock-skel w60"></span></div>
-                      </div>
-                    </div>
-                  </section>
-                  <section class="fvm-card fvm-card--12">
-                    <h4><span class="fvm-no">12</span>ポータルサイトで検索</h4>
-                    <div class="fvm-chips"><span></span><span></span><span></span><span></span></div>
-                  </section>
-                  <section class="fvm-card fvm-card--13">
-                    <h4><span class="fvm-no">13</span>営業決定価格</h4>
-                    <div class="fvm-calc"><span class="fvm-cell"></span><b>×</b><span class="fvm-cell"></span><b>=</b><span class="fvm-cell fvm-cell--result"></span></div>
-                    <div class="fvm-final"><span class="fvm-final-tag">最終判断</span><span class="mock-skel w50"></span></div>
-                  </section>
-                  <section class="fvm-card fvm-card--14">
-                    <h4><span class="fvm-no">14</span>AIレポート</h4>
-                    <span class="mock-skel w90"></span><span class="mock-skel w70"></span>
-                  </section>
-                </div>
+              <div class="fvm-search">
+                <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <span class="fvm-search-field"><span class="fvm-search-text">東京都〇〇区〇〇町１－２－３</span></span>
+                <span class="fvm-search-btn">調査</span>
+                <svg class="fvm-cursor" viewBox="0 0 24 24"><path d="M5 3l14 8-6.2 1.6L10 19z"/></svg>
+                <span class="fvm-loading"></span>
               </div>
-              <div class="fvm-menu">
-                <span class="fvm-btn fvm-btn--ghost">新規物件調査</span>
-                <span class="fvm-btn">プレゼンシートを作成</span>
-                <span class="fvm-btn">案件管理表に登録</span>
-                <span class="fvm-btn fvm-btn--ghost">印刷 / PDF保存</span>
-                <span class="fvm-menu-label">調査メニュー</span>
-                <ol class="fvm-menu-list">
-                  <li class="fvm-menu-active"></li>
-                  <li><span>9</span>土地評価額</li>
-                  <li><span>10</span>周辺取引事例</li>
-                  <li><span>11</span>AI参考価格</li>
-                  <li><span>12</span>ポータル検索</li>
-                  <li><span>13</span>営業決定価格</li>
-                  <li><span>14</span>AIレポート</li>
-                </ol>
+              <div class="fvm-results">
+                <div class="fvm-main">
+                  <div class="fvm-track">
+                    <section class="fvm-card fvm-card--9">
+                      <h4><span class="fvm-no">9</span>土地評価額</h4>
+                      <div class="fvm-row"><span class="mock-skel w40"></span><span class="mock-skel w30"></span></div>
+                    </section>
+                    <section class="fvm-card fvm-card--10">
+                      <h4><span class="fvm-no">10</span>周辺取引事例</h4>
+                      <div class="fvm-seg"><span class="is-on">〜500m</span><span>〜1km</span><span>〜2km</span><span>市全体</span></div>
+                      <div class="fvm-table">
+                        <div class="fvm-tr fvm-th"><span>時期</span><span>種類</span><span>取引価格</span><span>面積</span></div>
+                        <div class="fvm-tr"><i></i><i></i><i class="is-strong"></i><i></i></div>
+                        <div class="fvm-tr"><i></i><i></i><i class="is-strong"></i><i></i></div>
+                        <div class="fvm-tr"><i></i><i></i><i class="is-strong"></i><i></i></div>
+                      </div>
+                    </section>
+                    <section class="fvm-card fvm-card--11">
+                      <h4><span class="fvm-no">11</span>AI参考価格</h4>
+                      <div class="fvm-cols">
+                        <div class="fvm-box">
+                          <span class="fvm-label">AI参考価格（売買）</span>
+                          <div class="fvm-ai fvm-ai--glow"><span class="fvm-ai-head">AIが作成した内容</span><span class="mock-skel w90"></span><span class="mock-skel w70"></span><span class="mock-skel w80"></span></div>
+                        </div>
+                        <div class="fvm-box">
+                          <span class="fvm-label">AI参考価格（賃貸）</span>
+                          <div class="fvm-ai"><span class="fvm-ai-head">AIが作成した内容</span><span class="fvm-big"></span><span class="mock-skel w80"></span><span class="mock-skel w60"></span></div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="fvm-card fvm-card--12">
+                      <h4><span class="fvm-no">12</span>ポータルサイトで検索</h4>
+                      <div class="fvm-chips"><span></span><span></span><span></span><span></span></div>
+                    </section>
+                    <section class="fvm-card fvm-card--13">
+                      <h4><span class="fvm-no">13</span>営業決定価格</h4>
+                      <div class="fvm-calc"><span class="fvm-cell"></span><b>×</b><span class="fvm-cell"></span><b>=</b><span class="fvm-cell fvm-cell--result"></span></div>
+                      <div class="fvm-final"><span class="fvm-final-tag">最終判断</span><span class="mock-skel w50"></span></div>
+                    </section>
+                    <section class="fvm-card fvm-card--14">
+                      <h4><span class="fvm-no">14</span>AIレポート</h4>
+                      <span class="mock-skel w90"></span><span class="mock-skel w70"></span>
+                    </section>
+                  </div>
+                </div>
+                <div class="fvm-menu">
+                  <span class="fvm-btn fvm-btn--ghost">新規物件調査</span>
+                  <span class="fvm-btn">プレゼンシートを作成</span>
+                  <span class="fvm-btn">案件管理表に登録</span>
+                  <span class="fvm-btn fvm-btn--ghost">印刷 / PDF保存</span>
+                  <span class="fvm-menu-label">調査メニュー</span>
+                  <ol class="fvm-menu-list">
+                    <li class="fvm-menu-active"></li>
+                    <li><span>9</span>土地評価額</li>
+                    <li><span>10</span>周辺取引事例</li>
+                    <li><span>11</span>AI参考価格</li>
+                    <li><span>12</span>ポータル検索</li>
+                    <li><span>13</span>営業決定価格</li>
+                    <li><span>14</span>AIレポート</li>
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
@@ -220,27 +233,27 @@
         <ul class="problem-list reveal" aria-label="営業の現場でよくあるお悩み">
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>自治体の窓口やポータルサイトを行き来して、<span class="nobr">移動と待ち時間で半日が消えてしまう</span></p>
+            <p>自治体の窓口やポータルサイトを行き来して、<span class="nobr problem-em">移動と待ち時間で半日が消えてしまう</span></p>
           </li>
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>調べる項目が多く、<span class="nobr">市街化調整区域などの確認漏れが心配</span></p>
+            <p>調べる項目が多く、<span class="nobr problem-em">市街化調整区域などの確認漏れが心配</span></p>
           </li>
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>価格の根拠をそろえるのに、<span class="nobr">取引事例や相場を何度も調べ直している</span></p>
+            <p>価格の根拠をそろえるのに、<span class="nobr problem-em">取引事例や相場を毎回調べ直している</span></p>
           </li>
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>お客様向けの資料を、<span class="nobr">毎回定型文から作成している</span></p>
+            <p>お客様向けの資料を、<span class="nobr problem-em">毎回定型文から作成している</span></p>
           </li>
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>案件・顧客・保有物件の情報が、<span class="nobr">Excelや紙に散らばっている</span></p>
+            <p>案件・顧客・保有物件の情報が、<span class="nobr problem-em">Excelや紙に散らばっている</span></p>
           </li>
           <li class="problem-item">
             <span class="problem-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>新人とベテランで、<span class="nobr">調査品質にバラツキが出てしまう</span></p>
+            <p>新人とベテランで、<span class="nobr problem-em">調査品質にバラツキが出てしまう</span></p>
           </li>
         </ul>
       </div>
@@ -547,7 +560,7 @@
             </div>
           </li>
           <li class="why-item reveal">
-            <figure class="why-figure why-figure--screen"><img class="why-img" src="assets/screens/why-03.jpg" alt="物件詳細の入力（構造の表記・間取り）" width="900" height="716" loading="lazy"></figure>
+            <figure class="why-figure why-figure--screen"><img class="why-img" src="assets/screens/why-03.jpg" alt="物件詳細の入力（構造の表記・間取り）" width="900" height="794" loading="lazy"></figure>
             <div class="why-text">
               <span class="why-num">03</span>
               <h3>業務フローの起点集約</h3>
@@ -563,7 +576,7 @@
             </div>
           </li>
           <li class="why-item reveal">
-            <figure class="why-figure why-figure--screen"><img class="why-img" src="assets/screens/why-05.jpg" alt="PC の案件一覧 + スマホの案件詳細の合成" width="900" height="553" loading="lazy"></figure>
+            <figure class="why-figure why-figure--screen"><img class="why-img" src="assets/screens/why-05.jpg" alt="PC の案件一覧 + スマホの案件詳細の合成" width="900" height="547" loading="lazy"></figure>
             <div class="why-text">
               <span class="why-num">05</span>
               <h3>案件管理表とひとつながり</h3>
@@ -593,6 +606,54 @@
           <p class="eyebrow">CASE MANAGEMENT</p>
           <h2 class="section-title"><span class="nobr">案件・顧客・保有物件を、</span><span class="nobr">ひとつの画面で。</span></h2>
           <p class="section-lead">案件管理表は、案件管理・顧客管理・ポートフォリオの3つの機能を備えた、不動産会社向けの業務アプリです。調速で調べた物件は、案件詳細の「調査データ」にそのまま入ります。</p>
+        </div>
+
+        <!-- 連携図：調速で調べて登録 → 案件管理表で管理 → 次の物件調査へ（SVGアニメーション） -->
+        <div class="link-diagram reveal" role="img" aria-label="調速で調べた物件・営業決定価格・判断理由を案件管理表に登録し、案件・顧客の管理から次の物件調査へつなげる流れ">
+          <div class="lk-node lk-node--research">
+            <span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <p class="lk-badge">物件調査</p>
+            <h3 class="lk-title">調速</h3>
+            <p class="lk-sub">調べる・価格を決める</p>
+            <ul class="lk-chips"><li>調査結果</li><li>AI参考価格</li><li>営業決定価格</li><li>プレゼンシート</li></ul>
+          </div>
+
+          <div class="lk-flow" aria-hidden="true">
+            <div class="lk-lane lk-lane--to">
+              <p class="lk-label"><b>登録する</b>調査データ・営業決定価格・<br class="pc-only">判断理由をそのまま反映</p>
+              <svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
+                <path class="lk-path" d="M6 18 H224"/>
+                <path class="lk-head" d="M220 10 L232 18 L220 26"/>
+                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M6 18 H224"/></circle>
+              </svg>
+              <svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
+                <path class="lk-path" d="M18 4 V82"/>
+                <path class="lk-head" d="M10 78 L18 90 L26 78"/>
+                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M18 4 V82"/></circle>
+              </svg>
+            </div>
+            <div class="lk-lane lk-lane--back">
+              <svg class="lk-svg lk-svg--h" viewBox="0 0 240 36">
+                <path class="lk-path" d="M234 18 H16"/>
+                <path class="lk-head" d="M20 10 L8 18 L20 26"/>
+                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M234 18 H16"/></circle>
+              </svg>
+              <svg class="lk-svg lk-svg--v" viewBox="0 0 36 96">
+                <path class="lk-path" d="M18 92 V14"/>
+                <path class="lk-head" d="M10 18 L18 6 L26 18"/>
+                <circle class="lk-dot" r="5"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M18 92 V14"/></circle>
+              </svg>
+              <p class="lk-label"><b>次の調査へ</b>案件・顧客の管理から、<br class="pc-only">次の物件調査へ</p>
+            </div>
+          </div>
+
+          <div class="lk-node lk-node--kanri">
+            <span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+            <p class="lk-badge">案件・顧客の管理</p>
+            <h3 class="lk-title">案件管理表</h3>
+            <p class="lk-sub">登録して、管理する</p>
+            <ul class="lk-chips"><li>案件管理</li><li>顧客管理</li><li>ポートフォリオ</li></ul>
+          </div>
         </div>
 
         <div class="kanri-cards">
@@ -671,10 +732,6 @@
             <summary>スマートフォンでも使えますか？</summary>
             <div class="faq-body"><p>はい。調査結果の閲覧と、案件管理表のすべての機能がスマホに対応しています。プレゼンシートの編集はPCで行ってください。</p></div>
           </details>
-          <details class="faq-item">
-            <summary>解約はできますか？</summary>
-            <div class="faq-body"><p>契約期間・更新・解約の手続きは利用規約に定めています。詳しくはお問い合わせください。</p></div>
-          </details>
         </div>
       </div>
     </section>
@@ -746,7 +803,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#top" class="footer-logo-chip" aria-label="調速（ちょーはや）不動産調査業務支援ソフト ホーム">
-          <img src="assets/logo-tate.png" alt="" class="logo-img logo-img--tate" width="1254" height="1254">
+          <img src="assets/logo-yoko.png" alt="" class="logo-img logo-img--yoko" width="1774" height="887">
         </a>
         <p class="footer-tagline">不動産調査業務を支援する、<br>クラウド型ソフトウェア。</p>
       </div>
@@ -775,7 +832,6 @@
             <li><a href="#">運営会社</a></li>
             <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
             <li><a href="#">プライバシーポリシー</a></li>
-            <li><a href="terms.html">利用規約</a></li>
           </ul>
         </div>
       </nav>
