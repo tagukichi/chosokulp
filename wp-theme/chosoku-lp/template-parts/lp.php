@@ -558,7 +558,38 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 			<!-- 連携図：調速で調べた物件を、案件管理表に登録して自社案件として管理（SVGアニメーション） -->
 			<div class="link-diagram reveal" role="img" aria-label="調速で調べた物件を案件管理表に登録し、自社の案件として管理する流れ">
 				<div class="lk-node lk-node--research">
-					<span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+					<svg class="lk-screen" viewBox="0 0 220 132" aria-hidden="true">
+						<defs><linearGradient id="lkBtnGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
+						<rect class="lks-win" x="1" y="1" width="218" height="130" rx="10"/>
+						<path class="lks-bar" d="M1 11 a10 10 0 0 1 10 -10 h198 a10 10 0 0 1 10 10 v8 h-218 z"/>
+						<circle cx="12" cy="10" r="2.6" fill="#F87171"/><circle cx="20" cy="10" r="2.6" fill="#FBBF24"/><circle cx="28" cy="10" r="2.6" fill="#34D399"/>
+						<rect class="lks-search" x="9" y="26" width="202" height="18" rx="9"/>
+						<text class="lks-addr" x="18" y="38.2">東京都〇〇区〇〇町1-2-3</text>
+						<rect class="lks-cover" x="17" y="28" width="142" height="14"/>
+						<g class="lks-btn"><rect x="170" y="28" width="37" height="14" rx="7" fill="url(#lkBtnGrad)"/><text class="lks-btn-t" x="188.5" y="38">調査</text></g>
+						<g class="lks-panel lks-p1">
+							<rect class="lks-card" x="9" y="50" width="98" height="38" rx="5"/>
+							<rect x="13" y="54" width="90" height="30" rx="3" fill="#EEF3FA"/>
+							<path d="M13 64 h90 M13 74 h90 M35 54 v30 M58 54 v30 M81 54 v30" stroke="#DCE5F0" stroke-width="1"/>
+							<circle cx="62" cy="68" r="4.5" fill="#2563EB"/><circle cx="62" cy="68" r="1.8" fill="#fff"/>
+						</g>
+						<g class="lks-panel lks-p2">
+							<rect class="lks-card" x="113" y="50" width="98" height="38" rx="5"/>
+							<text class="lks-tag" x="119" y="61">用途地域</text>
+							<rect x="119" y="67" width="64" height="5" rx="2.5" fill="#DCE3EC"/><rect x="119" y="76" width="44" height="5" rx="2.5" fill="#DCE3EC"/>
+						</g>
+						<g class="lks-panel lks-p3">
+							<rect class="lks-card" x="9" y="94" width="98" height="30" rx="5"/>
+							<text class="lks-tag" x="15" y="104">ハザード</text>
+							<rect x="15" y="109" width="22" height="9" rx="4.5" fill="#DBEAFE"/><rect x="41" y="109" width="22" height="9" rx="4.5" fill="#DBEAFE"/><rect x="67" y="109" width="22" height="9" rx="4.5" fill="#DBEAFE"/>
+						</g>
+						<g class="lks-panel lks-p4">
+							<rect class="lks-card" x="113" y="94" width="98" height="30" rx="5"/>
+							<text class="lks-tag" x="119" y="104">周辺取引事例</text>
+							<rect x="119" y="109" width="26" height="4" rx="2" fill="#DCE3EC"/><rect x="150" y="109" width="30" height="4" rx="2" fill="#93C5FD"/><rect x="185" y="109" width="18" height="4" rx="2" fill="#DCE3EC"/>
+							<rect x="119" y="116" width="26" height="4" rx="2" fill="#DCE3EC"/><rect x="150" y="116" width="30" height="4" rx="2" fill="#93C5FD"/><rect x="185" y="116" width="18" height="4" rx="2" fill="#DCE3EC"/>
+						</g>
+					</svg>
 					<h3 class="lk-title">調速</h3>
 					<p class="lk-sub">物件を調べる</p>
 				</div>
@@ -578,10 +609,28 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 				</div>
 
 				<div class="lk-node lk-node--kanri">
-					<span class="lk-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+					<svg class="lk-screen" viewBox="0 0 220 132" aria-hidden="true">
+						<rect class="lks-win" x="1" y="1" width="218" height="130" rx="10"/>
+						<path class="lkt-bar" d="M1 11 a10 10 0 0 1 10 -10 h198 a10 10 0 0 1 10 10 v8 h-218 z"/>
+						<rect x="9" y="5" width="40" height="10" rx="5" fill="#3E6FCB"/><text class="lkt-tab" x="29" y="12.6">案件管理</text>
+						<rect x="53" y="5" width="34" height="10" rx="5" fill="#334155"/><rect x="91" y="5" width="40" height="10" rx="5" fill="#334155"/>
+						<text class="lkt-title" x="10" y="33">案件一覧</text>
+						<rect x="9" y="39" width="202" height="13" rx="3" fill="#EEF4FF"/>
+						<text class="lkt-th" x="15" y="48">案件名</text><text class="lkt-th" x="118" y="48">進行状況</text><text class="lkt-th" x="170" y="48">担当</text>
+						<g class="lkt-rows">
+							<g><rect x="15" y="60" width="64" height="5" rx="2.5" fill="#DCE3EC"/><rect x="118" y="57" width="30" height="10" rx="5" fill="#FEF3C7"/><rect x="170" y="60" width="28" height="5" rx="2.5" fill="#DCE3EC"/><path d="M9 70.5 h202" stroke="#EDF1F6"/></g>
+							<g><rect x="15" y="78" width="54" height="5" rx="2.5" fill="#DCE3EC"/><rect x="118" y="75" width="30" height="10" rx="5" fill="#DCFCE7"/><rect x="170" y="78" width="28" height="5" rx="2.5" fill="#DCE3EC"/><path d="M9 88.5 h202" stroke="#EDF1F6"/></g>
+							<g><rect x="15" y="96" width="60" height="5" rx="2.5" fill="#DCE3EC"/><rect x="118" y="93" width="30" height="10" rx="5" fill="#E0E7FF"/><rect x="170" y="96" width="28" height="5" rx="2.5" fill="#DCE3EC"/><path d="M9 106.5 h202" stroke="#EDF1F6"/></g>
+						</g>
+						<g class="lkt-new">
+							<rect class="lkt-new-bg" x="9" y="53" width="202" height="18" rx="3"/>
+							<text class="lkt-new-t" x="15" y="65">〇〇町1-2-3 戸建</text>
+							<rect x="118" y="57" width="30" height="10" rx="5" fill="#2563EB"/><text class="lkt-chip-t" x="133" y="64.6">調査済</text>
+							<rect class="lkt-badge" x="176" y="57" width="26" height="10" rx="5"/><text class="lkt-badge-t" x="189" y="64.6">NEW</text>
+						</g>
+					</svg>
 					<h3 class="lk-title">案件管理表</h3>
 					<p class="lk-sub">自社の案件として管理</p>
-					<ul class="lk-chips"><li>案件管理</li><li>顧客管理</li><li>ポートフォリオ</li></ul>
 				</div>
 
 				<p class="lk-message"><span class="nobr">調べて終わりにしない。</span><span class="nobr">自社の案件として、<em>しっかり管理。</em></span></p>
