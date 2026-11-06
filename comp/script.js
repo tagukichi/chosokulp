@@ -285,4 +285,105 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* ----------------------------------------------------------------
+     9. 特長02：AIの作成アニメーション
+        画面内に入ったら 1回だけ「AI参考価格 → AI解体費 → AI提案文」の順に作成。
+        タブを押すと、その時点で作成完了の状態にして該当タブを表示する。
+     ---------------------------------------------------------------- */
+  const aiDemo = document.querySelector('[data-ai-demo]');
+  if (aiDemo) {
+    const tabs = aiDemo.querySelectorAll('.aim-tab');
+    const panes = aiDemo.querySelectorAll('.aim-pane');
+    const statusText = aiDemo.querySelector('.aim-status-text');
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const timers = [];
+    let started = false;
+    let stopped = false;
+
+    const wait = function (ms) {
+      return new Promise(function (resolve) { timers.push(setTimeout(resolve, ms)); });
+    };
+    const showTab = function (name) {
+      tabs.forEach(function (t) { t.classList.toggle('is-active', t.dataset.tab === name); });
+      panes.forEach(function (p) { p.classList.toggle('is-active', p.dataset.pane === name); });
+    };
+    const completePane = function (pane) {
+      pane.querySelectorAll('.aim-frame').forEach(function (f) { f.classList.add('is-shown'); });
+      pane.querySelectorAll('.aim-text').forEach(function (t) {
+        t.textContent = t.dataset.type || '';
+        t.classList.remove('is-typing');
+      });
+      pane.querySelectorAll('tbody tr, .aim-reveal').forEach(function (r) { r.classList.add('is-shown'); });
+    };
+    const finish = function (name) {
+      stopped = true;
+      timers.forEach(clearTimeout);
+      panes.forEach(completePane);
+      if (statusText) statusText.textContent = '作成完了（AIが作成した内容は参考情報です）';
+      aiDemo.classList.add('is-done');
+      showTab(name || 'price');
+    };
+    const typeText = async function (el) {
+      const text = el.dataset.type || '';
+      el.textContent = '';
+      el.classList.add('is-typing');
+      for (let i = 0; i < text.length; i++) {
+        if (stopped) return;
+        el.textContent += text.charAt(i);
+        await wait(36);
+      }
+      el.classList.remove('is-typing');
+    };
+    const runPane = async function (name, label) {
+      if (stopped) return;
+      const pane = aiDemo.querySelector('.aim-pane[data-pane="' + name + '"]');
+      showTab(name);
+      if (statusText) statusText.textContent = label;
+      await wait(700);
+      if (stopped) return;
+      const frame = pane.querySelector('.aim-frame');
+      frame.classList.add('is-shown', 'is-glow');
+      await wait(450);
+      const texts = pane.querySelectorAll('.aim-text');
+      for (let i = 0; i < texts.length; i++) { await typeText(texts[i]); }
+      const rows = pane.querySelectorAll('tbody tr, .aim-reveal');
+      for (let i = 0; i < rows.length; i++) {
+        if (stopped) return;
+        rows[i].classList.add('is-shown');
+        await wait(170);
+      }
+      await wait(1900);
+    };
+    const run = async function () {
+      await runPane('price', 'AIが参考価格の目安を作成中…');
+      await runPane('demolition', 'AIが解体費の目安を作成中…');
+      await runPane('proposal', 'AIが提案文を下書き中…');
+      if (!stopped) finish('proposal');
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () { finish(tab.dataset.tab); });
+    });
+
+    if (reduceMotion) {
+      finish('price');
+    } else if ('IntersectionObserver' in window) {
+      const aiIo = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            observer.disconnect();
+            run();
+          }
+        });
+      }, { threshold: 0.4 });
+      aiIo.observe(aiDemo);
+    } else {
+      finish('price');
+    }
+
+    // カンプ撮影用：完成状態を表示する
+    window.chosokuAiDemo = { finish: finish };
+  }
+
 });

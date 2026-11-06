@@ -116,21 +116,87 @@
 
         <!-- 製品画面（実画面：PC + スマホ） -->
         <div class="hero-visual hero-anim-visual">
-          <div class="mock-window">
+          <!-- 製品モック：実際の調査画面の構成（左＝番号付きの調査結果、右＝調査メニュー）に似せたアニメーション -->
+          <div class="mock-window" role="img" aria-label="調速の調査画面のイメージ（左に調査結果、右に調査メニュー）">
             <div class="mock-bar">
               <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
               <span class="mock-url">app.cho-haya.com</span>
             </div>
-            <img class="mock-shot" src="assets/screens/hero-pc.jpg" alt="調速の調査画面（AI参考価格と右側の調査メニュー）" width="1000" height="625">
-          </div>
-
-          <div class="mock-phone">
-            <div class="mock-phone-notch" aria-hidden="true"></div>
-            <div class="mock-phone-screen mock-phone-screen--shot">
-              <img src="assets/screens/hero-sp.jpg" alt="プレゼンシートのスマホ表示" width="300" height="649">
+            <div class="fvm-body" aria-hidden="true">
+              <div class="fvm-main">
+                <div class="fvm-track">
+                  <section class="fvm-card fvm-card--9">
+                    <h4><span class="fvm-no">9</span>土地評価額</h4>
+                    <div class="fvm-row"><span class="mock-skel w40"></span><span class="mock-skel w30"></span></div>
+                  </section>
+                  <section class="fvm-card fvm-card--10">
+                    <h4><span class="fvm-no">10</span>周辺取引事例</h4>
+                    <div class="fvm-seg"><span class="is-on">〜500m</span><span>〜1km</span><span>〜2km</span><span>市全体</span></div>
+                    <div class="fvm-chart"><span class="mock-bars"><i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:62%"></i><i style="height:76%"></i></span></div>
+                    <div class="fvm-row"><span class="mock-skel w90"></span></div>
+                  </section>
+                  <section class="fvm-card fvm-card--11">
+                    <h4><span class="fvm-no">11</span>AI参考価格</h4>
+                    <div class="fvm-cols">
+                      <div class="fvm-box">
+                        <span class="fvm-label">AI参考価格（売買）</span>
+                        <div class="fvm-ai fvm-ai--glow"><span class="fvm-ai-head">AIが作成した内容</span><span class="mock-skel w90"></span><span class="mock-skel w70"></span><span class="mock-skel w80"></span></div>
+                      </div>
+                      <div class="fvm-box">
+                        <span class="fvm-label">AI参考価格（賃貸）</span>
+                        <div class="fvm-ai"><span class="fvm-ai-head">AIが作成した内容</span><span class="fvm-big"></span><span class="mock-skel w80"></span><span class="mock-skel w60"></span></div>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="fvm-card fvm-card--12">
+                    <h4><span class="fvm-no">12</span>ポータルサイトで検索</h4>
+                    <div class="fvm-chips"><span></span><span></span><span></span><span></span></div>
+                  </section>
+                  <section class="fvm-card fvm-card--13">
+                    <h4><span class="fvm-no">13</span>営業決定価格</h4>
+                    <div class="fvm-calc"><span class="fvm-cell"></span><b>×</b><span class="fvm-cell"></span><b>=</b><span class="fvm-cell fvm-cell--result"></span></div>
+                    <div class="fvm-final"><span class="fvm-final-tag">最終判断</span><span class="mock-skel w50"></span></div>
+                  </section>
+                  <section class="fvm-card fvm-card--14">
+                    <h4><span class="fvm-no">14</span>AIレポート</h4>
+                    <span class="mock-skel w90"></span><span class="mock-skel w70"></span>
+                  </section>
+                </div>
+              </div>
+              <div class="fvm-menu">
+                <span class="fvm-btn fvm-btn--ghost">新規物件調査</span>
+                <span class="fvm-btn">プレゼンシートを作成</span>
+                <span class="fvm-btn">案件管理表に登録</span>
+                <span class="fvm-btn fvm-btn--ghost">印刷 / PDF保存</span>
+                <span class="fvm-menu-label">調査メニュー</span>
+                <ol class="fvm-menu-list">
+                  <li class="fvm-menu-active"></li>
+                  <li><span>9</span>土地評価額</li>
+                  <li><span>10</span>周辺取引事例</li>
+                  <li><span>11</span>AI参考価格</li>
+                  <li><span>12</span>ポータル検索</li>
+                  <li><span>13</span>営業決定価格</li>
+                  <li><span>14</span>AIレポート</li>
+                </ol>
+              </div>
             </div>
           </div>
-          <p class="shot-cap shot-cap--hero">※ 画面はイメージです。数値・住所はダミーです。</p>
+
+          <div class="mock-phone" aria-hidden="true">
+            <div class="mock-phone-notch"></div>
+            <div class="mock-phone-screen fvm-phone">
+              <span class="fvm-phone-btn">PowerPointで出力</span>
+              <div class="fvm-phone-card">
+                <b>物件調査サマリー</b>
+                <span class="mock-skel w70"></span>
+              </div>
+              <div class="fvm-phone-card">
+                <span class="mock-panel-tag">物件概要</span>
+                <div class="fvm-phone-rows"><i></i><span class="mock-skel w80"></span><i></i><span class="mock-skel w60"></span><i></i><span class="mock-skel w70"></span><i></i><span class="mock-skel w50"></span></div>
+              </div>
+            </div>
+          </div>
+          <p class="shot-cap shot-cap--hero">※ 画面はイメージです。</p>
         </div>
       </div>
 
@@ -223,10 +289,70 @@
             <p class="sol-note">※ AIの目安は参考値です。不動産の評価・鑑定を行う機能ではありません。最終的な価格判断は宅地建物取引士の確認のもとで行ってください。</p>
           </div>
           <div class="sol-visual reveal reveal--right">
-            <figure class="shot">
-              <img src="assets/screens/sol-02.jpg" alt="AI参考価格（売買・賃貸）と「AIが作成した内容」の枠" width="1040" height="750" loading="lazy">
-              <figcaption class="shot-cap">※ 画面はイメージです。数値・住所はダミーです。</figcaption>
-            </figure>
+<div class="mock-card aim" data-ai-demo aria-label="AIが価格の目安・解体費・提案文を作成するイメージ">
+              <div class="aim-tabs">
+                <button type="button" class="aim-tab is-active" data-tab="price">AI参考価格</button>
+                <button type="button" class="aim-tab" data-tab="demolition">AI解体費</button>
+                <button type="button" class="aim-tab" data-tab="proposal">AI提案文</button>
+              </div>
+              <div class="aim-panes">
+                <div class="aim-pane is-active" data-pane="price">
+                  <div class="aim-head"><span class="aim-ico">¥</span><p><b>AI参考価格（売買）</b><small>周辺の取引事例と公示地価から、坪単価の目安を整理します。</small></p></div>
+                  <div class="aim-range"><span class="is-on">500m</span><span>1km</span><span>2km</span></div>
+                  <div class="aim-frame">
+                    <div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+                    <div class="aim-frame-body">
+                      <p class="aim-text" data-type="対象地から500m圏・直近1年の取引事例をもとにした坪単価の目安です。周辺は築30〜40年の戸建てが中心で、公示地価の水準とも大きな乖離はありません。"></p>
+                      <table class="aim-table">
+                        <thead><tr><th>区分</th><th>坪単価の目安</th></tr></thead>
+                        <tbody>
+                          <tr><td>築10年未満</td><td><span class="aim-bar" style="width:86%"></span></td></tr>
+                          <tr><td>築10〜20年</td><td><span class="aim-bar" style="width:76%"></span></td></tr>
+                          <tr><td>築20〜30年</td><td><span class="aim-bar" style="width:68%"></span></td></tr>
+                          <tr class="is-hl"><td>築30〜40年</td><td><span class="aim-bar" style="width:60%"></span></td></tr>
+                          <tr><td>築40〜50年</td><td><span class="aim-bar" style="width:52%"></span></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+                  </div>
+                </div>
+
+                <div class="aim-pane" data-pane="demolition">
+                  <div class="aim-head"><span class="aim-ico">解</span><p><b>AI解体費（概算）</b><small>構造別の解体費の相場から、延床面積をもとに総額の目安を計算します。</small></p></div>
+                  <div class="aim-frame">
+                    <div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+                    <div class="aim-frame-body">
+                      <p class="aim-text" data-type="対象地域の構造別の相場をもとに、延床面積から解体費の総額の目安を計算しました。実際の費用は解体業者の見積もりで確認してください。"></p>
+                      <table class="aim-table">
+                        <thead><tr><th>構造</th><th>坪単価の目安</th></tr></thead>
+                        <tbody>
+                          <tr class="is-hl"><td>木造</td><td><span class="aim-bar" style="width:50%"></span></td></tr>
+                          <tr><td>軽量鉄骨造</td><td><span class="aim-bar" style="width:62%"></span></td></tr>
+                          <tr><td>重量鉄骨造</td><td><span class="aim-bar" style="width:72%"></span></td></tr>
+                          <tr><td>RC造</td><td><span class="aim-bar" style="width:84%"></span></td></tr>
+                        </tbody>
+                      </table>
+                      <p class="aim-note aim-reveal"><b>坪単価に含まれない費用（別途）</b>付帯工事・残置物の処分・地中埋設物の撤去・アスベストの事前調査</p>
+                    </div>
+                    <div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+                  </div>
+                </div>
+
+                <div class="aim-pane" data-pane="proposal">
+                  <div class="aim-head"><span class="aim-ico">文</span><p><b>AI提案文</b><small>周辺データと担当者のメモから、お客様向けの文章を下書きします。</small></p></div>
+                  <div class="aim-memo"><span>担当者メモ</span>子育て世帯向け・駅近を強調</div>
+                  <div class="aim-frame">
+                    <div class="aim-frame-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4z"/><path d="M19 14l.8 2 .2.8-2 .8L17 19l-.8-2-2-.8 2-.8z"/></svg>AIが作成した内容<span>ここから下</span></div>
+                    <div class="aim-frame-body">
+                      <p class="aim-text aim-text--long" data-type="最寄り駅まで徒歩8分。周辺にはスーパーや小学校が揃い、子育て世帯にも暮らしやすいエリアです。落ち着いた住環境で、はじめてのマイホームにも安心してお選びいただけます。"></p>
+                    </div>
+                    <div class="aim-frame-foot">▲ AIが作成した内容はここまで</div>
+                  </div>
+                </div>
+              </div>
+              <div class="aim-status"><span class="aim-dot"></span><span class="aim-status-text">AIが作成します</span></div>
+            </div>
           </div>
         </div>
 
