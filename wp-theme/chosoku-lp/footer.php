@@ -8,7 +8,7 @@ $chosoku_login    = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/'
 $chosoku_logo    = chosoku_logo_url(); // ヘッダーと同じロゴ
 $chosoku_company  = chosoku_url('chosoku_company_url', '#');
 $chosoku_tokusho  = chosoku_tokusho_url();
-$chosoku_privacy  = chosoku_url('chosoku_privacy_url', '#');
+$chosoku_privacy  = chosoku_url('chosoku_privacy_url', 'https://usachim.com/privacy/');
 ?>
 	<!-- ============================= FOOTER ============================= -->
 	<footer data-section="footer" class="site-footer">
@@ -47,7 +47,7 @@ $chosoku_privacy  = chosoku_url('chosoku_privacy_url', '#');
 					<ul>
 						<li><a href="<?php echo esc_url($chosoku_company); ?>">運営会社</a></li>
 						<li><a href="<?php echo esc_url($chosoku_tokusho); ?>">特定商取引法に基づく表記</a></li>
-						<li><a href="<?php echo esc_url($chosoku_privacy); ?>">プライバシーポリシー</a></li>
+						<li><a href="<?php echo esc_url($chosoku_privacy); ?>" target="_blank" rel="noopener">プライバシーポリシー</a></li>
 					</ul>
 				</div>
 			</nav>

@@ -66,7 +66,7 @@ function chosoku_customize_register($wp_customize) {
 	));
 	$links = array(
 		'chosoku_login_url'   => array(__('ログインURL（本体アプリ）', 'chosoku-lp'), 'https://app.cho-haya.com/'),
-		'chosoku_privacy_url' => array(__('プライバシーポリシー URL', 'chosoku-lp'), '#'),
+		'chosoku_privacy_url' => array(__('プライバシーポリシー URL', 'chosoku-lp'), 'https://usachim.com/privacy/'),
 		'chosoku_tokusho_url' => array(__('特定商取引法に基づく表記 URL', 'chosoku-lp'), '#'),
 		'chosoku_company_url' => array(__('運営会社 URL', 'chosoku-lp'), '#'),
 	);

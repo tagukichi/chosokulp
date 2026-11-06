@@ -5,7 +5,7 @@
  * @package chosoku-lp
  */
 $chosoku_login   = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/');
-$chosoku_privacy = chosoku_url('chosoku_privacy_url', '#');
+$chosoku_privacy = chosoku_url('chosoku_privacy_url', 'https://usachim.com/privacy/');
 $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミーです。';
 ?>
@@ -766,7 +766,7 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 
 						<label class="field-check">
 							<input type="checkbox" id="cf-agree" name="agree" required>
-							<span><a href="<?php echo esc_url($chosoku_privacy); ?>" class="inline-link">プライバシーポリシー</a>に同意します<span class="req">必須</span></span>
+							<span><a href="<?php echo esc_url($chosoku_privacy); ?>" class="inline-link" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します<span class="req">必須</span></span>
 						</label>
 
 						<button type="submit" class="btn btn-primary btn-lg btn-block">送信する</button>
