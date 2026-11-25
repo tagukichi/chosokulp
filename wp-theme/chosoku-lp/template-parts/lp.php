@@ -22,7 +22,7 @@ $chosoku_video   = chosoku_intro_video(); // 紹介動画（未設定なら null
 		<div class="container hero-inner">
 			<div class="hero-copy hero-anim">
 				<h1 class="hero-title">
-					住所を入力して、<span class="hero-accent">約5分</span>。<br>
+					住所を入力して、<span class="hero-accent">約15秒</span>。<br>
 					不動産調査業務を効率化する<br>クラウド型ソフトウェア。
 				</h1>
 				<p class="hero-lead">
