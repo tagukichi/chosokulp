@@ -1063,7 +1063,6 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   display: flex; flex-direction: column; overflow: hidden;
   background: var(--c-surface); border: 1px solid var(--c-border);
   border-radius: var(--radius-lg); box-shadow: var(--sh-sm);
-  border-top: 4px solid var(--kanri-accent, var(--c-primary-600));
 }
 .kanri-card--case      { --kanri-accent: #3E6FCB; }
 .kanri-card--customer  { --kanri-accent: #B5654F; }
