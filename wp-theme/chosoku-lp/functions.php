@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('CHOSOKU_VER')) {
-	define('CHOSOKU_VER', '1.3.3');
+	define('CHOSOKU_VER', '1.4.0');
 }
 
 /**
@@ -150,6 +150,68 @@ function chosoku_screen_img($field, $default_rel, $w, $h, $alt, $class = '') {
 		esc_attr($alt),
 		$w,
 		$h
+	);
+}
+
+/**
+ * 紹介動画の埋め込み情報を返す（ACF「紹介動画」タブ）。未設定なら null。
+ * YouTube / Vimeo の URL は埋め込みプレーヤー、MP4 等は <video> で表示する。
+ *
+ * @return array|null array('html' => 埋め込みHTML, 'title' => 見出し, 'length' => 長さ表示, 'fv' => FVにボタンを出すか)
+ */
+function chosoku_intro_video() {
+	if (!function_exists('get_field')) {
+		return null;
+	}
+	$pid  = get_option('page_on_front');
+	$pid  = $pid ? $pid : null;
+	$url  = trim((string) get_field('intro_video_url', $pid));
+	$file = trim((string) get_field('intro_video_file', $pid));
+	$html = '';
+
+	if ($url !== '' && preg_match('~(?:youtube\.com/(?:watch\?(?:.*&)?v=|embed/|shorts/|live/)|youtu\.be/)([A-Za-z0-9_-]{11})~', $url, $m)) {
+		$html = sprintf(
+			'<iframe src="%s" title="調速 紹介動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+			esc_url('https://www.youtube-nocookie.com/embed/' . $m[1] . '?rel=0')
+		);
+	} elseif ($url !== '' && preg_match('~vimeo\.com/(?:video/)?(\d+)~', $url, $m)) {
+		$html = sprintf(
+			'<iframe src="%s" title="調速 紹介動画" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+			esc_url('https://player.vimeo.com/video/' . $m[1])
+		);
+	} else {
+		$src = '';
+		if ($url !== '' && preg_match('/\.(mp4|webm|mov|m4v)(\?.*)?$/i', $url)) {
+			$src = $url;
+		} elseif ($file !== '') {
+			$src = $file;
+		}
+		if ($src !== '') {
+			$poster = trim((string) get_field('intro_video_poster', $pid));
+			$html   = sprintf(
+				'<video src="%s"%s controls playsinline preload="metadata"></video>',
+				esc_url($src),
+				$poster !== '' ? ' poster="' . esc_url($poster) . '"' : ''
+			);
+		} elseif ($url !== '' && function_exists('wp_oembed_get')) {
+			$oembed = wp_oembed_get($url);
+			if ($oembed) {
+				$html = $oembed;
+			}
+		}
+	}
+	if ($html === '') {
+		return null;
+	}
+
+	$title  = trim((string) get_field('intro_video_title', $pid));
+	$length = trim((string) get_field('intro_video_length', $pid));
+	$fv     = get_field('intro_video_fv_button', $pid);
+	return array(
+		'html'   => $html,
+		'title'  => $title !== '' ? $title : '動画でわかる調速',
+		'length' => $length,
+		'fv'     => (null === $fv || '' === $fv) ? true : (bool) $fv, // 未保存なら表示
 	);
 }
 

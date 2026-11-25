@@ -23,6 +23,53 @@ function chosoku_register_acf_fields() {
 
 	$fields = array();
 
+	/* -------- 紹介動画（FVのボタン＋使い方セクションに埋め込み） -------- */
+	$fields[] = array('key' => 'field_chosoku_video_tab', 'label' => '紹介動画', 'type' => 'tab');
+	$fields[] = array(
+		'key'     => 'field_chosoku_video_intro',
+		'label'   => '',
+		'name'    => '',
+		'type'    => 'message',
+		'message' => '動画を設定すると、「使い方」セクションに動画を埋め込み、FV（ファーストビュー）に「紹介動画を見る」ボタンを表示します。<br><strong>動画URL → 動画ファイル</strong> の順に使い、どちらも空欄なら動画とボタンは表示しません。',
+	);
+	$fields[] = array(
+		'key'          => 'field_chosoku_video_url',
+		'label'        => '動画URL（YouTube / Vimeo / MP4）',
+		'name'         => 'intro_video_url',
+		'type'         => 'url',
+		'instructions' => 'YouTube は限定公開のURLでも埋め込めます（例：https://youtu.be/xxxxxxxxxxx）。',
+	);
+	$fields[] = array(
+		'key'           => 'field_chosoku_video_file',
+		'label'         => '動画ファイル（MP4）',
+		'name'          => 'intro_video_file',
+		'type'          => 'file',
+		'return_format' => 'url',
+		'library'       => 'all',
+		'mime_types'    => 'mp4,webm,mov,m4v',
+		'instructions'  => '動画URLが空欄のときに使います。',
+	);
+	$fields[] = array(
+		'key'           => 'field_chosoku_video_poster',
+		'label'         => 'サムネイル画像（MP4のとき）',
+		'name'          => 'intro_video_poster',
+		'type'          => 'image',
+		'return_format' => 'url',
+		'preview_size'  => 'medium',
+		'library'       => 'all',
+		'instructions'  => '再生前に表示する画像。YouTube / Vimeo の場合は不要です。',
+	);
+	$fields[] = array('key' => 'field_chosoku_video_title', 'label' => '動画の上の見出し', 'name' => 'intro_video_title', 'type' => 'text', 'placeholder' => '動画でわかる調速');
+	$fields[] = array('key' => 'field_chosoku_video_length', 'label' => '動画の長さ（FVのボタンに表示）', 'name' => 'intro_video_length', 'type' => 'text', 'placeholder' => '例：約2分', 'instructions' => '入力するとボタンが「紹介動画を見る（約2分）」になります。空欄なら長さは出しません。');
+	$fields[] = array(
+		'key'           => 'field_chosoku_video_fv_button',
+		'label'         => 'FVに「紹介動画を見る」ボタンを表示',
+		'name'          => 'intro_video_fv_button',
+		'type'          => 'true_false',
+		'ui'            => 1,
+		'default_value' => 1,
+	);
+
 	/* -------- よくある質問（FAQ） -------- */
 	$faq_defaults = chosoku_faq_defaults();
 	$fields[] = array('key' => 'field_chosoku_faq_tab', 'label' => 'よくある質問（FAQ）', 'type' => 'tab');

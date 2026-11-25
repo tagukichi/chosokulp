@@ -8,6 +8,7 @@ $chosoku_login   = chosoku_url('chosoku_login_url', 'https://app.cho-haya.com/')
 $chosoku_privacy = chosoku_url('chosoku_privacy_url', 'https://usachim.com/privacy/');
 $chosoku_cf7     = trim((string) get_theme_mod('chosoku_cf7_shortcode', ''));
 $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミーです。';
+$chosoku_video   = chosoku_intro_video(); // 紹介動画（未設定なら null）
 ?>
 <main>
 
@@ -30,6 +31,9 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 				</p>
 				<div class="hero-cta">
 					<a href="#contact" class="btn btn-primary btn-lg">お問い合わせはこちら</a>
+					<?php if ($chosoku_video && $chosoku_video['fv']) : ?>
+						<a href="#how-video" class="btn btn-outline btn-lg btn-video"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.6v6.8l5.4-3.4z" fill="currentColor" stroke="none"/></svg>紹介動画を見る<?php echo $chosoku_video['length'] !== '' ? '（' . esc_html($chosoku_video['length']) . '）' : ''; ?></a>
+					<?php endif; ?>
 				</div>
 				<ul class="hero-points">
 					<li>
@@ -463,6 +467,13 @@ $chosoku_cap     = '※ 画面はイメージです。数値・住所はダミ�
 					</div>
 				</li>
 			</ol>
+
+			<?php if ($chosoku_video) : ?>
+				<div class="how-video reveal" id="how-video">
+					<p class="how-video-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.6v6.8l5.4-3.4z" fill="currentColor" stroke="none"/></svg><?php echo esc_html($chosoku_video['title']); ?></p>
+					<div class="how-video-frame"><?php echo $chosoku_video['html']; // 埋め込みHTML（chosoku_intro_video() でエスケープ済み） ?></div>
+				</div>
+			<?php endif; ?>
 
 			<div class="how-cta reveal">
 				<a href="#contact" class="btn btn-primary btn-lg">お問い合わせはこちら</a>
