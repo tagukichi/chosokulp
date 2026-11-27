@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 }
 
 if (!defined('CHOSOKU_VER')) {
-	define('CHOSOKU_VER', '1.4.1');
+	define('CHOSOKU_VER', '1.4.2');
 }
 
 /**

@@ -1544,3 +1544,26 @@ details[open] .faq-body { animation: faqOpen .35s var(--ease); }
   .how-video { scroll-margin-top: 76px; }
   .how-video-title { font-size: 1rem; }
 }
+
+/* ---- FV「紹介動画を見る」ボタン：数秒ごとに光が走る＋再生アイコンが軽く弾む（色は変えない） ---- */
+.btn-video { position: relative; overflow: hidden; isolation: isolate; }
+.btn-video::after {
+  content: ""; position: absolute; top: -10%; bottom: -10%; left: -50%; width: 38%; z-index: -1;
+  background: linear-gradient(105deg, rgba(56, 189, 248, 0) 0%, rgba(56, 189, 248, .28) 35%, rgba(255, 255, 255, .95) 50%, rgba(56, 189, 248, .28) 65%, rgba(56, 189, 248, 0) 100%);
+  transform: skewX(-20deg); pointer-events: none;
+  animation: btnVideoShine 4s ease-in-out 1.5s infinite;
+}
+.btn-video .ico { animation: btnVideoIcon 4s ease-in-out 1.5s infinite; transform-origin: center; }
+@keyframes btnVideoShine {
+  0%        { left: -50%; }
+  28%, 100% { left: 130%; }
+}
+@keyframes btnVideoIcon {
+  0%, 18%, 40%, 100% { transform: scale(1); }
+  26%                { transform: scale(1.22); }
+  33%                { transform: scale(.94); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-video::after { animation: none; display: none; }
+  .btn-video .ico { animation: none; }
+}
